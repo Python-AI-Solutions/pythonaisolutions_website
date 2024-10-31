@@ -1,0 +1,50 @@
+/* ADD CUSTOM CSS TO THE PAGE - THIS AFFECTS MOBILE DEVICES */
+*#dm *.dmBody div.caption-container *.caption-text *.rteBlock{
+    font-size:16px !important}
+    *#dm *.dmBody div.u_1858067173{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_1003290460{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_1702683002{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_1823324936{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_dashboarding{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_pa_2109217{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_Dashboarding{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_pipelines{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_packaging{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_software{
+    padding-top:20px !important;
+    padding-bottom:20px !important}
+    *#dm *.dmBody div.u_1512912304{
+    background-position:50% 50% !important;
+    background-repeat:no-repeat !important;
+    background-size:cover !important;
+    padding-top:70px !important;
+    padding-bottom:70px !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    width:auto !important;
+    float:none !important;
+    top:0 !important;
+    left:0 !important;
+    position:relative !important;
+    height:auto !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    text-align:center !important}

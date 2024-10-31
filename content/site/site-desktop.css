@@ -1,0 +1,169 @@
+/* DESKTOP CSS - ADD CSS TO AFFECT ALL DESKTOP PAGES */
+/*SITE_THEME_BEGIN*/
+/* ==================================================================== */
+/*                     System Style Definitions                         */
+/* ==================================================================== */
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h1
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h1
+{
+	line-height:initial;
+}
+*#dm div.dm-title h1
+{
+	line-height:initial;
+}
+*#dm div.dmContent h3
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h3
+{
+	line-height:initial;
+}
+*#dm div.dm-title h3
+{
+	line-height:initial;
+}
+*#dm div.dmContent h2
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h2
+{
+	line-height:initial;
+}
+*#dm div.dm-title h2
+{
+	line-height:initial;
+}
+*#dm div.dmContent h4
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h4
+{
+	line-height:initial;
+}
+*#dm div.dm-title h4
+{
+	line-height:initial;
+}
+*#dm div.dmContent h5
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h5
+{
+	line-height:initial;
+}
+*#dm div.dm-title h5
+{
+	line-height:initial;
+}
+*#dm div.dmContent h6
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h6
+{
+	line-height:initial;
+}
+*#dm div.dm-title h6
+{
+	line-height:initial;
+}
+*#dm div.dmContent h1,*#dm div.dmFooter h1,*#dm div.dm-title h1
+{
+	font-size:50px;
+}
+*#dm div.dmContent h2,*#dm div.dmFooter h2,*#dm div.dm-title h2
+{
+	font-size:30px;
+}
+*#dm DIV.dmOuter DIV.dmInner,*#dm DIV.dmOuter DIV#dmSlideRightNavRight
+{
+	background-image:none;
+	background-color:var(--color_8);
+}
+*#dm div.dmContent h6,*#dm div.dmFooter h6,*#dm div.dm-title h6
+{
+	font-size:14px;
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+*#dm div.dmInner,*#dm div.dmInner *.dmRespCol,*#dm *.ecwid *,*#dm *.dmform *.dmforminput label,*.dmPrettyList *.listText,*.dmPrettyList *.itemName,*#dm *.dmRestaurantMenu *.menuItemBox,*.dmRestaurantMenu *.menuItemName,*.dmRestaurantMenu *.menuItemDesc,*.dmRestaurantMenu *.menuItemPrice,*.dmPhotoGallery p.caption-text,*.dmGeoLocation a span.dmGeoMLocItemTitle,*.dmGeoLocation a span.dmGeoMLocItemDetails,*.map-popup-description
+{
+	font-size:16px;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h5,*#dm div.dmFooter h5,*#dm div.dm-title h5
+{
+	font-size:15px;
+}
+*#dm div.dmContent h3,*#dm div.dmFooter h3,*#dm div.dm-title h3
+{
+	font-size:24px;
+}
+*#dm div.dmContent h4,*#dm div.dmFooter h4,*#dm div.dm-title h4
+{
+	font-size:18px;
+}
+*#dm div.dmContent h4,*#dm div.dmFooter h4,*#dm div.p_hfcontainer h4,*#dm div.dm-title h4
+{
+	font-size:16px;
+}
+#dm .dmContent .dmRespRow .dmRespCol,#dm .dmFooter .dmRespRow .dmRespCol
+{
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:0px;
+	margin-right:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:15px;
+	padding-right:15px;
+}
+.dmLargeBody #dm .dmBody .dmRespRowsWrapper
+{
+	background-color:var(--color_8);
+}
+*#dm div.dmContent h6,*#dm div.dmFooter h6,*#dm div.p_hfcontainer h6,*#dm div.flex_hfcontainer h6,*#dm div.dm-title h6
+{
+	font-size:18px;
+}
+#dm .dmContent .dmRespRow,#dm .dmFooter .dmRespRow
+{
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:0px;
+	margin-right:0px;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-left:40px;
+	padding-right:40px;
+}
+#dm div.dmNewParagraph p,#dm div.dmNewParagraph li
+{
+	font-size:18px;
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+#dm div.dmInner,#dm div.dmInner .dmRespCol,#dm .dmRespCol div.dmNewParagraph,#dm .ecwid .ec-store,#dm .dmform .dmforminput label,.dmPrettyList .listText,.dmPrettyList .itemName,#dm .dmRestaurantMenu .menuItemBox,.dmRestaurantMenu .menuItemName,.dmRestaurantMenu .menuItemDesc,.dmRestaurantMenu .menuItemPrice,.dmPhotoGallery .caption-text.caption-text,.dmGeoLocation a span.dmGeoMLocItemTitle,.dmGeoLocation a span.dmGeoMLocItemDetails,.map-popup-description
+{
+	font-size:18px;
+}
+/*SITE_THEME_END*/

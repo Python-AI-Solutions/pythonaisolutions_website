@@ -1,0 +1,65 @@
+/* ADD CUSTOM CSS TO THE PAGE - THIS AFFECTS ALL DEVICES */
+*#dm *.dmBody a.span.textonly
+{
+	color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.dmform-error
+{
+	font-style:normal !important;
+}
+*#dm *.dmBody div.dmforminput textarea
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.dmforminput *.fileUploadLink
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.checkboxwrapper span
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody div.radiowrapper span
+{
+	font-style:italic !important;
+}
+*#dm *.dmBody nav.u_1144820115
+{
+	color:black !important;
+}
+*#dm *.dmBody div.u_1232187241 img[dm_changed]
+{
+	border-radius:3% !important;
+	-moz-border-radius:3% !important;
+	-webkit-border-radius:3% !important;
+}
+*#dm *.dmBody div.u_1232187241 img
+{
+	border-radius:3% !important;
+	-moz-border-radius:3% !important;
+	-webkit-border-radius:3% !important;
+}
+*#dm *.dmBody div.u_1636631416 img[dm_changed]
+{
+	border-radius:3% !important;
+	-moz-border-radius:3% !important;
+	-webkit-border-radius:3% !important;
+}
+*#dm *.dmBody div.u_1636631416 img
+{
+	border-radius:3% !important;
+	-moz-border-radius:3% !important;
+	-webkit-border-radius:3% !important;
+}
+*#dm *.dmBody *.u_1232187241
+{
+	width:100% !important;
+}
+*#dm *.dmBody nav.u_1318507390
+{
+	color:black !important;
+}
+*#dm *.dmBody *.u_1636631416
+{
+	width:100% !important;
+}

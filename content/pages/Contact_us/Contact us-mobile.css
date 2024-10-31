@@ -1,0 +1,12 @@
+/* ADD CUSTOM CSS TO THE PAGE - THIS AFFECTS MOBILE DEVICES */
+*#dm *.d-page-1716942098 DIV.dmInner
+{
+	background-repeat:no-repeat !important;
+	background-size:cover !important;
+}
+*#dm *.d-page-1716942098 DIV#dmSlideRightNavRight
+{
+	background-repeat:no-repeat !important;
+	background-image:none !important;
+	background-size:cover !important;
+}

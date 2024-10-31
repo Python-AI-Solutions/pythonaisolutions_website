@@ -1,0 +1,452 @@
+/* GLOBAL THEME CSS - YOUR DESIGN CHANGES WILL BE DISPLAYED HERE */
+/* ==================================================================== */
+/*                     System Style Definitions                         */
+/* ==================================================================== */
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h1,*#dm div.dmFooter h1
+{
+	color:rgb(102,102,102);
+}
+*#dm div.dmRespCol>*
+{
+	line-height:1.5;
+}
+*.dmDesktopBody *#dm ul.dmNavWrapper>li>a *.navText,*.dmDesktopBody *#dm ul.dmNavWrapper>li>a *.navItemText,*.dmDesktopBody *#dm ul.dmNavWrapper>li>*.dmNavigation
+{
+	color:rgb(17,17,17);
+	font-weight:normal;
+}
+*.dmDesktopBody *#dm ul.dmNavWrapper>li>a:hover,*.dmDesktopBody *#dm ul.dmNavWrapper>li>a.currentPage
+{
+	border-color:rgb(17,17,17);
+}
+*.dmDesktopBody *#dm ul.dmNavWrapper>li.navItemSelectedServer>a *.navText,*.dmDesktopBody *#dm ul.dmNavWrapper>li.dmNavItemSelected>a *.navItemText,*.dmDesktopBody *#dm ul.dmNavWrapper>li.dmNavItemSelected>*.navItemText
+{
+	font-weight:bold;
+}
+*.stickyHeaderSpacer
+{
+	height:73px;
+}
+*#dm div.dmContent h3,*#dm div.dmFooter h3
+{
+	color:var(--color_1);
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+*#dm div.dmInner
+{
+	font-size:16px;
+	font-family:'Roboto';
+	line-height:initial;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm *.ecwid *
+{
+	font-family:'Roboto';
+}
+*#dm div.dmInner h1
+{
+	font-family:'Montserrat';
+}
+*#dm div.dmInner h2
+{
+	font-family:'Montserrat';
+}
+*#dm div.dmInner h3
+{
+	font-family:'Montserrat';
+}
+*#dm div.dmInner h4
+{
+	font-family:'Montserrat';
+}
+*#dm div.dmInner h5
+{
+	font-family:'Roboto';
+}
+*#dm div.dmInner h6
+{
+	font-family:'Roboto';
+}
+*#dm div.dmContent h2,*#dm div.dmFooter h2
+{
+	color:var(--color_3);
+}
+*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li>a *.navText,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li>a *.navItemText,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li>*.dmNavigation
+{
+	color:var(--color_3);
+	font-size:17px;
+	font-weight:bold;
+}
+*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li>a:hover,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li>a.currentPage
+{
+	border-color:var(--color_3);
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+*#dm DIV.dmInner,*#dm DIV#dmSlideRightNavRight
+{
+	background-repeat:no-repeat;
+	background-image:url(https://irt-cdn.multiscreensite.com/ce0bb35f932b47bb809d0e37905542ba/dms3rep/multi/site_background_education-2087x1173.jpg);
+	background-size:cover;
+	background-position:50% 0%;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmOuter div.dmInner,*#dm div#dmSlideRightNavRight
+{
+	background-position:center center;
+	background-repeat:repeat;
+	background-size:auto;
+}
+*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li>a:hover *.navText,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li>a *.navText.hover,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li>a:hover *.navItemText,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li>a *.navItemText.hover
+{
+	color:rgb(102,102,102);
+}
+*#dm div.dmContent h4,*#dm div.dmFooter h4
+{
+	color:var(--color_3);
+}
+*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li.navItemSelectedServer>a *.navText,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li.dmNavItemSelected>a *.navItemText,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li.dmNavItemSelected>*.navItemText
+{
+	font-weight:normal;
+}
+*#dm div.dmContent h5,*#dm div.dmFooter h5
+{
+	color:var(--color_3);
+}
+*#dm div.dmContent h6,*#dm div.dmFooter h6
+{
+	color:var(--color_3);
+}
+*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li.navItemSelectedServer>a:hover *.navText,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li.dmNavItemSelected>a:hover *.navItemText,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li.navItemSelectedServer>a *.navText.hover,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li.dmNavItemSelected>a *.navItemText.hover
+{
+	color:rgb(102,102,102);
+}
+*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li.navItemSelectedServer>a,*.dmRoot.dmDesktopBody *#dm ul.dmNavWrapper>li.dmNavItemSelected>a
+{
+	border-color:rgb(102,102,102);
+}
+*.dmRoot.dmDesktopBody *#dm li>ul.dmn
+{
+	background-color:var(--color_1) !important;
+	border-style:solid;
+	border-width:1px;
+}
+*.dmRoot.dmDesktopBody *#dm li>ul.dmNavigation.dmn li>a *.navText,*.dmRoot.dmDesktopBody *#dm li>ul.dmNavigation.dmn li>a *.navItemText
+{
+	color:var(--color_3);
+	font-weight:bold;
+	font-family:'Roboto';
+}
+*.dmRoot.dmDesktopBody *#dm li>ul.dmNavigation.dmn li>a:hover *.navText,*.dmRoot.dmDesktopBody *#dm li>ul.dmNavigation.dmn li>a:hover *.navItemText,*.dmRoot.dmDesktopBody *#dm li>ul.dmNavigation.dmn li>a *.navText.hover,*.dmRoot.dmDesktopBody *#dm li>ul.dmNavigation.dmn li>a *.navItemText.hover
+{
+	color:rgb(102,102,102);
+}
+*#dm div.dmContent h4,*#dm div.dmFooter h4,*#dm div.dm-title h4
+{
+	font-family:Roboto;
+	font-weight:bold;
+	color:rgba(100,100,100,1);
+}
+*#dm div.dmContent h1,*#dm div.dmFooter h1,*#dm div.dm-title h1
+{
+	font-weight:bold;
+	color:rgba(100,100,100,1);
+	font-family:Montserrat;
+}
+*.dmLargeBody *.dmBody *.dmRespRowsWrapper,*.dmLargeBody *.dm-layout-sec *.dmBody *.dmRespRowsWrapper
+{
+	background-color:transparent;
+}
+*#dm div.dmContent h2,*#dm div.dmFooter h2,*#dm div.dm-title h2
+{
+	color:rgba(100,100,100,1);
+	font-weight:bold;
+	font-family:Montserrat;
+}
+*#dm div.dmContent h3,*#dm div.dmFooter h3,*#dm div.dm-title h3
+{
+	color:rgba(100,100,100,1);
+	font-family:Montserrat;
+	font-weight:bold;
+}
+*#dm div.dmContent h5,*#dm div.dmFooter h5,*#dm div.dm-title h5
+{
+	color:rgba(119,119,119,1);
+	font-family:Montserrat;
+	font-weight:bold;
+}
+*#dm div.dmContent h6,*#dm div.dmFooter h6,*#dm div.dm-title h6
+{
+	color:rgba(100,100,100,1);
+	font-weight:normal;
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+*#dm div.dmInner,*#dm div.dmInner *.dmRespCol,*#dm *.ecwid *,*#dm *.dmform *.dmforminput label,*.dmPrettyList *.listText,*.dmPrettyList *.itemName
+{
+	font-weight:300;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmNewParagraph a,*#dm *.dmNewParagraph a,*#dm div.dmBlockElement a,*#dm *.dmBlockElement a,*#dm *.dmform a.fileUploadLink,*.dmPrettyList *.link:not(.dmWidget)
+{
+	color:rgba(54,73,87,1);
+	text-decoration:underline;
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+*#dm div.dmInner,*#dm div.dmInner *.dmRespCol,*#dm *.ecwid *,*#dm *.dmform *.dmforminput label,*.dmPrettyList *.listText,*.dmPrettyList *.itemName,*#dm *.dmRestaurantMenu *.menuItemBox,*.dmRestaurantMenu *.menuItemName,*.dmRestaurantMenu *.menuItemDesc,*.dmRestaurantMenu *.menuItemPrice,*.dmPhotoGallery p.caption-text,*.dmGeoLocation a span.dmGeoMLocItemTitle,*.dmGeoLocation a span.dmGeoMLocItemDetails
+{
+	color:rgba(0,0,0,1);
+}
+*#dm div.dmInner,*#dm div.dmInner *.dmRespCol,*#dm *.ecwid *,*#dm *.dmform *.dmforminput label,*.dmPrettyList *.listText,*.dmPrettyList *.itemName,*#dm *.dmRestaurantMenu *.menuItemBox,*.dmRestaurantMenu *.menuItemName,*.dmRestaurantMenu *.menuItemDesc,*.dmRestaurantMenu *.menuItemPrice,*.dmPhotoGallery p.caption-text,*.dmGeoLocation a span.dmGeoMLocItemTitle,*.dmGeoLocation a span.dmGeoMLocItemDetails,*.map-popup-description
+{
+	color:rgba(147,147,147,1);
+	font-family:Roboto;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*.dmLargeBody *.dmBody *.dmRespRowsWrapper,*.dmLargeBody *.dm-layout-sec *.dmBody *.dmRespRowsWrapper,*#dmSlideRightNavRight *#site_content
+{
+	background-color:transparent;
+}
+*#dm div.dmNewParagraph a,*#dm *.dmNewParagraph a,*#dm div.dmBlockElement a,*#dm *.dmBlockElement a,*#dm *.dmform a.fileUploadLink,*.dmPrettyList *.link:not(.dmWidget),*#dm *.dmGeoLocation a.dmGeoSVSeeAll,*#dm *.dmGeoLocation a.dmGeoSVGoToPage,*#dm *.postDescription a,*#dm *.blog-post-component a,*#dm *.timeline-post a,*#dm *.rteBlock a,*#dm *.rteBlock a,*#dm *.rteBlock a,*#dm *.rteBlock a,*#dm *.rteBlock a,*#dm *.rteBlock a,*.newPhotoGallery *.photoGalleryViewAll.link
+{
+	color:rgba(65,67,69,1);
+}
+*#dm div.dmNewParagraph a,*#dm *.dmNewParagraph a,*#dm div.dmBlockElement a,*#dm *.dmBlockElement a,*#dm *.dmform a.fileUploadLink,*.dmPrettyList *.link:not(.dmWidget),*#dm *.dmGeoLocation a.dmGeoSVSeeAll,*#dm *.dmGeoLocation a.dmGeoSVGoToPage,*#dm *.postDescription a,*#dm *.blog-post-component a,*#dm *.timeline-post a,*#dm *.rteBlock a,*#dm *.rteBlock a,*#dm *.rteBlock a,*.newPhotoGallery *.photoGalleryViewAll.link
+{
+	color:rgba(147,147,147,1);
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+#dm div.dmInner,#dm div.dmInner .dmRespCol,#dm .dmRespCol div.dmNewParagraph,#dm .ecwid .ec-store,#dm .dmform .dmforminput label,.dmPrettyList .listText,.dmPrettyList .itemName,#dm .dmRestaurantMenu .menuItemBox,.dmRestaurantMenu .menuItemName,.dmRestaurantMenu .menuItemDesc,.dmRestaurantMenu .menuItemPrice,.dmPhotoGallery .caption-text.caption-text,.dmGeoLocation a span.dmGeoMLocItemTitle,.dmGeoLocation a span.dmGeoMLocItemDetails,.map-popup-description
+{
+	color:var(--color_3);
+	font-family:'Helvetica Neue Regular';
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h1,*#dm div.dmFooter h1,*#dm div.p_hfcontainer h1,*#dm div.dm-title h1
+{
+	font-family:Manrope;
+	color:rgba(255,255,255,1);
+	direction:ltr;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+}
+*#dm div.dmContent h2,*#dm div.dmFooter h2,*#dm div.p_hfcontainer h2,*#dm div.dm-title h2
+{
+	font-family:Manrope;
+	color:var(--color_3);
+	direction:ltr;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+}
+*#dm div.dmContent h3,*#dm div.dmFooter h3,*#dm div.p_hfcontainer h3,*#dm div.dm-title h3
+{
+	font-family:"Cormorant Garamond";
+	color:var(--color_3);
+	direction:ltr;
+	font-weight:400;
+	font-style:italic;
+	text-decoration:none;
+}
+*#dm div.dmContent h4,*#dm div.dmFooter h4,*#dm div.p_hfcontainer h4,*#dm div.dm-title h4
+{
+	font-family:Manrope;
+	color:var(--color_3);
+	direction:ltr;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+}
+*#dm div.dmContent h5,*#dm div.dmFooter h5,*#dm div.p_hfcontainer h5,*#dm div.dm-title h5
+{
+	color:var(--color_3);
+	font-family:Poppins;
+	direction:ltr;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+}
+*#dm div.dmContent h6,*#dm div.dmFooter h6,*#dm div.p_hfcontainer h6,*#dm div.dm-title h6
+{
+	color:var(--color_3);
+	font-family:Poppins;
+	direction:ltr;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h1,*#dm div.dmFooter .dmNewParagraph[data-version] h1,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h1,*#dm div.dm-title .dmNewParagraph[data-version] h1
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h1 *,*#dm div.dmFooter .dmNewParagraph[data-version] h1 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h1 *,*#dm div.dm-title .dmNewParagraph[data-version] h1 *
+{
+	text-decoration:none;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h2,*#dm div.dmFooter .dmNewParagraph[data-version] h2,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h2,*#dm div.dm-title .dmNewParagraph[data-version] h2
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h2 *,*#dm div.dmFooter .dmNewParagraph[data-version] h2 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h2 *,*#dm div.dm-title .dmNewParagraph[data-version] h2 *
+{
+	text-decoration:none;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h3,*#dm div.dmFooter .dmNewParagraph[data-version] h3,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h3,*#dm div.dm-title .dmNewParagraph[data-version] h3
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h3 *,*#dm div.dmFooter .dmNewParagraph[data-version] h3 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h3 *,*#dm div.dm-title .dmNewParagraph[data-version] h3 *
+{
+	text-decoration:none;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h4,*#dm div.dmFooter .dmNewParagraph[data-version] h4,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h4,*#dm div.dm-title .dmNewParagraph[data-version] h4
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h4 *,*#dm div.dmFooter .dmNewParagraph[data-version] h4 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h4 *,*#dm div.dm-title .dmNewParagraph[data-version] h4 *
+{
+	text-decoration:none;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h5,*#dm div.dmFooter .dmNewParagraph[data-version] h5,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h5,*#dm div.dm-title .dmNewParagraph[data-version] h5
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h5 *,*#dm div.dmFooter .dmNewParagraph[data-version] h5 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h5 *,*#dm div.dm-title .dmNewParagraph[data-version] h5 *
+{
+	text-decoration:none;
+}
+.dmMobileBody .dmLayoutWrapper,.dmMobileBody .dm-layout-sec .dmLayoutWrapper,#dmSlideRightNavRight #site_content,.dm-layout-sec #dmSlideRightNavRight #site_content,#dm DIV.dmOuter DIV#dmSlideRightNavRight
+{
+	background-color:transparent;
+}
+#dm div.dmNewParagraph p
+{
+	color:var(--color_3);
+	direction:ltr;
+	font-family:Manrope;
+	font-weight:300;
+	font-style:normal;
+	text-decoration:none;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h6,*#dm div.dmFooter .dmNewParagraph[data-version] h6,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h6,*#dm div.dm-title .dmNewParagraph[data-version] h6
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h6 *,*#dm div.dmFooter .dmNewParagraph[data-version] h6 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h6 *,*#dm div.dm-title .dmNewParagraph[data-version] h6 *
+{
+	text-decoration:none;
+}
+*#dm div.dmContent h1,*#dm div.dmFooter h1,*#dm div.p_hfcontainer h1,*#dm div.flex_hfcontainer h1,*#dm div.dm-title h1
+{
+	color:rgb(49,187,254);
+	direction:ltr;
+	font-family:"Helvetica Neue Regular";
+	font-weight:bold;
+	font-style:normal;
+	text-decoration:rgb(255,255,255);
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h1,*#dm div.dmFooter .dmNewParagraph[data-version] h1,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h1,*#dm div.flex_hfcontainer .dmNewParagraph[data-version] h1,*#dm div.dm-title .dmNewParagraph[data-version] h1
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h1 *,*#dm div.dmFooter .dmNewParagraph[data-version] h1 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h1 *,*#dm div.flex_hfcontainer .dmNewParagraph[data-version] h1 *,*#dm div.dm-title .dmNewParagraph[data-version] h1 *
+{
+	text-decoration:rgb(255,255,255);
+}
+#dm div.dmNewParagraph p,#dm div.dmNewParagraph li
+{
+	color:var(--color_8);
+	direction:ltr;
+	font-family:"Helvetica Neue Regular";
+	font-weight:300;
+	font-style:normal;
+	text-decoration:rgb(49,74,94);
+}
+*#dm div.dmContent h2,*#dm div.dmFooter h2,*#dm div.p_hfcontainer h2,*#dm div.flex_hfcontainer h2,*#dm div.dm-title h2
+{
+	color:rgb(79,76,176);
+	direction:ltr;
+	font-family:"Helvetica Neue Regular";
+	font-weight:bold;
+	font-style:normal;
+	text-decoration:rgb(49,74,94);
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h2,*#dm div.dmFooter .dmNewParagraph[data-version] h2,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h2,*#dm div.flex_hfcontainer .dmNewParagraph[data-version] h2,*#dm div.dm-title .dmNewParagraph[data-version] h2
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h2 *,*#dm div.dmFooter .dmNewParagraph[data-version] h2 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h2 *,*#dm div.flex_hfcontainer .dmNewParagraph[data-version] h2 *,*#dm div.dm-title .dmNewParagraph[data-version] h2 *
+{
+	text-decoration:rgb(49,74,94);
+}
+#dm .dmContent .dmRespRow,#dm .dmFooter .dmRespRow
+{
+	background-color:var(--color_8);
+}
+*#dm div.dmContent h6,*#dm div.dmFooter h6,*#dm div.p_hfcontainer h6,*#dm div.flex_hfcontainer h6,*#dm div.dm-title h6
+{
+	color:rgba(0, 0, 0, 1);
+	direction:ltr;
+	font-family:"Helvetica Neue Regular";
+	font-weight:400;
+	font-style:normal;
+	text-decoration:rgb(49, 74, 94);
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h6,*#dm div.dmFooter .dmNewParagraph[data-version] h6,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h6,*#dm div.flex_hfcontainer .dmNewParagraph[data-version] h6,*#dm div.dm-title .dmNewParagraph[data-version] h6
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h6 *,*#dm div.dmFooter .dmNewParagraph[data-version] h6 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h6 *,*#dm div.flex_hfcontainer .dmNewParagraph[data-version] h6 *,*#dm div.dm-title .dmNewParagraph[data-version] h6 *
+{
+	text-decoration:rgb(49, 74, 94);
+}
+*#dm div.dmContent h3,*#dm div.dmFooter h3,*#dm div.p_hfcontainer h3,*#dm div.flex_hfcontainer h3,*#dm div.dm-title h3
+{
+	color:var(--color_6);
+	direction:ltr;
+	font-family:"Helvetica Neue Regular";
+	font-weight:400;
+	font-style:italic;
+	text-decoration:rgb(49,74,94);
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h3,*#dm div.dmFooter .dmNewParagraph[data-version] h3,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h3,*#dm div.flex_hfcontainer .dmNewParagraph[data-version] h3,*#dm div.dm-title .dmNewParagraph[data-version] h3
+{
+	text-decoration:inherit;
+}
+*#dm div.dmContent .dmNewParagraph[data-version] h3 *,*#dm div.dmFooter .dmNewParagraph[data-version] h3 *,*#dm div.p_hfcontainer .dmNewParagraph[data-version] h3 *,*#dm div.flex_hfcontainer .dmNewParagraph[data-version] h3 *,*#dm div.dm-title .dmNewParagraph[data-version] h3 *
+{
+	text-decoration:rgb(49,74,94);
+}

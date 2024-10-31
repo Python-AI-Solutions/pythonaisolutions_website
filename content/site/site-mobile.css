@@ -1,0 +1,154 @@
+/* MOBILE CSS - ADD CSS TO AFFECT ALL MOBILE PAGES */
+/*SITE_THEME_BEGIN*/
+/* ==================================================================== */
+/*                     System Style Definitions                         */
+/* ==================================================================== */
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h1
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h1
+{
+	line-height:initial;
+}
+*#dm div.dm-title h1
+{
+	line-height:initial;
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+*#dm DIV.dmInner,*#dm DIV#dmSlideRightNavRight
+{
+	background-repeat:no-repeat;
+	background-image:url(https://irp.cdn-website.com/md/dmtmpl/b0dca24d-75f4-46c7-8421-b88e88a716f7/dms3rep/multi/site_background_education-2087x1173.jpg);
+	background-size:cover;
+	background-position:50% 0%;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*.dmMobileBody *.dmLayoutWrapper
+{
+	background-color:transparent;
+}
+*#dm div.dmContent h2
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h2
+{
+	line-height:initial;
+}
+*#dm div.dm-title h2
+{
+	line-height:initial;
+}
+*#dm div.dmContent h3
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h3
+{
+	line-height:initial;
+}
+*#dm div.dm-title h3
+{
+	line-height:initial;
+}
+*#dm div.dmContent h4
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h4
+{
+	line-height:initial;
+}
+*#dm div.dm-title h4
+{
+	line-height:initial;
+}
+*#dm div.dmContent h5
+{
+	line-height:initial;
+}
+*#dm div.dmFooter h5
+{
+	line-height:initial;
+}
+*#dm div.dm-title h5
+{
+	line-height:initial;
+}
+*#dm div.dmContent h4,*#dm div.dmFooter h4,*#dm div.dm-title h4
+{
+	font-size:20px;
+}
+*#dm DIV.dmOuter DIV.dmInner,*#dm DIV.dmOuter DIV#dmSlideRightNavRight
+{
+	background-image:none;
+	background-color:rgba(0,0,0,1);
+}
+*#dm div.dmContent h1,*#dm div.dmFooter h1,*#dm div.dm-title h1
+{
+	font-size:40px;
+}
+*#dm div.dmContent h6,*#dm div.dmFooter h6,*#dm div.dm-title h6
+{
+	font-size:14px;
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+*#dm div.dmInner,*#dm div.dmInner *.dmRespCol,*#dm *.ecwid *,*#dm *.dmform *.dmforminput label,*.dmPrettyList *.listText,*.dmPrettyList *.itemName,*#dm *.dmRestaurantMenu *.menuItemBox,*.dmRestaurantMenu *.menuItemName,*.dmRestaurantMenu *.menuItemDesc,*.dmRestaurantMenu *.menuItemPrice,*.dmPhotoGallery p.caption-text,*.dmGeoLocation a span.dmGeoMLocItemTitle,*.dmGeoLocation a span.dmGeoMLocItemDetails,*.map-popup-description
+{
+	font-size:15px;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h5,*#dm div.dmFooter h5,*#dm div.dm-title h5
+{
+	font-size:15px;
+}
+*#dm div.dmContent h2,*#dm div.dmFooter h2,*#dm div.dm-title h2
+{
+	font-size:28px;
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+#dm div.dmInner,#dm div.dmInner .dmRespCol,#dm .dmRespCol div.dmNewParagraph,#dm .ecwid .ec-store,#dm .dmform .dmforminput label,.dmPrettyList .listText,.dmPrettyList .itemName,#dm .dmRestaurantMenu .menuItemBox,.dmRestaurantMenu .menuItemName,.dmRestaurantMenu .menuItemDesc,.dmRestaurantMenu .menuItemPrice,.dmPhotoGallery .caption-text.caption-text,.dmGeoLocation a span.dmGeoMLocItemTitle,.dmGeoLocation a span.dmGeoMLocItemDetails,.map-popup-description
+{
+	font-size:16px;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h1,*#dm div.dmFooter h1,*#dm div.p_hfcontainer h1,*#dm div.dm-title h1
+{
+	font-size:35px;
+}
+*#dm div.dmContent h4,*#dm div.dmFooter h4,*#dm div.p_hfcontainer h4,*#dm div.dm-title h4
+{
+	font-size:16px;
+}
+*#dm div.dmContent h3,*#dm div.dmFooter h3,*#dm div.p_hfcontainer h3,*#dm div.dm-title h3
+{
+	font-size:20px;
+}
+*#dm div.dmContent h2,*#dm div.dmFooter h2,*#dm div.p_hfcontainer h2,*#dm div.dm-title h2
+{
+	font-size:24px;
+}
+/*SITE_THEME_END*/

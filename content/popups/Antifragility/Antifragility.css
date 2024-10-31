@@ -1,0 +1,41 @@
+/* ADD CUSTOM CSS TO THE PAGE - THIS AFFECTS ALL DEVICES */
+*#dm *.dmBody a.span.textonly
+{
+	color:rgb(255,255,255) !important;
+}
+*#dm *.dmBody div.dmPopupInner
+{
+	background-color:rgb(255,255,255) !important;
+	border-style:solid !important;
+	border-width:0 !important;
+	-webkit-box-shadow:0 0 10px rgba(0,0,0,0.30) !important;
+	box-shadow:0 0 10px rgba(0,0,0,0.30) !important;
+	-moz-box-shadow:0 0 10px rgba(0,0,0,0.30) !important;
+	border-radius:10px !important;
+	-moz-border-radius:10px !important;
+	-webkit-border-radius:10px !important;
+	background-image:none !important;
+	background-repeat:no-repeat !important;
+	background-size:cover !important;
+	background-position:top right !important;
+}
+*#dm *.dmBody div.u_dm_content
+{
+	background-image:none !important;
+}
+*#dm *.dmBody nav.u_1144820115
+{
+	color:black !important;
+}
+*#dm *.dmBody *.allWrapper .dmPopupInner
+{
+	border-radius:25px 25px 25px 25px !important;
+	box-shadow:none !important;
+	-moz-box-shadow:none !important;
+	-webkit-box-shadow:none !important;
+	background-color:rgba(49,74,94,1) !important;
+}
+*#dm *.dmBody nav.u_1318507390
+{
+	color:black !important;
+}

@@ -1,0 +1,180 @@
+/* ADD CUSTOM CSS TO THE PAGE - THIS AFFECTS ALL DEVICES */
+*#dm *.dmBody div.dmforminput textarea{
+font-style:italic !important}
+*#dm *.dmBody div.dmforminput *.fileUploadLink{
+font-style:italic !important}
+*#dm *.dmBody div.checkboxwrapper span{
+font-style:italic !important}
+*#dm *.dmBody div.radiowrapper span{
+font-style:italic !important}
+*#dm *.dmBody div.caption-container *.caption-text *.rteBlock{
+color:rgba(153,153,153,1) !important}
+*#dm *.dmBody div.u_1858067173{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody div.u_1003290460{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody div.u_1702683002{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody div.u_1823324936{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody div.u_dashboarding{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody div.u_pa_2109217{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody div.u_Dashboarding{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody div.u_pipelines{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody div.u_packaging{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody div.u_software{
+background-color:rgba(246,246,246,1) !important}
+*#dm *.dmBody nav.u_1318507390{
+color:black !important}
+*#dm *.dmBody div.u_1835149766 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody div.u_1835149766 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody *.u_1835149766{
+width:100% !important}
+*#dm *.dmBody div.u_1384603636 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody div.u_1384603636 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody div.u_1004467839 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody div.u_1004467839 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody *.u_1384603636{
+width:100% !important}
+*#dm *.dmBody *.u_1004467839{
+width:100% !important}
+*#dm *.dmBody div.u_1697938403 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody div.u_1697938403 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody div.u_1501824048 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody div.u_1501824048 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody *.u_1501824048{
+width:100% !important}
+*#dm *.dmBody *.u_1697938403{
+width:100% !important}
+*#dm *.dmBody *.u_1842529152{
+width:100% !important}
+*#dm *.dmBody div.u_1842529152 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important;
+object-position:50% 0 !important;
+object-fit:cover !important}
+*#dm *.dmBody div.u_1842529152 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important;
+object-position:50% 0 !important;
+object-fit:cover !important}
+*#dm *.dmBody div.u_1512912304:before{
+background-color:rgba(0,0,0,1) !important;
+opacity:0.35 !important}
+*#dm *.dmBody div.u_1512912304.before{
+background-color:rgba(0,0,0,1) !important;
+opacity:0.35 !important}
+*#dm *.dmBody div.u_1512912304>.bgExtraLayerOverlay{
+opacity:0.35 !important}
+*#dm *.dmBody *.u_1512912304:before{
+opacity:0.5 !important;
+background-color:rgb(0,0,0) !important}
+*#dm *.dmBody *.u_1512912304.before{
+opacity:0.5 !important;
+background-color:rgb(0,0,0) !important}
+*#dm *.dmBody *.u_1512912304>.bgExtraLayerOverlay{
+opacity:0.5 !important;
+background-color:rgb(0,0,0) !important}
+*#dm *.dmBody div.u_1512912304{
+background-repeat:no-repeat !important;
+background-image:none !important;
+border-radius:0 0 0 0 !important}
+*#dm *.dmBody div.u_1242476596 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important;
+object-position:50% 50% !important;
+object-fit:cover !important}
+*#dm *.dmBody div.u_1242476596 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important;
+object-position:50% 50% !important;
+object-fit:cover !important}
+*#dm *.dmBody *.u_1242476596{
+width:100% !important}
+*#dm *.dmBody *.u_1351057199{
+width:100% !important}
+*#dm *.dmBody div.u_1351057199 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important;
+object-position:50% 0 !important;
+object-fit:cover !important}
+*#dm *.dmBody div.u_1351057199 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important;
+object-position:50% 0 !important;
+object-fit:cover !important}
+*#dm *.dmBody div.u_1593720331 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody div.u_1593720331 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody *.u_1593720331{
+width:100% !important}
+*#dm *.dmBody *.u_1085340221{
+width:100% !important}
+*#dm *.dmBody div.u_1085340221 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important;
+object-position:50% 0 !important;
+object-fit:cover !important}
+*#dm *.dmBody div.u_1085340221 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important;
+object-position:50% 0 !important;
+object-fit:cover !important}
+*#dm *.dmBody div.u_1958257414 img[dm_changed]{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody div.u_1958257414 img{
+border-radius:3% !important;
+-moz-border-radius:3% !important;
+-webkit-border-radius:3% !important}
+*#dm *.dmBody *.u_1958257414{
+width:100% !important}
