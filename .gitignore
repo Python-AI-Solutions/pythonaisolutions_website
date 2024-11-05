@@ -1,3 +1,8 @@
 Icon
 .DS_Store
 content/Icon
+output/*
+venv/*
+cache/
+__pycache__/
+*.pyc
