@@ -25,6 +25,15 @@ def generate_services(generator):
 
     generator.context["services"] = services
 
+    experience_file = os.path.join(generator.settings["PATH"], "experience-expertise.md")
+    reader = MarkdownReader(generator.settings)
+    content, metadata = reader.read(experience_file)
+    generator.context["experience"] = {
+        **metadata,
+        "content": content,
+    }
+
+
 
 def register():
     """Register the plugin to Pelican's signal system."""

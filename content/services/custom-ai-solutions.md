@@ -3,3 +3,4 @@ Description: Get AI solutions that are tailor-made for your business needs. Whet
 Image: images/customer-ai-soluton.webp
 Logo: images/custom-ai-solution-logo.svg
 Date: 2024-11-05
+show_in_list: true

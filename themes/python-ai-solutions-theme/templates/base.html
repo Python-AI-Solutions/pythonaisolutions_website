@@ -69,6 +69,19 @@
       max-width: 100%;
       height: auto;
     }
+
+    .main-logo {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    @media (max-width: 768px) {
+        .main-logo {
+            max-width: 300px;
+        }
+    }
   </style>
 
 
@@ -80,9 +93,9 @@
     <div class="navbar navbar-dark bg-dark shadow-sm">
       <div class="container">
         <a href="{{ SITEURL }}" class="navbar-brand d-flex align-items-center">
-          <img src="{{ SITEURL }}/theme/images/snakebrain.svg" width="40" height="32" class="bi me-2"
+          <img src="{{ SITEURL }}/theme/images/snakebrain.svg" width="60" height="48" class="bi me-2"
             alt="Snake Brain Logo">
-          <span class="d-none d-sm-block">{{ SITENAME }}</span>
+          <span class="d-none d-sm-block fs-4">{{ SITENAME }}</span>
         </a>
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="{{ SITEURL }}" class="nav-link {% if output_file == 'index.html' %}active{% endif %}">Home</a></li>
@@ -107,8 +120,11 @@
             <div id="widget_r67" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper"
               data-widget-type="image" data-keep-proportion="true" data-external-id="1807453992">
               <div class="imageWidget align-center u_1807453992" data-element-type="image" data-widget-type="image"
-                id="1807453992" editablewidget="true"><img
-                  src="{{SITEURL}}/images/Python+AI+Solutions+no+tagline-864w.webp" alt="Python AI Solutions" /></div>
+                id="1807453992" editablewidget="true">
+                <img src="{{SITEURL}}/images/Python+AI+Solutions+no+tagline-864w.webp" 
+                     alt="Python AI Solutions"
+                     class="main-logo" />
+              </div>
             </div>
             <p class="lead text-muted">We are committed to the democratization of AI, believing in its capacity to
               transform the world for the better. Our goal is to level the technological playing field and provide
