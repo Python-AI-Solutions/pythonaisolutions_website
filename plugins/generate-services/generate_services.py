@@ -24,15 +24,19 @@ def generate_services(generator):
         services.append(context)
 
     generator.context["services"] = services
+    generator.context["experience"] = get_data(generator,  "experience-expertise.md")
+    generator.context["index_data"] = get_data(generator, "index.md")
 
-    experience_file = os.path.join(generator.settings["PATH"], "experience-expertise.md")
+
+
+def get_data(generator, md_file):
+    file_path = os.path.join(generator.settings["PATH"], md_file)
     reader = MarkdownReader(generator.settings)
-    content, metadata = reader.read(experience_file)
-    generator.context["experience"] = {
+    content, metadata = reader.read(file_path)
+    return {
         **metadata,
         "content": content,
     }
-
 
 
 def register():

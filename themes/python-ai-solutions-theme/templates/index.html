@@ -58,6 +58,52 @@
         border-color: #ffca2c;
         transform: scale(1.05);
     }
+
+    .featured-section {
+        width: 90%;
+        margin: 4rem auto;
+        background-color: #f8f9fa;
+        border-radius: 15px;
+        padding: 3rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .featured-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .featured-text h2 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+
+    .featured-text p {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .featured-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .featured-section {
+            width: 95%;
+            padding: 2rem;
+        }
+        
+        .featured-image {
+            margin-top: 2rem;
+        }
+    }
 </style>
 
 <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
@@ -78,11 +124,45 @@
     {% endif %}
     {% endfor %}
 </div>
-<div class="text-center mt-4">
+<div class="text-center mt-4 mb-5">
     <a href="#" class="btn btn-learn-more">Learn More</a>
 </div>
 
+<div class="featured-section">
+    <div class="row align-items-center">
+        <div class="col-lg-6 featured-text text-center">
+            <h2>{{index_data.contact_us_title}}</h2>
+            <p>{{index_data.contact_us_description}}</p>
+            <div class="text-center mt-4 mb-5">
+                <a href="#" class="btn btn-learn-more">Learn More</a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="{{SITEURL}}/{{index_data.contact_us_images}}" 
+                 alt="AI Development" 
+                 class="featured-image">
+        </div>
+    </div>
+</div>
 
-
+<div class="featured-section">
+    <div class="row align-items-center">
+        <div class="col-lg-4">
+            <img src="{{SITEURL}}/images/EU-Structural-Fund-391w.png" 
+                 alt="EU-Structural-Fund-391w" 
+                 class="featured-image">
+        </div>
+        <div class="col-lg-4">
+            <img src="{{SITEURL}}/images/European-Regional-Development-Fund-403w.png" 
+                 alt="EU-Structural-Fund-391w" 
+                 class="featured-image">
+        </div>
+        <div class="col-lg-4">
+            <img src="{{SITEURL}}/images/LEO-Logo-403w.png" 
+                 alt="EU-Structural-Fund-391w" 
+                 class="featured-image">
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
