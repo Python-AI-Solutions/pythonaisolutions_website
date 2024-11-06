@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Experience & Expertise{% endblock title %}
+
+{% block content %}
+<style>
+    .btn-learn-more {
+        background-color: #ffc107;
+        border-color: #ffc107;
+        color: #000;
+        font-weight: 500;
+        margin-top: auto;
+        transition: all 0.3s ease;
+    }
+
+    .btn-learn-more:hover {
+        background-color: #ffca2c;
+        border-color: #ffca2c;
+        transform: scale(1.05);
+    }
+
+    .featured-image {
+        max-width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+        margin: 30px;
+    }
+
+    .featured-section {
+        border: 3px solid;
+        border-radius: 50px;
+        padding: 20px;
+        margin: 30px;
+        background-color: white;
+    }
+</style>
+<div class="featured-section">
+    <div class="row align-items-center">
+        <div class="col-lg-6 featured-text text-center">
+            <h2>{{article.title}}</h2>
+            <p>{{article.description}}</p>
+            <div class="text-center mt-4 mb-5">
+                <a href="{{article.github}}" class="btn btn-learn-more">GitHub</a>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-5">
+            <img src="{{SITEURL}}/{{article.picture}}" 
+                 alt="AI Development" 
+                 class="featured-image">
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -98,8 +98,9 @@
         </a>
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="{{ SITEURL }}" class="nav-link {% if output_file == 'index.html' %}active{% endif %}">Home</a></li>
-          <li class="nav-item"><a href="{{ SITEURL }}/services" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="{{ SITEURL }}/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{{ SITEURL }}/services" class="nav-link {% if output_file == 'services.html' %}active{% endif %}">Services</a></li>
+          <li class="nav-item"><a href="{{ SITEURL }}/experience-expertise" class="nav-link {% if output_file == 'experience-expertise.html' %}active{% endif %}">Experience & Expertise</a></li>
+          <li class="nav-item"><a href="{{ SITEURL }}/our-mission" class="nav-link {% if output_file == 'our-mission.html' %}active{% endif %}">Our Mission</a></li>
           <li class="nav-item"><a href="{{ SITEURL }}/contact" class="nav-link">Contact</a></li>
         </ul>
       </div>
@@ -107,33 +108,8 @@
   </header>
 
   <main>
-
-    <div class="container-fluid p-0">
-      <img src="{{SITEURL}}/images/zoomed_banner.jpg" class="banner-image" alt="Banner">
-    </div>
-
-    <section class="py-5 text-center container">
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-          <div class="fw-light">
-            <div id="widget_r67" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper"
-              data-widget-type="image" data-keep-proportion="true" data-external-id="1807453992">
-              <div class="imageWidget align-center u_1807453992" data-element-type="image" data-widget-type="image"
-                id="1807453992" editablewidget="true">
-                <img src="{{SITEURL}}/images/Python+AI+Solutions+no+tagline-864w.webp" 
-                     alt="Python AI Solutions"
-                     class="main-logo" />
-              </div>
-            </div>
-            <p class="lead text-muted">We are committed to the democratization of AI, believing in its capacity to
-              transform the world for the better. Our goal is to level the technological playing field and provide
-              organizations with accessible, customized AI solutions that enable them to fully harness their data and
-              streamline their operations amid rapid technological advancements.</p>
-
-          </div>
-        </div>
-    </section>
-
+    {% block banner %}
+    {% endblock %}
     <div class="album py-5 bg-light">
       <div class="container">
 

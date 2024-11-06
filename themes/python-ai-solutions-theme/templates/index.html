@@ -5,9 +5,12 @@
 {% block content %}
 <style>
     .card {
-        border: none;
-        background: transparent;
         transition: transform 0.2s;
+        border: 3px solid;
+        border-radius: 50px;
+        padding: 20px;
+        margin: 30px;
+        background-color: white;
     }
 
     .card:hover {
@@ -51,6 +54,9 @@
         font-weight: 500;
         margin-top: auto;
         transition: all 0.3s ease;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        margin: 2rem auto;
     }
 
     .btn-learn-more:hover {
@@ -124,7 +130,8 @@
     {% endif %}
     {% endfor %}
 </div>
-<div class="text-center mt-4 mb-5">
+
+<div class="text-center mt-5 mb-5">
     <a href="#" class="btn btn-learn-more">Learn More</a>
 </div>
 
@@ -133,7 +140,7 @@
         <div class="col-lg-6 featured-text text-center">
             <h2>{{index_data.contact_us_title}}</h2>
             <p>{{index_data.contact_us_description}}</p>
-            <div class="text-center mt-4 mb-5">
+            <div class="text-center mt-5 mb-5">
                 <a href="#" class="btn btn-learn-more">Learn More</a>
             </div>
         </div>
@@ -166,3 +173,34 @@
 </div>
 
 {% endblock content %}
+
+
+{% block banner %}
+
+<div class="container-fluid p-0">
+    <img src="{{SITEURL}}/images/zoomed_banner.jpg" class="banner-image" alt="Banner">
+  </div>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <div class="fw-light">
+          <div id="widget_r67" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper"
+            data-widget-type="image" data-keep-proportion="true" data-external-id="1807453992">
+            <div class="imageWidget align-center u_1807453992" data-element-type="image" data-widget-type="image"
+              id="1807453992" editablewidget="true">
+              <img src="{{SITEURL}}/images/Python+AI+Solutions+no+tagline-864w.webp" 
+                   alt="Python AI Solutions"
+                   class="main-logo" />
+            </div>
+          </div>
+          <p class="lead text-muted">We are committed to the democratization of AI, believing in its capacity to
+            transform the world for the better. Our goal is to level the technological playing field and provide
+            organizations with accessible, customized AI solutions that enable them to fully harness their data and
+            streamline their operations amid rapid technological advancements.</p>
+
+        </div>
+      </div>
+  </section>
+
+{% endblock %}
