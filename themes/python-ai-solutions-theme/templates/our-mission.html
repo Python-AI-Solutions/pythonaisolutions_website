@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Services{% endblock title %}
+
+{% block content %}
+
+<style>
+    .btn-learn-more {
+        background-color: #ffc107;
+        border-color: #ffc107;
+        color: #000;
+        font-weight: 500;
+        margin-top: auto;
+        transition: all 0.3s ease;
+    }
+
+    .btn-learn-more:hover {
+        background-color: #ffca2c;
+        border-color: #ffca2c;
+        transform: scale(1.05);
+    }
+
+    .featured-image {
+        max-width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+        margin: 30px;
+    }
+
+    .featured-section {
+        border: 3px solid;
+        border-radius: 50px;
+        padding: 20px;
+        margin: 30px;
+        background-color: white;
+    }
+
+    .modal-dialog {
+        max-width: 800px;
+    }
+
+    .modal-content {
+        border-radius: 15px;
+    }
+
+    .modal-body {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .modal-body img {
+        max-width: 70%;
+        height: auto;
+        margin: 0 auto 30px;
+        display: block;
+    }
+
+    .modal-body h2 {
+        margin-bottom: 25px;
+    }
+</style>
+
+<div class="featured-section">
+    <div class="row align-items-center">
+        <div class="col-lg-6 featured-text text-center">
+            <h2>{{article.what_we_want_title}}</h2>
+            <p>{{article.what_we_want_description}}</p>
+            <div class="text-center mt-4 mb-5">
+                <button type="button" class="btn btn-learn-more" data-bs-toggle="modal" data-bs-target="#whatWeWantModal">
+                    Learn More
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-5">
+            <img src="{{SITEURL}}/{{article.what_we_want_picture}}" 
+                 alt="AI Development" 
+                 class="featured-image">
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="whatWeWantModal" tabindex="-1" aria-labelledby="whatWeWantModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{{SITEURL}}/{{article.what_we_want_popup_picture}}" 
+                     alt="{{article.what_we_want_popup_title}}" 
+                     class="img-fluid">
+                <h2>{{article.what_we_want_popup_title}}</h2>
+                {{article.what_we_want_popup_description}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
