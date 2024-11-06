@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Services{% endblock title %}
+
+{% block content %}
+
+<div class="row row-cols-1 row-cols-lg-2 g-4">
+    {% for service in services %}
+    {% if loop.last and loop.index0 % 2 == 0 %}
+    {# Last item and odd number of items - make it full width #}
+    <div class="col-12">
+        <div class="card h-100 my-3 p-3" style="border-radius: 30px;">
+            <div class="card-body">
+                <h5 class="card-title">{{ service.title }}</h5>
+                <p class="card-text">{{ service.description }}</p>
+            </div>
+            <div class="card-img-container" style="max-height: 400px; overflow: hidden; border-radius: 100px;">
+                <img src="{{ service.image }}" class="card-img-top" alt="{{ service.title }}" style="object-fit: cover; height: 100%; width: 100%;">
+            </div>
+        </div>
+    {% else %}
+    <div class="col">
+        <div class="card h-100 my-3 p-3" style="border-radius: 30px;">
+            <div class="card-body">
+                <h5 class="card-title">{{ service.title }}</h5>
+                <p class="card-text">{{ service.description }}</p>
+            </div>
+            <div class="card-img-container" style="max-height: 200px; overflow: hidden; border-radius: 70px;">
+                <img src="{{ service.image }}" class="card-img-top" alt="{{ service.title }}" style="object-fit: cover; height: 100%; width: 100%;">
+            </div>
+        </div>
+    {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
