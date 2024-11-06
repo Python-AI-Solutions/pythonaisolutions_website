@@ -5,9 +5,12 @@
 {% block content %}
 <style>
     .card {
-        border: none;
-        background: transparent;
         transition: transform 0.2s;
+        border: 3px solid;
+        border-radius: 50px;
+        padding: 20px;
+        margin: 30px;
+        background-color: white;
     }
 
     .card:hover {
@@ -124,6 +127,7 @@
     {% endif %}
     {% endfor %}
 </div>
+
 <div class="text-center mt-4 mb-5">
     <a href="#" class="btn btn-learn-more">Learn More</a>
 </div>
