@@ -1,0 +1,46 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  link_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install pelican[markdown] typogrify
+          pip install linkchecker
+
+      - name: Build site
+        run: pelican content -o output -s publishconf.py
+
+    #   - name: Run link checker
+    #     run: |
+    #       linkchecker --check-extern \
+    #       --ignore 403 \
+    #       --ignore-url "pattern:mailto:.*" \
+    #       https://quang-ng.github.io/getpelican-cmn
+
+  deploy:
+    needs: link_check
+    uses: getpelican/pelican/.github/workflows/github_pages.yml@main
+    with:
+      settings: "publishconf.py"  
+      requirements: "pelican[markdown] typogrify"
+      python: "3.12"
+      feed_domain: "https://quang-ng.github.io/getpelican-cmn"
+      siteurl: "https://quang-ng.github.io/getpelican-cmn"
+    permissions:
+      contents: "read"
+      pages: "write"
+      id-token: "write"
