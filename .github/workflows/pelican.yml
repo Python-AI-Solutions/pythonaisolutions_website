@@ -3,13 +3,24 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
-
+    inputs:
+      site-url:
+        description: Deployment target
+        required: true
+        default: dev.pythonaisolutions.com
+        type: choice
+        options:
+          - dev.pythonaisolutions.com
+          - pythonaisolutions.com
 jobs:
+
   link_check:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -24,22 +35,41 @@ jobs:
       - name: Build site
         run: pelican content -o output -s publishconf.py
 
-    #   - name: Run link checker
-    #     run: |
-    #       linkchecker --check-extern \
-    #       --ignore 403 \
-    #       --ignore-url "pattern:mailto:.*" \
-    #       https://quang-ng.github.io/getpelican-cmn
+      - name: Run link checker
+        run: |
+          pelican --listen &
+          linkchecker --check-extern \
+          --ignore 403 \
+          --ignore-url "pattern:mailto:.*" \
+          http://localhost:8000
+
+  set-deployment-target:
+    runs-on: ubuntu-latest
+    name: Set deployment target
+    outputs:
+      site_url: ${{ steps.set-url.outputs.site_url }}
+    steps:
+      - name: Set URL
+        id: set-url
+        run: |
+          if [[ "${{ github.event_name }}" == 'workflow_dispatch' ]]; then
+            export site_url="${{ inputs.site-url }}"
+          else
+            export site_url="dev.pythonaisolutions.com"
+          fi
+          echo "site_url=${site_url}" >> "$GITHUB_OUTPUT"
+          cat "$GITHUB_OUTPUT"
+          echo Deploying to ${site_url}
 
   deploy:
-    needs: link_check
+    needs: [link_check, set-deployment-target]
     uses: getpelican/pelican/.github/workflows/github_pages.yml@main
     with:
-      settings: "publishconf.py"  
+      settings: "publishconf.py"
       requirements: "pelican[markdown] typogrify"
       python: "3.12"
-      feed_domain: "https://quang-ng.github.io/getpelican-cmn"
-      siteurl: "https://quang-ng.github.io/getpelican-cmn"
+      feed_domain: ${{ needs.set-deployment-target.outputs.site_url }}
+      siteurl: ${{ needs.set-deployment-target.outputs.site_url }}
     permissions:
       contents: "read"
       pages: "write"
