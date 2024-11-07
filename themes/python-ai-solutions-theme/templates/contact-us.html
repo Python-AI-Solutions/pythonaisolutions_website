@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock title %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <!-- Contact Form Column -->
+        <div class="col-lg-8 mt-5">
+            <h2 class="mb-4">Contact us</h2>
+            <form id="fs-frm" name="contact-form" accept-charset="utf-8" action="https://formspree.io/f/{{article.form_id}}" method="post">
+                <div class="mb-3">
+                    <label for="full-name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" name="name" id="full-name" placeholder="First and Last" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email-address" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" name="_replyto" id="email-address" placeholder="email@domain.tld" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="telephone" class="form-label">Telephone Number (Optional)</label>
+                    <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="(555) 555-5555">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="complaint" class="form-label">Message</label>
+                    <textarea class="form-control" rows="6" name="complaint" id="complaint"
+                        placeholder="How can we help you?" required></textarea>
+                </div>
+                
+                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+        
+        <!-- Image Column - Updated with h-100 and object-fit -->
+        <div class="col-lg-4 d-flex align-items-center">
+            <div class="h-100 w-100">
+                <img src="{{ SITEURL }}/{{ article.image }}" alt="Contact Us" class="img-fluid rounded shadow-lg h-100 w-100" style="object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
