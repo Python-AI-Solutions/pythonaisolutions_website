@@ -3,12 +3,13 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
+
 <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
     {% for service in services %}
     {% if service.show_in_list == "true" %}
     <div class="col">
         <div class="card h-100 text-center">
-            <div class="card-img-container" style="padding: 20px;">
+            <div class="card-img-container" style="padding: 5px;">
                 <img src="{{ SITEURL }}/{{ service.logo }}" class="card-img-top"
                     alt="{{ service.title }}" style="max-width: 100px; height: auto;">
             </div>
@@ -32,7 +33,7 @@
             <h2>{{index_data.contact_us_title}}</h2>
             <p>{{index_data.contact_us_description}}</p>
             <div class="text-center mt-5 mb-5">
-                <a href="#" class="btn btn-learn-more">Learn More</a>
+                <a href="{{SITEURL}}/contact-us" class="btn btn-learn-more">Contact us</a>
             </div>
         </div>
         <div class="col-lg-6">

@@ -3,10 +3,10 @@
 {% block title %}Contact Us{% endblock title %}
 
 {% block content %}
-<div class="container py-5">
-    <div class="row">
+<div class="container py-5 min-vh-100 d-flex align-items-center">
+    <div class="row w-100">
         <!-- Contact Form Column -->
-        <div class="col-lg-8 mt-5">
+        <div class="col-lg-8 pe-lg-5">
             <h2 class="mb-4">Contact us</h2>
             <form id="fs-frm" name="contact-form" accept-charset="utf-8" action="https://formspree.io/f/{{article.form_id}}" method="post">
                 <div class="mb-3">
@@ -38,10 +38,11 @@
             </form>
         </div>
         
-        <!-- Image Column - Updated with h-100 and object-fit -->
+        <!-- Image Column -->
         <div class="col-lg-4 d-flex align-items-center">
-            <div class="h-100 w-100">
-                <img src="{{ SITEURL }}/{{ article.image }}" alt="Contact Us" class="img-fluid rounded shadow-lg h-100 w-100" style="object-fit: cover;">
+            <div class="h-40">
+                <img src="{{ SITEURL }}/{{ article.image }}" alt="Contact Us" 
+                class="img-fluid rounded shadow-lg" style="object-fit: cover; max-width: 90%; height: auto;">
             </div>
         </div>
     </div>
