@@ -3,47 +3,21 @@
 {% block title %}Contact Us{% endblock title %}
 
 {% block content %}
-<div class="container py-5 min-vh-100 d-flex align-items-center">
-    <div class="row w-100">
-        <!-- Contact Form Column -->
-        <div class="col-lg-8 pe-lg-5">
-            <h2 class="mb-4">Contact us</h2>
-            <form id="fs-frm" name="contact-form" accept-charset="utf-8" action="https://formspree.io/f/{{article.form_id}}" method="post">
-                <div class="mb-3">
-                    <label for="full-name" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" name="name" id="full-name" placeholder="First and Last" required>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="email-address" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" name="_replyto" id="email-address" placeholder="email@domain.tld" required>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="telephone" class="form-label">Telephone Number (Optional)</label>
-                    <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="(555) 555-5555">
-                </div>
-                
-                <div class="mb-3">
-                    <label for="complaint" class="form-label">Message</label>
-                    <textarea class="form-control" rows="6" name="complaint" id="complaint"
-                        placeholder="How can we help you?" required></textarea>
-                </div>
-                
-                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-                
-                <button type="submit" class="btn btn-learn-more core-values-btn">
-                    Send message
-                </button>
-            </form>
+<div class="container-fluid py-0 min-vh-100 d-flex align-items-center">
+    <div class="row w-100 flex-grow-1 align-items-stretch">
+        <div class="col-lg-8 pe-lg-5 d-flex align-items-stretch">
+            <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSf5vRxCYCV42j2j7hDlnQimOATTE6_e_QmxaYjagzYQsIQ_oA/viewform?usp=send_form"
+            class="w-100 border-0 rounded shadow-lg"
+            style="height: calc(100vh - 20px); min-height: 900px;"
+            allowfullscreen>
+        </iframe>
         </div>
-        
-        <!-- Image Column -->
         <div class="col-lg-4 d-flex align-items-center">
-            <div class="h-40">
-                <img src="{{ SITEURL }}/{{ article.image }}" alt="Contact Us" 
-                class="img-fluid rounded shadow-lg" style="object-fit: cover; max-width: 90%; height: auto;">
-            </div>
+            <img src="{{ SITEURL }}/{{ article.image }}"
+                 alt="Contact Us"
+                 class="img-fluid rounded shadow-lg"
+                 style="object-fit: cover; width: 100%; height: 100%; max-height: 100vh;">
         </div>
     </div>
 </div>
