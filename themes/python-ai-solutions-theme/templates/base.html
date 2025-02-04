@@ -14,10 +14,8 @@
   <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
   <link rel="icon" href="{{ SITEURL }}/favicon.ico" type="image/x-icon">
 
-  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/headers.css" />
-  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/base.css" />
   <style>
+    /* Critical CSS here */
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -85,6 +83,15 @@
     }
   </style>
 
+  <!-- Non-critical CSS -->
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/headers.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/base.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/headers.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/base.css">
+  </noscript>
 
 </head>
 
