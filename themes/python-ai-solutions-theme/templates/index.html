@@ -10,8 +10,10 @@
     <div class="col">
         <div class="card h-100 text-center">
             <div class="card-img-container" style="padding: 5px;">
-                <img src="{{ SITEURL }}/{{ service.logo }}" class="card-img-top"
-                    alt="{{ service.title }}" style="max-width: 100px; height: auto;">
+                <img src="{{ SITEURL }}/{{ service.logo }}" 
+                     srcset="{{ SITEURL }}/{{ service.logo }} 1x, {{ SITEURL }}/{{ service.logo|replace('.','@2x.') }} 2x"
+                     class="card-img-top"
+                     alt="{{ service.title }}" style="max-width: 100px; height: auto;">
             </div>
             <div class="card-body">
                 <h5 class="card-title" style="color: #4828a7;">{{ service.title }}</h5>
@@ -38,6 +40,7 @@
         </div>
         <div class="col-lg-6">
             <img src="{{SITEURL}}/{{index_data.contact_us_images}}" 
+                 srcset="{{SITEURL}}/{{index_data.contact_us_images}} 1x, {{SITEURL}}/{{index_data.contact_us_images|replace('.','@2x.') }} 2x"
                  alt="AI Development" 
                  class="featured-image">
         </div>
@@ -48,17 +51,20 @@
     <div class="row align-items-center">
         <div class="col-lg-4">
             <img src="{{SITEURL}}/images/EU-Structural-Fund-391w.webp" 
+                 srcset="{{SITEURL}}/images/EU-Structural-Fund-391w.webp 1x, {{SITEURL}}/images/EU-Structural-Fund-391w@2x.webp 2x"
                  alt="EU-Structural-Fund-391w" 
                  class="featured-image">
         </div>
         <div class="col-lg-4">
             <img src="{{SITEURL}}/images/European-Regional-Development-Fund-403w.webp" 
+                 srcset="{{SITEURL}}/images/European-Regional-Development-Fund-403w.webp 1x, {{SITEURL}}/images/European-Regional-Development-Fund-403w@2x.webp 2x"
                  alt="EU-Structural-Fund-391w" 
                  class="featured-image">
         </div>
         <div class="col-lg-4">
             <img src="{{SITEURL}}/images/LEO-Logo-403w.webp" 
-                alt="EU-Structural-Fund-391w" 
+                 srcset="{{SITEURL}}/images/LEO-Logo-403w.webp 1x, {{SITEURL}}/images/LEO-Logo-403w@2x.webp 2x"
+                 alt="EU-Structural-Fund-391w" 
                  class="featured-image">
         </div>
     </div>
@@ -70,10 +76,12 @@
 {% block banner %}
 
 <div class="container-fluid p-0">
-    <img src="{{SITEURL}}/images/zoomed_banner.webp" class="banner-image" alt="Banner">
-  </div>
+    <img src="{{SITEURL}}/images/zoomed_banner.webp" 
+         srcset="{{SITEURL}}/images/zoomed_banner.webp 1x, {{SITEURL}}/images/zoomed_banner@2x.webp 2x"
+         class="banner-image" alt="Banner">
+</div>
 
-  <section class="py-5 text-center container">
+<section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <div class="fw-light">
@@ -82,6 +90,7 @@
             <div class="imageWidget align-center u_1807453992" data-element-type="image" data-widget-type="image"
               id="1807453992" editablewidget="true">
               <img src="{{SITEURL}}/images/Python+AI+Solutions+no+tagline-864w.webp" 
+                   srcset="{{SITEURL}}/images/Python+AI+Solutions+no+tagline-864w.webp 1x, {{SITEURL}}/images/Python+AI+Solutions+no+tagline-864w@2x.webp 2x"
                    alt="Python AI Solutions"
                    class="main-logo" />
             </div>
