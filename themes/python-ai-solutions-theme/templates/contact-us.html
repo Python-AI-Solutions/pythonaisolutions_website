@@ -5,19 +5,19 @@
 {% block content %}
 <div class="container-fluid py-0 min-vh-100 d-flex align-items-center">
     <div class="row w-100 flex-grow-1 align-items-stretch">
-        <div class="col-lg-8 pe-lg-5 d-flex align-items-stretch">
+        <div class="col-lg-8 col-md-12 pe-lg-5 d-flex align-items-stretch mb-3 mb-lg-0">
             <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSf5vRxCYCV42j2j7hDlnQimOATTE6_e_QmxaYjagzYQsIQ_oA/viewform?usp=send_form"
             class="w-100 border-0 rounded shadow-lg"
-            style="height: calc(100vh - 20px); min-height: 900px;"
+            style="height: 100%; min-height: 500px;"
             allowfullscreen>
         </iframe>
         </div>
-        <div class="col-lg-4 d-flex align-items-center">
+        <div class="col-lg-4 col-md-12 d-none d-md-flex align-items-center">
             <img src="{{ SITEURL }}/{{ article.image }}"
                  alt="Contact Us"
                  class="img-fluid rounded shadow-lg"
-                 style="object-fit: cover; width: 100%; height: 100%; max-height: 100vh;">
+                 style="object-fit: cover; width: 100%; height: auto; max-height: 100vh;">
         </div>
     </div>
 </div>
