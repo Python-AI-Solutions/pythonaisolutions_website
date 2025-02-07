@@ -81,6 +81,33 @@
             max-width: 300px;
         }
     }
+
+    .navbar {
+      padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+      margin-right: auto;
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    @media (min-width: 768px) {
+      .navbar-expand-md .navbar-nav {
+        flex-direction: row;
+      }
+
+      .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem;
+      }
+    }
   </style>
 
   <!-- Non-critical CSS -->
@@ -98,21 +125,27 @@
 <body>
 
   <header>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-      <div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-start">
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <a href="{{ SITEURL }}" class="navbar-brand d-flex align-items-center">
           <img src="{{ SITEURL }}/theme/images/snakebrain.svg" width="60" height="48" class="bi me-2"
             alt="Snake Brain Logo">
         </a>
-        <ul class="nav nav-pills">
-          <li class="nav-item"><a href="{{ SITEURL }}" class="nav-link {% if output_file == 'index.html' %}active{% endif %}">Home</a></li>
-          <li class="nav-item"><a href="{{ SITEURL }}/services" class="nav-link {% if output_file == 'services.html' %}active{% endif %}">Services</a></li>
-          <li class="nav-item"><a href="{{ SITEURL }}/experience-expertise" class="nav-link {% if output_file == 'experience-expertise.html' %}active{% endif %}">Experience & Expertise</a></li>
-          <li class="nav-item"><a href="{{ SITEURL }}/our-mission" class="nav-link {% if output_file == 'our-mission.html' %}active{% endif %}">Our Mission</a></li>
-          <li class="nav-item"><a href="{{ SITEURL }}/contact-us" class="nav-link {% if output_file == 'contact-us.html' %}active{% endif %}">Contact us</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a href="{{ SITEURL }}" class="nav-link {% if output_file == 'index.html' %}active{% endif %}">Home</a></li>
+            <li class="nav-item"><a href="{{ SITEURL }}/services" class="nav-link {% if output_file == 'services.html' %}active{% endif %}">Services</a></li>
+            <li class="nav-item"><a href="{{ SITEURL }}/experience-expertise" class="nav-link {% if output_file == 'experience-expertise.html' %}active{% endif %}">Experience & Expertise</a></li>
+            <li class="nav-item"><a href="{{ SITEURL }}/our-mission" class="nav-link {% if output_file == 'our-mission.html' %}active{% endif %}">Our Mission</a></li>
+            <li class="nav-item"><a href="{{ SITEURL }}/contact-us" class="nav-link {% if output_file == 'contact-us.html' %}active{% endif %}">Contact us</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main>
