@@ -5,7 +5,25 @@
 {% block content %}
 
 <style>
-    
+    .card-img-container {
+        max-height: 200px; /* Ensure consistent height for all images */
+        overflow: hidden;
+        border-radius: 70px;
+    }
+
+    .card-img-container.full-width {
+        max-height: 400px; /* Full width image for the last item */
+    }
+
+    .card {
+        height: 100%; /* Ensure cards have consistent height */
+    }
+
+    .featured-image {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
 </style>
 
 <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -18,8 +36,8 @@
                 <h5 class="card-title">{{ service.title }}</h5>
                 <p class="card-text">{{ service.description }}</p>
             </div>
-            <div class="card-img-container" style="max-height: 400px; overflow: hidden; border-radius: 100px;">
-                <img src="{{ service.image }}"  class="card-img-top img-flui featured-image" alt="{{ service.title }}" style="object-fit: cover; height: 100%; width: 100%;">
+            <div class="card-img-container full-width">
+                <img src="{{ service.image }}" class="card-img-top img-fluid featured-image" alt="{{ service.title }}">
             </div>
         </div>
     {% else %}
@@ -29,8 +47,8 @@
                 <h5 class="card-title">{{ service.title }}</h5>
                 <p class="card-text">{{ service.description }}</p>
             </div>
-            <div class="card-img-container" style="max-height: 200px; overflow: hidden; border-radius: 70px;">
-                <img src="{{ service.image }}" class="card-img-top img-fluid featured-image" alt="{{ service.title }}" style="object-fit: cover; height: 100%; width: 100%;">
+            <div class="card-img-container">
+                <img src="{{ service.image }}" class="card-img-top img-fluid featured-image" alt="{{ service.title }}">
             </div>
         </div>
     {% endif %}
