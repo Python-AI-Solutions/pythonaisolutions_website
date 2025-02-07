@@ -6,3 +6,6 @@ venv/*
 cache/
 __pycache__/
 *.pyc
+python_scripts/venv/*
+python_scripts/output/*
+python_scripts/images/*
