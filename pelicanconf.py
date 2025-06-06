@@ -2,6 +2,7 @@ import os
 from pelican import signals
 from pelican.readers import MarkdownReader
 from pelican.contents import Content
+import datetime
 
 AUTHOR = 'John Lee'
 SITENAME = 'Python AI Solutions'
@@ -55,4 +56,6 @@ SITEURL = 'http://localhost:8000'
 EXTRA_PATH_METADATA = {
     'static/favicon.ico': {'path': 'favicon.ico'}
 }
+
+SITEYEAR = datetime.datetime.now().year
 
