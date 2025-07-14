@@ -3,8 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -27,13 +26,6 @@ jobs:
         with:
           node-version: '18'
           
-      - name: Debug - Check public directory
-        run: |
-          echo "Checking public directory contents:"
-          ls -la studio-ts/public/
-          echo "Checking for image files:"
-          find studio-ts/public/ -name "*.png" -o -name "*.jpg" -o -name "*.webp" -o -name "*.svg"
-          
       - name: Install dependencies
         run: npm install
         working-directory: ./studio-ts
@@ -43,13 +35,6 @@ jobs:
         working-directory: ./studio-ts
         env:
           NODE_ENV: production
-          
-      - name: Debug - Check build output
-        run: |
-          echo "Checking build output:"
-          ls -la studio-ts/out/
-          echo "Checking for images in build output:"
-          find studio-ts/out/ -name "*.png" -o -name "*.jpg" -o -name "*.webp" -o -name "*.svg" | head -20
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -62,6 +47,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
