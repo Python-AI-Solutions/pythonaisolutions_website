@@ -73,7 +73,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/services_1.png")}
+                        src={getAssetPath("/data_analytics.webp")}
                         alt="Data Analytics and Insight Generation"
                         width={400}
                         height={300}
@@ -86,7 +86,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 2.png")}
+                        src={getAssetPath("/automation.webp")}
                         alt="Automation Services"
                         width={400}
                         height={300}
@@ -99,7 +99,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 3.png")}
+                        src={getAssetPath("/predictive_analytics.webp")}
                         alt="Predictive Analytics"
                         width={400}
                         height={300}
@@ -112,7 +112,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 4.png")}
+                        src={getAssetPath("/collaborative.webp")}
                         alt="Collaborative AI Projects"
                         width={400}
                         height={300}
@@ -125,7 +125,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 5.png")}
+                        src={getAssetPath("/automation.webp")}
                         alt="Custom AI Solutions"
                         width={400}
                         height={300}
@@ -138,7 +138,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 6.png")}
+                        src={getAssetPath("/AI_training.webp")}
                         alt="AI Training and Support"
                         width={400}
                         height={300}
@@ -151,7 +151,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 7.png")}
+                        src={getAssetPath("/NLP.webp")}
                         alt="Natural Language Processing (NLP)"
                         width={400}
                         height={300}
@@ -164,7 +164,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 8.png")}
+                        src={getAssetPath("/sustainability.webp")}
                         alt="Sustainability Solutions"
                         width={400}
                         height={300}
@@ -177,7 +177,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 9.png")}
+                        src={getAssetPath("/AIconsultation.webp")}
                         alt="AI Consultation and Strategic Planning"
                         width={400}
                         height={300}
@@ -190,7 +190,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 10.png")}
+                        src={getAssetPath("/EthicalAI.webp")}
                         alt="Ethical AI Advisory"
                         width={400}
                         height={300}
@@ -203,7 +203,7 @@ function ServicesList() {
                   <div className="lg:col-span-4 flex justify-center items-center">
                     <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
                       <Image
-                        src={getAssetPath("/service 11.png")}
+                        src={getAssetPath("/image_processing.webp")}
                         alt="Images processing"
                         width={400}
                         height={300}

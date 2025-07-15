@@ -51,7 +51,7 @@ Navigate to [http://localhost:3000](http://localhost:3000) to view the website.
 │   │   ├── about/        # About page
 │   │   ├── blog/         # Blog pages
 │   │   ├── contact/      # Contact page
-│   │   ├── work/         # Portfolio/work pages
+│   │   ├── services/     # Services pages
 │   │   └── layout.tsx    # Root layout
 │   ├── components/       # Reusable components
 │   ├── images/          # Static images
