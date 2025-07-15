@@ -385,7 +385,7 @@ function CaseStudies() {
                 {projects.map((project, index) => (
                   <div key={project.client} className="w-full flex-shrink-0" style={{ width: `${100 / totalSlidesMobile}%` }}>
                     <FadeIn>
-                      <Link href="/blog" className="block">
+                      <Link href="/clientele" className="block">
                         <article className="relative flex w-full flex-col rounded-3xl p-4 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 bg-white shadow-sm hover:shadow-md cursor-pointer">
                           <h3 className="flex justify-center">
                             <Image
@@ -442,7 +442,7 @@ function CaseStudies() {
                   <div key={slideIndex} className="flex gap-6 lg:gap-8" style={{ width: `${100 / totalSlidesDesktop}%` }}>
                     {projects.slice(slideIndex * 3, slideIndex * 3 + 3).map((project) => (
                       <FadeIn key={project.client} className="w-1/3 min-w-0">
-                        <Link href="/blog" className="block">
+                        <Link href="/clientele" className="block">
                           <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 bg-white shadow-sm hover:shadow-md cursor-pointer">
                             <h3 className="flex justify-center">
                               <Image
@@ -631,7 +631,7 @@ function Services() {
             
             <div className="pt-4">
               <Button 
-                href="/work"
+                href="/services"
                 className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
               >
                 Learn More

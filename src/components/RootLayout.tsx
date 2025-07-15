@@ -74,10 +74,10 @@ function Header({
               Home
             </Link>
             <Link
-              href="/work"
+              href="/services"
               className={clsx(
                 'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                pathname.startsWith('/work') 
+                pathname.startsWith('/services') 
                   ? 'text-[#31b9fd]' 
                   : invert 
                     ? 'text-white hover:text-[#31b9fd]' 
@@ -101,10 +101,10 @@ function Header({
             </Link>
 
             <Link
-              href="/blog"
+              href="/clientele"
               className={clsx(
                 'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                pathname.startsWith('/blog') 
+                pathname.startsWith('/clientele') 
                   ? 'text-[#31b9fd]' 
                   : invert 
                     ? 'text-white hover:text-[#31b9fd]' 
@@ -161,11 +161,11 @@ function Header({
                 Home
               </Link>
               <Link
-                href="/work"
+                href="/services"
                 onClick={closeMobileMenu}
                 className={clsx(
                   'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
-                  pathname.startsWith('/work') 
+                  pathname.startsWith('/services') 
                     ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
                     : invert 
                       ? 'text-white hover:text-[#31b9fd]' 
@@ -189,11 +189,11 @@ function Header({
                 About Us
               </Link>
               <Link
-                href="/blog"
+                href="/clientele"
                 onClick={closeMobileMenu}
                 className={clsx(
                   'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
-                  pathname.startsWith('/blog') 
+                  pathname.startsWith('/clientele') 
                     ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
                     : invert 
                       ? 'text-white hover:text-[#31b9fd]' 
