@@ -663,7 +663,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <div className="flex justify-start mb-6">
               <Image
-                src={getAssetPath("/Python-AI-Solutuons-Logo.webp")}
+                src={getAssetPath("/Python-AI-Solutions-Logo.webp")}
                 alt="Python AI Solutions Logo"
                 width={600}
                 height={240}

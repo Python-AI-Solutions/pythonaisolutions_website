@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const clients = [
   {
     name: 'FamilyFund',
-    logo: '/Python-AI-Solutuons-Logo.webp',
+    logo: '/Python-AI-Solutions-Logo.webp',
     industry: 'Non-Profit',
     testimonial: 'Python AI Solutions transformed our vision into a reality. Their expertise in AI and data analytics helped us create a platform that truly serves our community.',
     author: 'Sarah Johnson',
@@ -27,7 +27,7 @@ const clients = [
   },
   {
     name: 'Unseal',
-    logo: '/Python-AI-Solutuons-Logo.webp',
+    logo: '/Python-AI-Solutions-Logo.webp',
     industry: 'Healthcare Technology',
     testimonial: 'The team at Python AI Solutions delivered an innovative solution that revolutionized how we think about health data ownership and blockchain technology.',
     author: 'Michael Chen',
@@ -35,7 +35,7 @@ const clients = [
   },
   {
     name: 'Phobia',
-    logo: '/Python-AI-Solutuons-Logo.webp',
+    logo: '/Python-AI-Solutions-Logo.webp',
     industry: 'Mental Health',
     testimonial: 'Working with Python AI Solutions was incredible. They understood our unique concept and built an AI-powered matching system that exceeded our expectations.',
     author: 'Emma Rodriguez',

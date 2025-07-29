@@ -156,8 +156,8 @@ function Culture() {
         <div className="space-y-8">
           <div className="flex justify-center">
             <Image
-              src={getAssetPath('/our mission.png')}
-              alt="Our Mission"
+                              src={getAssetPath('/our-mission.png')}
+                alt="Our Mission"
               width={300}
               height={300}
               className="rounded-full border-4 border-neutral-200 shadow-lg object-cover"
