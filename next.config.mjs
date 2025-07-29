@@ -15,8 +15,6 @@ import { unifiedConditional } from 'unified-conditional'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/pythonaisolutions_website' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/pythonaisolutions_website/' : '',
   trailingSlash: true,
   images: {
     unoptimized: true,
