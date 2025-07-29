@@ -194,6 +194,7 @@ function ContactDetails() {
           {[
             ['Support', 'support@pythonaisolutions.com'],
             ['Sales', 'sales@pythonaisolutions.com'],
+            ['Security', 'security@pythonaisolutions.com'],
           ].map(([label, email]) => (
             <div key={email}>
               <dt className="font-semibold text-neutral-950">{label}</dt>
@@ -208,6 +209,38 @@ function ContactDetails() {
             </div>
           ))}
         </dl>
+      </Border>
+
+      <Border className="mt-16 pt-16">
+        <h2 className="font-display text-base font-semibold text-neutral-950">
+          Security & Vulnerability Disclosure
+        </h2>
+        <div className="mt-6 text-sm text-neutral-600">
+          <p className="mb-4">
+            We take security seriously. If you&apos;ve found a security vulnerability, 
+            please report it responsibly to <Link href="mailto:security@pythonaisolutions.com" className="font-semibold text-neutral-950 hover:text-[#31b9fd]">security@pythonaisolutions.com</Link>.
+          </p>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div>
+              <h3 className="font-semibold text-neutral-950 mb-2">Response Commitment</h3>
+              <ul className="space-y-1 text-sm">
+                <li>• Acknowledgment within 72 hours</li>
+                <li>• Regular progress updates</li>
+                <li>• No unsolicited payments</li>
+                <li>• Professional collaboration</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-neutral-950 mb-2">Scope & Guidelines</h3>
+              <ul className="space-y-1 text-sm">
+                <li>• Website and infrastructure security</li>
+                <li>• Data protection issues</li>
+                <li>• Authentication vulnerabilities</li>
+                <li>• Act in good faith, avoid disruption</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </Border>
     </FadeIn>
   )

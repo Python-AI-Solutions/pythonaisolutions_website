@@ -34,6 +34,25 @@ jobs:
         env:
           NODE_ENV: production
           
+      - name: Validate assets
+        run: |
+          echo "🔍 Running asset validation..."
+          npm run check-assets
+          echo "✅ Asset validation completed successfully"
+          
+      - name: Security scan of build output
+        run: |
+          echo "🛡️ Scanning build output for security issues..."
+          # Check for potential secrets in build files
+          find out -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) | \
+            xargs grep -l -i -E "(api[_-]?key|secret|password|token)" || echo "No secrets detected in build"
+          
+          # Check for external resources that might be insecure
+          find out -name "*.html" | xargs grep -h -o 'src="http://[^"]*"' | \
+            sed 's/src="//;s/"//' | sort | uniq | while read -r url; do
+              echo "⚠️  Insecure HTTP resource found: $url"
+            done || echo "No insecure HTTP resources found"
+            
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
