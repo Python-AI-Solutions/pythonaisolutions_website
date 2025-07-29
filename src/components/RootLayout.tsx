@@ -150,7 +150,7 @@ function Header({
                 href="/"
                 onClick={closeMobileMenu}
                 className={clsx(
-                  'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
+                  'px-6 py-3 font-display text-base font-medium tracking-tight transition-all duration-200 hover:bg-neutral-50',
                   pathname === '/' || pathname === '' 
                     ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
                     : invert 
@@ -164,7 +164,7 @@ function Header({
                 href="/services"
                 onClick={closeMobileMenu}
                 className={clsx(
-                  'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
+                  'px-6 py-3 font-display text-base font-medium tracking-tight transition-all duration-200 hover:bg-neutral-50',
                   pathname.startsWith('/services') 
                     ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
                     : invert 
@@ -178,7 +178,7 @@ function Header({
                 href="/about"
                 onClick={closeMobileMenu}
                 className={clsx(
-                  'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
+                  'px-6 py-3 font-display text-base font-medium tracking-tight transition-all duration-200 hover:bg-neutral-50',
                   pathname.startsWith('/about') 
                     ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
                     : invert 
@@ -192,7 +192,7 @@ function Header({
                 href="/clientele"
                 onClick={closeMobileMenu}
                 className={clsx(
-                  'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
+                  'px-6 py-3 font-display text-base font-medium tracking-tight transition-all duration-200 hover:bg-neutral-50',
                   pathname.startsWith('/clientele') 
                     ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
                     : invert 

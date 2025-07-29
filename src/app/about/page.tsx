@@ -53,7 +53,7 @@ function Culture() {
                 <p>This captures the essence of integrity as a core value that encompasses multiple virtues and guides consistent ethical behavior.</p>
                 <button
                   onClick={() => setIsIntegrityModalOpen(true)}
-                  className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
+                  className="inline-flex items-center gap-x-2 text-sm font-medium text-white hover:text-[#31b9fd] transition-colors"
                 >
                   Learn More
                   <svg
@@ -77,7 +77,7 @@ function Culture() {
                 <p>We practice digital stewardship by actively engaging with and supporting the digital ecosystem that sustains our work.</p>
                 <button
                   onClick={() => setIsTrustModalOpen(true)}
-                  className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
+                  className="inline-flex items-center gap-x-2 text-sm font-medium text-white hover:text-[#31b9fd] transition-colors"
                 >
                   Learn More
                   <svg
@@ -101,7 +101,7 @@ function Culture() {
                 <p>Antifragility is a system&apos;s or organization&apos;s capacity to grow stronger in response to stressors, volatility, and challenges.</p>
                 <button
                   onClick={() => setIsCompassion1ModalOpen(true)}
-                  className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
+                  className="inline-flex items-center gap-x-2 text-sm font-medium text-white hover:text-[#31b9fd] transition-colors"
                 >
                   Learn More
                   <svg
@@ -125,7 +125,7 @@ function Culture() {
                 <p>Collaboration embodies our commitment to harnessing the collective power of diverse minds working together towards a shared vision</p>
                 <button
                   onClick={() => setIsCompassion2ModalOpen(true)}
-                  className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
+                  className="inline-flex items-center gap-x-2 text-sm font-medium text-white hover:text-[#31b9fd] transition-colors"
                 >
                   Learn More
                   <svg

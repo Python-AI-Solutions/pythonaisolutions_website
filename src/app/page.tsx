@@ -406,7 +406,7 @@ function CaseStudies() {
                             </Blockquote>
                           )}
                           <button
-                            className="mt-4 inline-flex items-center gap-x-2 text-sm font-semibold text-neutral-700 hover:text-[#31b9fd] transition-colors"
+                                                          className="mt-4 inline-flex items-center gap-x-2 text-sm font-medium text-neutral-700 hover:text-[#31b9fd] transition-colors"
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
@@ -463,7 +463,7 @@ function CaseStudies() {
                               </Blockquote>
                             )}
                             <button
-                              className="mt-4 inline-flex items-center gap-x-2 text-sm font-semibold text-neutral-700 hover:text-[#31b9fd] transition-colors"
+                              className="mt-4 inline-flex items-center gap-x-2 text-sm font-medium text-neutral-700 hover:text-[#31b9fd] transition-colors"
                               onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
