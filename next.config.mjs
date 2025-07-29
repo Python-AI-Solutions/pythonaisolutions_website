@@ -19,7 +19,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
     loader: 'default',
-    path: process.env.NODE_ENV === 'production' ? '/pythonaisolutions_website' : '',
+    path: '',
   },
 }
 

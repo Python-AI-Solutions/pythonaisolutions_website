@@ -1,5 +1,5 @@
 export function getBasePath() {
-  return process.env.NODE_ENV === 'production' ? '/pythonaisolutions_website' : ''
+  return ''
 }
 
 export function getAssetPath(path: string) {
