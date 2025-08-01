@@ -5,78 +5,78 @@ import logoBioImaginix from '@/images/clients/BioImaginix/logo-dark.svg'
 
 export const testimonials = [
   {
-    client: 'FamilyFund',
+    client: 'Lorem Corp',
     logo: logoJusticeInnovationLab,
     year: '2023',
     testimonial: {
-      content: 'Python AI Solutions transformed our donor management system with cutting-edge analytics that increased retention by 40%.',
-      author: { name: 'Sarah Chen', role: 'Executive Director' }
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      author: { name: 'Lorem Ipsum', role: 'Lorem Director' }
     },
     detailedReport: {
-      summary: 'Improved donor retention and streamlined fundraising processes through automated data analysis and predictive modeling.',
+      summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
       achievements: [
-        'Implemented predictive analytics for donor behavior',
-        'Automated donor segmentation and targeting',
-        'Created real-time fundraising dashboards',
-        'Optimized campaign timing and messaging'
+        'Lorem ipsum dolor sit amet consectetur',
+        'Adipiscing elit sed do eiusmod tempor',
+        'Incididunt ut labore et dolore magna',
+        'Aliqua ut enim ad minim veniam'
       ],
       impact: [
-        { value: '40%', label: 'Increase in donor retention' },
-        { value: '3x', label: 'Faster data processing' },
-        { value: '85%', label: 'Improvement in service efficiency' },
-        { value: '$2.5M', label: 'Additional funds raised' }
+        { value: '40%', label: 'Lorem ipsum dolor' },
+        { value: '3x', label: 'Consectetur adipiscing' },
+        { value: '85%', label: 'Sed do eiusmod' },
+        { value: '2.5M', label: 'Tempor incididunt' }
       ],
-      fullTestimonial: 'Working with Python AI Solutions was a game-changer for our organization. Their team understood our unique challenges in nonprofit fundraising and delivered a comprehensive AI solution that not only improved our donor retention but also gave us insights we never had before. The predictive analytics help us identify potential major donors early, and the automated systems free up our staff to focus on relationship building rather than data management.'
+      fullTestimonial: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
     }
   },
   {
-    client: 'Unseal',
+    client: 'Ipsum Industries',
     logo: logoBioImaginix,
     year: '2022',
     testimonial: {
-      content: 'Their data security and user onboarding AI reduced breaches by 50% while scaling to 100K+ users seamlessly.',
-      author: { name: 'Marcus Rodriguez', role: 'Chief Technology Officer' }
+      content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      author: { name: 'Dolor Sit', role: 'Amet Consectetur' }
     },
     detailedReport: {
-      summary: 'Achieved enterprise-grade security while maintaining user-friendly experience and rapid scaling capabilities.',
+      summary: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.',
       achievements: [
-        'Implemented AI-powered threat detection',
-        'Automated user verification and onboarding',
-        'Created adaptive security protocols',
-        'Built scalable infrastructure architecture'
+        'Nemo enim ipsam voluptatem quia',
+        'Voluptas sit aspernatur aut odit',
+        'Aut fugit sed quia consequuntur',
+        'Magni dolores eos qui ratione'
       ],
       impact: [
-        { value: '100K+', label: 'Users onboarded' },
-        { value: '99.9%', label: 'Data security uptime' },
-        { value: '50%', label: 'Reduction in data breaches' },
-        { value: '$2M', label: 'Cost savings achieved' }
+        { value: '100K+', label: 'Lorem ipsum users' },
+        { value: '99.9%', label: 'Dolor sit uptime' },
+        { value: '50%', label: 'Amet consectetur' },
+        { value: '$2M', label: 'Adipiscing savings' }
       ],
-      fullTestimonial: 'Security and user experience often conflict, but Python AI Solutions found the perfect balance. Their AI-driven approach to user onboarding is brilliant - it maintains high security standards while being completely transparent to legitimate users. The threat detection system has prevented multiple sophisticated attacks, and the scalability they built in allowed us to grow from 10K to 100K users without missing a beat.'
+      fullTestimonial: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.'
     }
   },
   {
-    client: 'DataFlow',
+    client: 'Dolor Solutions',
     logo: logoSustech,
     year: '2023',
     testimonial: {
-      content: 'Real-time insights delivery improved by 75% while generating $8M in additional revenue through AI-powered analytics.',
-      author: { name: 'Dr. Jennifer Wu', role: 'Chief Data Officer' }
+      content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      author: { name: 'Consectetur Elit', role: 'Sed Eiusmod' }
     },
     detailedReport: {
-      summary: 'Achieved real-time insights delivery with significant revenue growth and improved decision-making accuracy.',
+      summary: 'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.',
       achievements: [
-        'Built real-time data processing pipeline',
-        'Implemented predictive revenue modeling',
-        'Created automated insight generation',
-        'Optimized data warehouse architecture'
+        'Accusantium doloremque laudantium totam',
+        'Rem aperiam eaque ipsa quae',
+        'Ab illo inventore veritatis et',
+        'Quasi architecto beatae vitae dicta'
       ],
       impact: [
-        { value: '40%', label: 'Revenue increase' },
-        { value: '75%', label: 'Faster insights delivery' },
-        { value: '3x', label: 'Improvement in accuracy' },
-        { value: '$8M', label: 'Additional revenue generated' }
+        { value: '40%', label: 'Lorem increase' },
+        { value: '75%', label: 'Ipsum delivery' },
+        { value: '3x', label: 'Dolor improvement' },
+        { value: '$8M', label: 'Sit amet revenue' }
       ],
-      fullTestimonial: 'As a data-driven company, we thought we were already optimized, but Python AI Solutions showed us what true real-time analytics could achieve. Their solution processes terabytes of data in seconds and delivers actionable insights that directly impact our bottom line. The $8M in additional revenue speaks for itself, but more importantly, we can now make confident decisions based on current data rather than yesterday\'s reports.'
+      fullTestimonial: 'Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.'
     }
   }
 ]
