@@ -21,25 +21,25 @@ const clients = [
     name: 'FamilyFund',
     logo: '/Python-AI-Solutions-Logo.webp',
     industry: 'Non-Profit',
-    testimonial: 'Python AI Solutions transformed our vision into a reality. Their expertise in AI and data analytics helped us create a platform that truly serves our community.',
-    author: 'Sarah Johnson',
-    role: 'CEO'
+    testimonial: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    author: 'Lorem Ipsum',
+    role: 'Placeholder'
   },
   {
     name: 'Unseal',
     logo: '/Python-AI-Solutions-Logo.webp',
     industry: 'Healthcare Technology',
-    testimonial: 'The team at Python AI Solutions delivered an innovative solution that revolutionized how we think about health data ownership and blockchain technology.',
-    author: 'Michael Chen',
-    role: 'CTO'
+    testimonial: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    author: 'Dolor Sit',
+    role: 'Amet'
   },
   {
     name: 'Phobia',
     logo: '/Python-AI-Solutions-Logo.webp',
     industry: 'Mental Health',
-    testimonial: 'Working with Python AI Solutions was incredible. They understood our unique concept and built an AI-powered matching system that exceeded our expectations.',
-    author: 'Emma Rodriguez',
-    role: 'Founder'
+    testimonial: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    author: 'Consectetur Adipiscing',
+    role: 'Lorem'
   }
 ]
 
