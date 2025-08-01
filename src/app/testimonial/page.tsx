@@ -116,6 +116,7 @@ function SelectInput({
 function TestimonialForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
+  const [copyStatus, setCopyStatus] = useState('')
   const [expandedSections, setExpandedSections] = useState({
     shareMore: false,
     completeStory: false
@@ -139,6 +140,96 @@ function TestimonialForm() {
 
   const removeAchievement = (index: number) => {
     setAchievements(prev => prev.filter((_, i) => i !== index))
+  }
+
+  const handleCopyToClipboard = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setCopyStatus('')
+
+    try {
+      const formDataObj = new FormData(e.currentTarget)
+      
+      // Get form values (same as in handleSubmit)
+      const name = formDataObj.get('name') as string
+      const quickQuote = formDataObj.get('quickQuote') as string
+      const role = formDataObj.get('role') as string
+      const company = formDataObj.get('company') as string
+      const email = formDataObj.get('email') as string
+      const testimonial = formDataObj.get('testimonial') as string
+      const projectType = formDataObj.get('projectType') as string
+      const timeline = formDataObj.get('timeline') as string
+      const results = formDataObj.get('results') as string
+      const challenges = formDataObj.get('challenges') as string
+      const impactValue1 = formDataObj.get('impactValue1') as string
+      const impactLabel1 = formDataObj.get('impactLabel1') as string
+      const impactValue2 = formDataObj.get('impactValue2') as string
+      const impactLabel2 = formDataObj.get('impactLabel2') as string
+      const impactValue3 = formDataObj.get('impactValue3') as string
+      const impactLabel3 = formDataObj.get('impactLabel3') as string
+      const impactValue4 = formDataObj.get('impactValue4') as string
+      const impactLabel4 = formDataObj.get('impactLabel4') as string
+
+      // Validate required fields
+      if (!name || !quickQuote) {
+        setCopyStatus('Please provide your name and a quick quote.')
+        return
+      }
+
+      // Filter out empty achievements
+      const filteredAchievements = achievements.filter(achievement => achievement.trim() !== '')
+
+      // Build impact metrics
+      const impactMetrics = []
+      if (impactValue1 && impactLabel1) impactMetrics.push(`${impactValue1}: ${impactLabel1}`)
+      if (impactValue2 && impactLabel2) impactMetrics.push(`${impactValue2}: ${impactLabel2}`)
+      if (impactValue3 && impactLabel3) impactMetrics.push(`${impactValue3}: ${impactLabel3}`)
+      if (impactValue4 && impactLabel4) impactMetrics.push(`${impactValue4}: ${impactLabel4}`)
+
+      // Build email content
+      const subject = `New Testimonial Submission from ${name}`
+      const body = `Name: ${name}
+Email: ${email || 'Not provided'}
+Quick Quote: ${quickQuote}
+
+${role || company ? `Contact Details:
+Role: ${role || 'Not provided'}
+Company: ${company || 'Not provided'}
+` : ''}
+${testimonial ? `Full Testimonial:
+${testimonial}
+` : ''}
+${projectType || timeline ? `Project Details:
+Project Type: ${projectType || 'Not provided'}
+Timeline: ${timeline || 'Not provided'}
+` : ''}
+${challenges ? `Challenges Faced:
+${challenges}
+` : ''}
+${results ? `Results & Impact:
+${results}
+` : ''}
+${filteredAchievements.length > 0 ? `Key Achievements:
+${filteredAchievements.map(achievement => `- ${achievement}`).join('\n')}
+` : ''}
+${impactMetrics.length > 0 ? `Impact Metrics:
+${impactMetrics.join('\n')}
+` : ''}`
+
+      // Copy to clipboard
+      const emailContent = `Subject: ${subject}
+
+${body}`
+      
+      await navigator.clipboard.writeText(emailContent)
+      setCopyStatus('Email content copied to clipboard!')
+      
+      // Clear the success message after 3 seconds
+      setTimeout(() => setCopyStatus(''), 3000)
+      
+    } catch (error) {
+      console.error('Copy to clipboard error:', error)
+      setCopyStatus('Failed to copy to clipboard. Please try again.')
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -301,7 +392,7 @@ ${impactMetrics.join('\n')}
                   <TextInput label="Email Address (for follow-up)" type="email" name="email" autoComplete="email" />
                   <TextInput label="Job Title" name="role" />
                   <TextInput label="Company/Organization" name="company" autoComplete="organization" />
-                  <p className="mt-2 text-xs text-neutral-600">Leave blank if you prefer to stay anonymous</p>
+                  <p className="mt-2 text-xs text-neutral-600">We understand these cannot always be shared.</p>
                 </div>
 
                 {/* Project Details */}
@@ -461,15 +552,51 @@ ${impactMetrics.join('\n')}
             <p>{submitMessage}</p>
           </div>
         )}
+
+        {copyStatus && (
+          <div className="mt-6 p-4 rounded-lg bg-blue-50 border border-blue-200 text-blue-800">
+            <p>{copyStatus}</p>
+          </div>
+        )}
         
-        <div className="flex justify-center mt-10">
-          <Button 
-            type="submit" 
-            className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white" 
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Opening Email...' : "Submit Testimonial"}
-          </Button>
+        <div className="mt-10 space-y-6">
+          <div className="flex justify-center">
+            <Button 
+              type="submit" 
+              className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white" 
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Opening Email...' : "Open in Email Client"}
+            </Button>
+          </div>
+          
+          <div className="text-center space-y-4">
+            <div>
+              <p className="text-sm text-neutral-600 mb-2">
+                Or send your testimonial manually to:
+              </p>
+              <p className="text-sm font-medium text-[#31b9fd]">
+                testimonials@pythonaisolutions.com
+              </p>
+            </div>
+            
+            <Button 
+              type="submit" 
+              formAction=""
+              onClick={(e) => {
+                e.preventDefault()
+                const form = e.currentTarget.closest('form')
+                if (form) {
+                  const formEvent = new Event('submit', { cancelable: true }) as any
+                  formEvent.currentTarget = form
+                  handleCopyToClipboard(formEvent)
+                }
+              }}
+              className="transition-colors duration-300 bg-neutral-200 text-neutral-900 hover:!bg-neutral-300 hover:!text-neutral-950"
+            >
+              Copy to Clipboard
+            </Button>
+          </div>
         </div>
       </form>
     </FadeIn>

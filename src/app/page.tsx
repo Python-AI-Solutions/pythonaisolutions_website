@@ -34,13 +34,14 @@ import { Modal } from '@/components/Modal'
 import { testimonials } from '@/data/testimonials'
 
 const clients = [
-  ['Phobia', logoPytorchIgniteLight],
-  ['Family Fund', logoJusticeInnovationLabLight],
-  ['Unseal', logoBioImaginixLight],
-  ['Mail Smirk', logoDataScienceNimhLight],
-  ['Home Work', logoCmnLight],
-  ['Sustech', logoSustechLight],
-  ['North Adventures', logoCirunLight],
+  ['PyTorch Ignite', logoPytorchIgniteLight, 'https://pytorch.org/ignite/'],
+  ['Justice Innovation Lab', logoJusticeInnovationLabLight, 'https://www.justiceinnovationlab.org/'],
+  ['BioImaginix', logoBioImaginixLight, 'https://www.bioimaginix.com/'],
+  ['DSST', logoDataScienceNimhLight, 'https://cmn.nimh.nih.gov/dsst'],
+  ['CMN', logoCmnLight, 'https://cmn.nimh.nih.gov'],
+  ['SUStech', logoSustechLight, 'https://sustech.ie/'],
+  ['Cirun', logoCirunLight, 'https://cirun.io/'],
+  ['Futurus', 'https://futurus.ie/wp-content/themes/bootscore/assets/img/logo/futurus_logo.png', 'https://futurus.ie/'],
 ]
 
 // Load testimonials from generated data
@@ -61,15 +62,24 @@ function Clients() {
             role="list"
             className="mt-8 sm:mt-10 grid grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10 lg:grid-cols-4"
           >
-            {clients.map(([client, logo]) => (
+            {clients.map(([client, logo, url]) => (
               <li key={client} className="flex items-center justify-center">
                 <FadeIn>
-                  <Image 
-                    src={logo} 
-                    alt={client} 
-                    unoptimized 
-                    className="max-h-16 sm:max-h-20 mx-auto" 
-                  />
+                  <a 
+                    href={url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-105 duration-200"
+                  >
+                    <Image 
+                      src={logo} 
+                      alt={client} 
+                      unoptimized 
+                      width={typeof logo === 'string' ? 200 : undefined}
+                      height={typeof logo === 'string' ? 80 : undefined}
+                      className="max-h-16 sm:max-h-20 mx-auto cursor-pointer" 
+                    />
+                  </a>
                 </FadeIn>
               </li>
             ))}
