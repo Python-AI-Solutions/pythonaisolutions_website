@@ -31,219 +31,21 @@ import imageLaptop from '@/images/laptop.jpg'
 import { RootLayout } from '@/components/RootLayout'
 import { getAssetPath } from '@/lib/basePath'
 import { Modal } from '@/components/Modal'
+import { testimonials } from '@/data/testimonials'
 
 const clients = [
-  ['Phobia', logoPytorchIgniteLight],
-  ['Family Fund', logoJusticeInnovationLabLight],
-  ['Unseal', logoBioImaginixLight],
-  ['Mail Smirk', logoDataScienceNimhLight],
-  ['Home Work', logoCmnLight],
-  ['Sustech', logoSustechLight],
-  ['North Adventures', logoCirunLight],
+  ['PyTorch Ignite', logoPytorchIgniteLight, 'https://pytorch.org/ignite/'],
+  ['Justice Innovation Lab', logoJusticeInnovationLabLight, 'https://www.justiceinnovationlab.org/'],
+  ['BioImaginix', logoBioImaginixLight, 'https://www.bioimaginix.com/'],
+  ['DSST', logoDataScienceNimhLight, 'https://cmn.nimh.nih.gov/dsst'],
+  ['CMN', logoCmnLight, 'https://cmn.nimh.nih.gov'],
+  ['SUStech', logoSustechLight, 'https://sustech.ie/'],
+  ['Cirun', logoCirunLight, 'https://cirun.io/'],
+  ['Futurus', 'https://futurus.ie/wp-content/themes/bootscore/assets/img/logo/futurus_logo.png', 'https://futurus.ie/'],
 ]
 
-const projects = [
-  {
-    client: 'FamilyFund',
-    logo: logoJusticeInnovationLab,
-    year: '2023',
-    testimonial: {
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      author: { name: 'Lorem Ipsum', role: 'Placeholder' }
-    },
-    detailedReport: {
-      summary: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.`,
-      achievements: [
-        'Lorem ipsum dolor sit amet consectetur adipiscing',
-        'Sed do eiusmod tempor incididunt ut labore magna',
-        'Ut enim ad minim veniam quis nostrud exercitation',
-        'Duis aute irure dolor in reprehenderit voluptate'
-      ],
-      impact: [
-        { value: '40%', label: 'Increase in donor retention' },
-        { value: '3x', label: 'Faster data processing' },
-        { value: '85%', label: 'Improvement in service efficiency' },
-        { value: '2.5M', label: 'Additional funds raised' }
-      ],
-      fullTestimonial: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.`
-    }
-  },
-  {
-    client: 'Unseal',
-    logo: logoBioImaginix,
-    year: '2022',
-    testimonial: {
-      content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      author: { name: 'Dolor Sit', role: 'Amet' }
-    },
-    detailedReport: {
-      summary: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-      achievements: [
-        'Nemo enim ipsam voluptatem quia voluptas sit',
-        'Aspernatur aut odit aut fugit sed quia consequuntur',
-        'Magni dolores eos qui ratione voluptatem sequi',
-        'Neque porro quisquam est qui dolorem ipsum'
-      ],
-      impact: [
-        { value: '100K+', label: 'Users onboarded' },
-        { value: '99.9%', label: 'Data security uptime' },
-        { value: '50%', label: 'Reduction in data breaches' },
-        { value: '$2M', label: 'Cost savings achieved' }
-      ],
-      fullTestimonial: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.'
-    }
-  },
-  {
-    client: 'Phobia',
-    logo: logoPytorchIgnite,
-    year: '2022',
-    testimonial: {
-      content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      author: { name: 'Consectetur Adipiscing', role: 'Lorem' }
-    },
-    detailedReport: {
-      summary: 'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum hic tenetur a sapiente delectus.',
-      achievements: [
-        'Accusantium doloremque laudantium totam rem aperiam',
-        'Eaque ipsa quae ab illo inventore veritatis',
-        'Et quasi architecto beatae vitae dicta sunt',
-        'Explicabo nemo enim ipsam voluptatem quia'
-      ],
-      impact: [
-        { value: '500K+', label: 'Active users' },
-        { value: '85%', label: 'User satisfaction rate' },
-        { value: '3x', label: 'Increase in successful matches' },
-        { value: '4.8/5', label: 'App store rating' }
-      ],
-      fullTestimonial: 'Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.'
-    }
-  },
-  {
-    client: 'TechCorp',
-    logo: logoJusticeInnovationLab,
-    year: '2023',
-    testimonial: {
-      content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-      author: { name: 'Voluptatem Quia', role: 'Voluptas' }
-    },
-    detailedReport: {
-      summary: 'Omnis dolor repellendus temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.',
-      achievements: [
-        'Itaque earum rerum hic tenetur sapiente delectus',
-        'Ut aut reiciendis voluptatibus maiores alias',
-        'Consequatur aut perferendis doloribus asperiores',
-        'Repellat nam libero tempore cum soluta nobis'
-      ],
-      impact: [
-        { value: '60%', label: 'Reduction in operational costs' },
-        { value: '4x', label: 'Faster decision making' },
-        { value: '90%', label: 'Improvement in efficiency' },
-        { value: '$5M', label: 'Annual cost savings' }
-      ],
-      fullTestimonial: 'Est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus omnis voluptas assumenda est omnis dolor repellendus temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.'
-    }
-  },
-  {
-    client: 'DataFlow',
-    logo: logoSustech,
-    year: '2023',
-    testimonial: {
-      content: 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.',
-      author: { name: 'Enim Ipsam', role: 'Voluptatem' }
-    },
-    detailedReport: {
-      summary: 'Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.',
-      achievements: [
-        'Quos dolores et quas molestias excepturi sint',
-        'Occaecati cupiditate non provident similique sunt',
-        'In culpa qui officia deserunt mollitia animi',
-        'Id est laborum et dolorum fuga et harum'
-      ],
-      impact: [
-        { value: '40%', label: 'Revenue increase' },
-        { value: '75%', label: 'Faster insights delivery' },
-        { value: '3x', label: 'Improvement in accuracy' },
-        { value: '$8M', label: 'Additional revenue generated' }
-      ],
-      fullTestimonial: 'Quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus omnis voluptas assumenda est omnis dolor repellendus.'
-    }
-  },
-  {
-    client: 'InnovateLab',
-    logo: logoCmn,
-    year: '2022',
-    testimonial: {
-      content: 'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.',
-      author: { name: 'Repudiandae Sint', role: 'Molestiae' }
-    },
-    detailedReport: {
-      summary: 'Non recusandae itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat nam libero tempore.',
-      achievements: [
-        'Cum soluta nobis est eligendi optio cumque',
-        'Nihil impedit quo minus id quod maxime',
-        'Placeat facere possimus omnis voluptas assumenda',
-        'Est omnis dolor repellendus temporibus autem'
-      ],
-      impact: [
-        { value: '10x', label: 'User growth' },
-        { value: '95%', label: 'Customer satisfaction' },
-        { value: '50%', label: 'Reduction in support tickets' },
-        { value: '$3M', label: 'Series A funding secured' }
-      ],
-      fullTestimonial: 'Quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias.'
-    }
-  },
-  {
-    client: 'SmartRetail',
-    logo: logoDataScienceNimh,
-    year: '2023',
-    testimonial: {
-      content: 'Consequatur aut perferendis doloribus asperiores repellat nam libero tempore cum soluta nobis est eligendi.',
-      author: { name: 'Optio Cumque', role: 'Nihil Impedit' }
-    },
-    detailedReport: {
-      summary: 'Quo minus id quod maxime placeat facere possimus omnis voluptas assumenda est omnis dolor repellendus temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.',
-      achievements: [
-        'Ut et voluptates repudiandae sint et molestiae',
-        'Non recusandae itaque earum rerum hic tenetur',
-        'Sapiente delectus ut aut reiciendis voluptatibus',
-        'Maiores alias consequatur aut perferendis doloribus'
-      ],
-      impact: [
-        { value: '70%', label: 'Improvement in customer satisfaction' },
-        { value: '45%', label: 'Reduction in operational costs' },
-        { value: '3x', label: 'Faster customer service' },
-        { value: '$4M', label: 'Additional revenue generated' }
-      ],
-      fullTestimonial: 'Asperiores repellat nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus omnis voluptas assumenda est omnis dolor repellendus temporibus.'
-    }
-  },
-  {
-    client: 'FutureTech',
-    logo: logoCirun,
-    year: '2022',
-    testimonial: {
-      content: 'Autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.',
-      author: { name: 'Sint Molestiae', role: 'Non Recusandae' }
-    },
-    detailedReport: {
-      summary: 'Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat nam libero tempore cum soluta nobis est eligendi.',
-      achievements: [
-        'Optio cumque nihil impedit quo minus id',
-        'Quod maxime placeat facere possimus omnis',
-        'Voluptas assumenda est omnis dolor repellendus',
-        'Temporibus autem quibusdam et aut officiis'
-      ],
-      impact: [
-        { value: '20x', label: 'User growth' },
-        { value: '90%', label: 'System uptime' },
-        { value: '5x', label: 'Faster scaling capability' },
-        { value: '$15M', label: 'Series B funding secured' }
-      ],
-      fullTestimonial: 'Debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis.'
-    }
-  },
-]
+// Load testimonials from generated data
+const projects = testimonials
 
 function Clients() {
   return (
@@ -260,15 +62,24 @@ function Clients() {
             role="list"
             className="mt-8 sm:mt-10 grid grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10 lg:grid-cols-4"
           >
-            {clients.map(([client, logo]) => (
+            {clients.map(([client, logo, url]) => (
               <li key={client} className="flex items-center justify-center">
                 <FadeIn>
-                  <Image 
-                    src={logo} 
-                    alt={client} 
-                    unoptimized 
-                    className="max-h-16 sm:max-h-20 mx-auto" 
-                  />
+                  <a 
+                    href={url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-105 duration-200"
+                  >
+                    <Image 
+                      src={logo} 
+                      alt={client} 
+                      unoptimized 
+                      width={typeof logo === 'string' ? 200 : undefined}
+                      height={typeof logo === 'string' ? 80 : undefined}
+                      className="max-h-16 sm:max-h-20 mx-auto cursor-pointer" 
+                    />
+                  </a>
                 </FadeIn>
               </li>
             ))}
@@ -388,12 +199,14 @@ function CaseStudies() {
                       <Link href="/clientele" className="block">
                         <article className="relative flex w-full flex-col rounded-3xl p-4 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 bg-white shadow-sm hover:shadow-md cursor-pointer">
                           <h3 className="flex justify-center">
-                            <Image
-                              src={project.logo}
-                              alt={project.client}
-                              className="h-24 w-24"
-                              unoptimized
-                            />
+                            {project.logo ? (
+                              <Image
+                                src={project.logo}
+                                alt={project.client}
+                                className="h-24 w-24"
+                                unoptimized
+                              />
+                            ) : null}
                           </h3>
                           {project.testimonial && (
                             <Blockquote
@@ -405,20 +218,27 @@ function CaseStudies() {
                               </span>
                             </Blockquote>
                           )}
-                          <button
-                                                          className="mt-4 inline-flex items-center gap-x-2 text-sm font-medium text-neutral-700 hover:text-[#31b9fd] transition-colors"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              setSelectedTestimonial(project);
-                              setIsModalOpen(true);
-                            }}
-                          >
-                            Read more
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </button>
+                          
+                          {/* Show Read more button only if there's more content beyond basic quote */}
+                          {(project.testimonial?.content !== project.detailedReport?.summary || 
+                            project.detailedReport?.achievements?.length > 0 || 
+                            project.detailedReport?.impact?.length > 0 ||
+                            project.detailedReport?.fullTestimonial) && (
+                            <button
+                              className="mt-4 inline-flex items-center gap-x-2 text-sm font-medium text-neutral-700 hover:text-[#31b9fd] transition-colors"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                setSelectedTestimonial(project);
+                                setIsModalOpen(true);
+                              }}
+                            >
+                              Read more
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </button>
+                          )}
                         </article>
                       </Link>
                     </FadeIn>
@@ -445,12 +265,14 @@ function CaseStudies() {
                         <Link href="/clientele" className="block">
                           <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 bg-white shadow-sm hover:shadow-md cursor-pointer">
                             <h3 className="flex justify-center">
-                              <Image
-                                src={project.logo}
-                                alt={project.client}
-                                className="h-28 w-28 lg:h-32 lg:w-32"
-                                unoptimized
-                              />
+                              {project.logo ? (
+                                <Image
+                                  src={project.logo}
+                                  alt={project.client}
+                                  className="h-28 w-28 lg:h-32 lg:w-32"
+                                  unoptimized
+                                />
+                              ) : null}
                             </h3>
                             {project.testimonial && (
                               <Blockquote
@@ -462,20 +284,27 @@ function CaseStudies() {
                                 </span>
                               </Blockquote>
                             )}
-                            <button
-                              className="mt-4 inline-flex items-center gap-x-2 text-sm font-medium text-neutral-700 hover:text-[#31b9fd] transition-colors"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                setSelectedTestimonial(project);
-                                setIsModalOpen(true);
-                              }}
-                            >
-                              Read more
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                              </svg>
-                            </button>
+                            
+                            {/* Show Read more button only if there's more content beyond basic quote */}
+                            {(project.testimonial?.content !== project.detailedReport?.summary || 
+                              project.detailedReport?.achievements?.length > 0 || 
+                              project.detailedReport?.impact?.length > 0 ||
+                              project.detailedReport?.fullTestimonial) && (
+                              <button
+                                className="mt-4 inline-flex items-center gap-x-2 text-sm font-medium text-neutral-700 hover:text-[#31b9fd] transition-colors"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  setSelectedTestimonial(project);
+                                  setIsModalOpen(true);
+                                }}
+                              >
+                                Read more
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </button>
+                            )}
                           </article>
                         </Link>
                       </FadeIn>
@@ -517,52 +346,81 @@ function CaseStudies() {
         {selectedTestimonial && (
           <div className="space-y-4 sm:space-y-6">
             <div className="flex flex-col sm:flex-row items-center gap-4 mb-4 sm:mb-6">
-              <Image
-                src={selectedTestimonial.logo}
-                alt={selectedTestimonial.client}
-                className="h-12 w-12 sm:h-16 sm:w-16"
-                unoptimized
-              />
+              {selectedTestimonial.logo ? (
+                <Image
+                  src={selectedTestimonial.logo}
+                  alt={selectedTestimonial.client}
+                  className="h-12 w-12 sm:h-16 sm:w-16"
+                  unoptimized
+                />
+              ) : null}
               <div className="flex-1 text-center sm:text-right">
                 <h2 className="text-lg sm:text-xl font-bold text-neutral-950">{selectedTestimonial.client}</h2>
-                <p className="text-sm sm:text-base text-neutral-600">{selectedTestimonial.testimonial?.author?.name}, {selectedTestimonial.testimonial?.author?.role}</p>
+                {selectedTestimonial.testimonial?.author && (
+                  <p className="text-sm sm:text-base text-neutral-600">
+                    {selectedTestimonial.testimonial.author.name}
+                    {selectedTestimonial.testimonial.author.role && `, ${selectedTestimonial.testimonial.author.role}`}
+                  </p>
+                )}
               </div>
             </div>
-            <div className="bg-neutral-50 rounded-xl p-4 sm:p-6">
-              <h3 className="text-base sm:text-lg font-semibold text-neutral-950 mb-3 sm:mb-4">Executive Summary</h3>
-              <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">{selectedTestimonial.detailedReport?.summary}</p>
-            </div>
-            <div className="space-y-3 sm:space-y-4">
-              <h3 className="text-base sm:text-lg font-semibold text-neutral-950">Key Achievements</h3>
-              <ul className="space-y-2 sm:space-y-3">
-                {selectedTestimonial.detailedReport?.achievements?.map?.((achievement: string, index: number) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-[#31b9fd] rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-sm sm:text-base text-neutral-700">{achievement}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="space-y-3 sm:space-y-4">
-              <h3 className="text-base sm:text-lg font-semibold text-neutral-950">Impact & Results</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                {selectedTestimonial.detailedReport?.impact?.map?.((item: any, index: number) => (
-                  <div key={index} className="bg-gradient-to-br from-[#31b9fd]/10 to-transparent p-3 sm:p-4 rounded-lg border border-[#31b9fd]/20">
-                    <div className="text-xl sm:text-2xl font-bold text-[#31b9fd]">{item.value}</div>
-                    <div className="text-xs sm:text-sm text-neutral-600">{item.label}</div>
+            
+            {/* Executive Summary - only show if different from main testimonial or if no main testimonial */}
+            {selectedTestimonial.detailedReport?.summary && 
+             selectedTestimonial.detailedReport.summary !== selectedTestimonial.testimonial?.content && (
+              <div className="bg-neutral-50 rounded-xl p-4 sm:p-6">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-950 mb-3 sm:mb-4">Executive Summary</h3>
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">{selectedTestimonial.detailedReport.summary}</p>
+              </div>
+            )}
+            
+            {/* Key Achievements - only show if exists */}
+            {selectedTestimonial.detailedReport?.achievements?.length > 0 && (
+              <div className="space-y-3 sm:space-y-4">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-950">Key Achievements</h3>
+                <ul className="space-y-2 sm:space-y-3">
+                  {selectedTestimonial.detailedReport.achievements.map((achievement: string, index: number) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-[#31b9fd] rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm sm:text-base text-neutral-700">{achievement}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {/* Impact & Results - only show if exists */}
+            {selectedTestimonial.detailedReport?.impact?.length > 0 && (
+              <div className="space-y-3 sm:space-y-4">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-950">Impact & Results</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  {selectedTestimonial.detailedReport.impact.map((item: any, index: number) => (
+                    <div key={index} className="bg-gradient-to-br from-[#31b9fd]/10 to-transparent p-3 sm:p-4 rounded-lg border border-[#31b9fd]/20">
+                      <div className="text-xl sm:text-2xl font-bold text-[#31b9fd]">{item.value}</div>
+                      <div className="text-xs sm:text-sm text-neutral-600">{item.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {/* Full Testimonial - show if exists and different from main quote */}
+            {selectedTestimonial.detailedReport?.fullTestimonial && 
+             selectedTestimonial.detailedReport.fullTestimonial !== selectedTestimonial.testimonial?.content && (
+              <div className="bg-gradient-to-r from-[#31b9fd]/10 to-transparent p-4 sm:p-6 rounded-xl border-l-4 border-[#31b9fd]">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-950 mb-2 sm:mb-3">Full Testimonial</h3>
+                <blockquote className="text-sm sm:text-base text-neutral-700 italic leading-relaxed">
+                  &quot;{selectedTestimonial.detailedReport.fullTestimonial}&quot;
+                </blockquote>
+                {selectedTestimonial.testimonial?.author && (
+                  <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-neutral-600">
+                    — {selectedTestimonial.testimonial.author.name}
+                    {selectedTestimonial.testimonial.author.role && `, ${selectedTestimonial.testimonial.author.role}`}
+                    {selectedTestimonial.client && ` at ${selectedTestimonial.client}`}
                   </div>
-                ))}
+                )}
               </div>
-            </div>
-            <div className="bg-gradient-to-r from-[#31b9fd]/10 to-transparent p-4 sm:p-6 rounded-xl border-l-4 border-[#31b9fd]">
-              <h3 className="text-base sm:text-lg font-semibold text-neutral-950 mb-2 sm:mb-3">Client Testimonial</h3>
-              <blockquote className="text-sm sm:text-base text-neutral-700 italic leading-relaxed">
-                &quot;{selectedTestimonial.detailedReport?.fullTestimonial}&quot;
-              </blockquote>
-              <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-neutral-600">
-                — {selectedTestimonial.testimonial?.author?.name}, {selectedTestimonial.testimonial?.author?.role} at {selectedTestimonial.client}
-              </div>
-            </div>
+            )}
           </div>
         )}
       </Modal>
