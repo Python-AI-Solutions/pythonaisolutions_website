@@ -573,7 +573,7 @@ ${impactMetrics.join('\n')}
           <div className="text-center space-y-4">
             <div>
               <p className="text-sm text-neutral-600 mb-2">
-                Or send your testimonial manually to:
+                Or copy your testimonial and send it manually to:
               </p>
               <p className="text-sm font-medium text-[#31b9fd]">
                 testimonials@pythonaisolutions.com
