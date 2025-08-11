@@ -15,6 +15,14 @@ import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
 import { RootLayout } from '@/components/RootLayout'
 import { Modal } from '@/components/Modal'
+import { ResumeModal } from '@/components/ResumeModal'
+import JohnResume from '@/resumes/json/John_Lee.json'
+import SumitJha from '../../../submodules/the-team/resumes/json/Sumit_Jha.json'
+import AbdulQadeer from '../../../submodules/the-team/resumes/json/Abdul_qadeer.json'
+import AdityaPatane from '../../../submodules/the-team/resumes/json/Aditya_patane.json'
+import HeetShah from '../../../submodules/the-team/resumes/json/Heet_shah.json'
+import PradyotRanjan from '../../../submodules/the-team/resumes/json/Pradyot_ranjan.json'
+import JeevanChevula from '../../../submodules/the-team/resumes/json/chevula_jeevan.json'
 import { getAssetPath } from '@/lib/basePath'
 
 function Culture() {
@@ -326,6 +334,16 @@ function Culture() {
   )
 }
 
+const resumes = [
+  { name: (JohnResume as any).basics?.name ?? 'John Lee', data: JohnResume },
+  { name: 'Sumit Jha', data: SumitJha },
+  { name: 'Heet Shah', data: HeetShah },
+  { name: 'Chevula Jeevan', data: JeevanChevula },
+  { name: 'Aditya Patane', data: AdityaPatane },
+  { name: 'Abdul Qadeer', data: AbdulQadeer },
+  { name: 'Pradyot Ranjan', data: PradyotRanjan }
+]
+
 const team = [
   {
     title: 'Leadership',
@@ -334,14 +352,37 @@ const team = [
         name: 'John Lee',
         role: 'Founder',
         image: { src: getAssetPath('/john lee.jpg'), width: 400, height: 400 },
+        github: 'https://github.com/leej3',
+        description: [
+          'PhD-trained neuroscientist and open-source contributor with deep experience in scientific data analysis and software engineering.',
+          'Published research in neuroscience and brain segmentation; committed to democratizing ethical and accessible AI.',
+        ],
+      },
+      {
+        name: 'Sumit Jha',
+        role: 'Technical Lead',
+        image: { src: 'https://github.com/isumitjha.png', width: 400, height: 400 },
+        github: 'https://github.com/isumitjha',
+        linkedin: 'https://www.linkedin.com/in/7sumitjha/',
+        description: [
+          'Full‑stack software engineer focused on robust, production-ready web apps and APIs with React, Next.js, and Python backends.',
+          'Leads implementation across frontend and backend, optimizing developer workflows and delivering reliable, scalable features.',
+        ],
       },
     ],
   },
 ]
 
 function Team() {
+  const [isResumesOpen, setIsResumesOpen] = useState(false)
+  const [selectedResume, setSelectedResume] = useState<any | null>(null)
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
+      <div className="flex justify-end mb-8">
+        <Button onClick={() => setIsResumesOpen(true)} className="hover:!bg-[#31b9fd] hover:!text-white">
+          View Team Resumes
+        </Button>
+      </div>
       <div className="space-y-24">
         {team.map((group) => (
           <FadeInStagger key={group.title}>
@@ -352,67 +393,74 @@ function Team() {
                   {group.title}
                 </h2>
               </FadeIn>
-              <div className="flex flex-col lg:flex-row lg:items-center lg:gap-x-12">
-                {/* Photo on the left */}
-                <div className="lg:w-1/2 mb-8 lg:mb-0">
-                  <FadeIn>
-                    <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
-                      <Image
-                        alt="John Lee - Founder"
-                        src={getAssetPath('/john lee.jpg')}
-                        width={400}
-                        height={400}
-                        className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
-                        style={{ objectPosition: 'center 20%' }}
-                      />
-                    </div>
-                  </FadeIn>
+              {group.people.map((person, idx) => (
+                <div key={person.name} className={`flex flex-col lg:flex-row lg:items-center lg:gap-x-6 ${idx > 0 ? 'mt-16' : ''}`}>
+                  <div className="mb-8 lg:mb-0 lg:flex-none">
+                    <FadeIn>
+                      <div className="group relative overflow-hidden rounded-3xl bg-neutral-100 h-96 aspect-[3/4] w-[18rem]">
+                        <Image
+                          alt={`${person.name} - ${person.role}`}
+                          src={person.image.src}
+                          width={person.image.width}
+                          height={person.image.height}
+                          className="h-full w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
+                          style={{ objectPosition: 'center 20%' }}
+                          unoptimized
+                        />
+                      </div>
+                    </FadeIn>
+                  </div>
+                  <div className="lg:flex-1 lg:ml-0">
+                    <FadeIn>
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="font-display text-2xl font-semibold text-neutral-950">{person.name}</h3>
+                          <p className="text-lg text-neutral-600 mt-2">{person.role}</p>
+                        </div>
+                        {Array.isArray(person.description) && person.description.length > 0 && (
+                          <div className="space-y-4 text-base text-neutral-600">
+                            {person.description.map((p: string, i: number) => (
+                              <p key={i}>{p}</p>
+                            ))}
+                          </div>
+                        )}
+                        <div className="mt-6 flex gap-3 flex-wrap">
+                          {person.github && (
+                            <Button href={person.github} target="_blank" rel="noopener noreferrer">
+                              GitHub
+                            </Button>
+                          )}
+          
+                        </div>
+                      </div>
+                    </FadeIn>
+                  </div>
                 </div>
-                
-                {/* Information on the right */}
-                <div className="lg:w-1/2">
-                  <FadeIn>
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="font-display text-2xl font-semibold text-neutral-950">
-                          John Lee
-                        </h3>
-                        <p className="text-lg text-neutral-600 mt-2">
-                          Founder
-                        </p>
-                      </div>
-                      
-                      <div className="space-y-4 text-base text-neutral-600">
-                        <p>
-                          Data and open source software enthusiast with a background in Neuroscience. 
-                          John brings extensive expertise in scientific research, data science, and software engineering.
-                        </p>
-                        
-                        <p>
-                          With experience at Trinity College Dublin and a strong foundation in research, 
-                          John has published multiple papers in neuroscience and brain segmentation, 
-                          demonstrating deep technical knowledge and analytical capabilities.
-                        </p>
-                        
-                        <p>
-                          He is passionate about democratizing AI technology and making it accessible 
-                          to SMEs and nonprofits, combining his technical expertise with a commitment 
-                          to ethical and responsible AI development.
-                        </p>
-                      </div>
-                      
-                      <div className="mt-6">
-                        <Button href="https://github.com/leej3" target="_blank" rel="noopener noreferrer">
-                          GitHub
-                        </Button>
-                      </div>
-                    </div>
-                  </FadeIn>
-                </div>
-              </div>
+              ))}
             </div>
           </FadeInStagger>
         ))}
+        {/* Resumes list modal */}
+        <Modal isOpen={isResumesOpen} onClose={() => setIsResumesOpen(false)} title="Team Resumes">
+          {selectedResume ? (
+            <div className="space-y-4">
+              <Button onClick={() => setSelectedResume(null)} className="bg-neutral-200 text-neutral-900 hover:!bg-neutral-300">
+                Back
+              </Button>
+              <ResumeModal isOpen={true} onClose={() => setSelectedResume(null)} resume={selectedResume.data} />
+            </div>
+          ) : (
+            <ul className="space-y-3">
+              {resumes.map((r) => (
+                <li key={r.name}>
+                  <button onClick={() => setSelectedResume(r)} className="text-left text-neutral-900 hover:text-[#31b9fd]">
+                    {r.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </Modal>
       </div>
     </Container>
   )
@@ -441,3 +489,4 @@ export default function About() {
     </RootLayout>
   )
 }
+
