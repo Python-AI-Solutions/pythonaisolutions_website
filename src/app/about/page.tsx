@@ -16,6 +16,7 @@ import { StatList, StatListItem } from '@/components/StatList'
 import { RootLayout } from '@/components/RootLayout'
 import { Modal } from '@/components/Modal'
 import { ResumeModal } from '@/components/ResumeModal'
+import { NoStringsResume } from '@/components/NoStringsResume'
 import JohnResume from '../../../submodules/the-team/resumes/json/John_Lee.json'
 import SumitJha from '../../../submodules/the-team/resumes/json/Sumit_Jha.json'
 import AbdulQadeer from '../../../submodules/the-team/resumes/json/Abdul_qadeer.json'
@@ -497,7 +498,13 @@ function Team() {
                 }
               }}
             >
-              <ResumeModal isOpen={true} onClose={() => setSelectedResume(null)} resume={selectedResume.data} />
+              <NoStringsResume
+                resume={selectedResume.data as any}
+                photoSrc={(() => {
+                  const avatar = getAvatarSrc(selectedResume)
+                  return avatar || undefined
+                })()}
+              />
             </div>
           ) : (
             <div>
