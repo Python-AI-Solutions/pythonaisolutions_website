@@ -16,13 +16,19 @@ import { StatList, StatListItem } from '@/components/StatList'
 import { RootLayout } from '@/components/RootLayout'
 import { Modal } from '@/components/Modal'
 import { ResumeModal } from '@/components/ResumeModal'
-import JohnResume from '@/resumes/json/John_Lee.json'
+import JohnResume from '../../../submodules/the-team/resumes/json/John_Lee.json'
 import SumitJha from '../../../submodules/the-team/resumes/json/Sumit_Jha.json'
 import AbdulQadeer from '../../../submodules/the-team/resumes/json/Abdul_qadeer.json'
 import AdityaPatane from '../../../submodules/the-team/resumes/json/Aditya_patane.json'
 import HeetShah from '../../../submodules/the-team/resumes/json/Heet_shah.json'
 import PradyotRanjan from '../../../submodules/the-team/resumes/json/Pradyot_ranjan.json'
 import JeevanChevula from '../../../submodules/the-team/resumes/json/chevula_jeevan.json'
+// Headshot photos for avatar thumbnails in the resumes modal
+import AdityaPhoto from '../../../submodules/the-team/public/photos/Aditya_Patane.png'
+import ChevulaPhoto from '../../../submodules/the-team/public/photos/Chevula_Jeevan.jpg'
+import HeetPhoto from '../../../submodules/the-team/public/photos/Heet_Shah.jpg'
+import PradyotPhoto from '../../../submodules/the-team/public/photos/Pradyot_Ranjan.jpg'
+import SumitPhoto from '../../../submodules/the-team/public/photos/Sumit_Jha.png'
 import { getAssetPath } from '@/lib/basePath'
 
 function Culture() {
@@ -376,9 +382,27 @@ const team = [
 function Team() {
   const [isResumesOpen, setIsResumesOpen] = useState(false)
   const [selectedResume, setSelectedResume] = useState<any | null>(null)
+  const getAvatarSrc = (entry: { name: string; data: any }) => {
+    switch (entry.name) {
+      case 'John Lee':
+        return getAssetPath('/john lee.jpg')
+      case 'Sumit Jha':
+        return (SumitPhoto as unknown as string)
+      case 'Heet Shah':
+        return (HeetPhoto as unknown as string)
+      case 'Chevula Jeevan':
+        return (ChevulaPhoto as unknown as string)
+      case 'Aditya Patane':
+        return (AdityaPhoto as unknown as string)
+      case 'Pradyot Ranjan':
+        return (PradyotPhoto as unknown as string)
+      default:
+        return '' // Abdul Qadeer or any missing photo → fallback to initials
+    }
+  }
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <div className="flex justify-end mb-8">
+      <div className="flex justify-end mb-8 sticky top-20 z-20">
         <Button onClick={() => setIsResumesOpen(true)} className="hover:!bg-[#31b9fd] hover:!text-white">
           View Team Resumes
         </Button>
@@ -441,24 +465,110 @@ function Team() {
           </FadeInStagger>
         ))}
         {/* Resumes list modal */}
-        <Modal isOpen={isResumesOpen} onClose={() => setIsResumesOpen(false)} title="Team Resumes">
+        <Modal
+          isOpen={isResumesOpen}
+          onClose={() => { setIsResumesOpen(false); setSelectedResume(null) }}
+          title={selectedResume ? (
+            `${selectedResume.name}'s Resume`
+          ) : (
+            <div className="flex items-center gap-3 py-1">
+              <Image
+                src={getAssetPath('/Python-AI-Solutions-Logo.webp')}
+                alt="Python AI Solutions"
+                width={140}
+                height={32}
+                unoptimized
+              />
+            </div>
+          )}
+        >
           {selectedResume ? (
-            <div className="space-y-4">
-              <Button onClick={() => setSelectedResume(null)} className="bg-neutral-200 text-neutral-900 hover:!bg-neutral-300">
-                Back
-              </Button>
+            <div
+              className="space-y-4"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                  const list = resumes
+                  const idx = list.findIndex((x) => x.name === selectedResume.name)
+                  if (idx !== -1) {
+                    const next = e.key === 'ArrowRight' ? (idx + 1) % list.length : (idx - 1 + list.length) % list.length
+                    setSelectedResume(list[next])
+                  }
+                }
+              }}
+            >
               <ResumeModal isOpen={true} onClose={() => setSelectedResume(null)} resume={selectedResume.data} />
             </div>
           ) : (
-            <ul className="space-y-3">
-              {resumes.map((r) => (
-                <li key={r.name}>
-                  <button onClick={() => setSelectedResume(r)} className="text-left text-neutral-900 hover:text-[#31b9fd]">
-                    {r.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <div className="mb-4">
+                <input
+                  type="text"
+                  placeholder="Search by name or title..."
+                  className="w-full rounded-xl border border-neutral-200 px-4 py-2 text-sm focus:outline-none focus:border-[#31b9fd]"
+                  onChange={(e) => {
+                    const v = e.currentTarget.value.toLowerCase()
+                    const grid = document.getElementById('resumes-grid')
+                    if (!grid) return
+                    for (const child of Array.from(grid.children)) {
+                      const el = child as HTMLElement
+                      const name = el.getAttribute('data-name')?.toLowerCase() || ''
+                      const label = el.getAttribute('data-label')?.toLowerCase() || ''
+                      el.style.display = (name.includes(v) || label.includes(v)) ? '' : 'none'
+                    }
+                  }}
+                />
+              </div>
+              <div id="resumes-grid" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {resumes.map((r, i) => {
+                const avatar = getAvatarSrc(r)
+                return (
+                  <div
+                    key={r.name}
+                    data-name={r.name}
+                    data-label={(r.data as any)?.basics?.label || ''}
+                    className="rounded-2xl border border-neutral-200 bg-white p-4 flex flex-col transform transition will-change-transform hover:scale-[1.02] hover:shadow-lg hover:-translate-y-0.5 hover:border-[#31b9fd]"
+                    style={{ transitionDuration: '200ms', transitionTimingFunction: 'cubic-bezier(0.2,0.9,0.2,1)' }}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="h-12 w-12 rounded-full bg-neutral-100 overflow-hidden flex items-center justify-center ring-1 ring-transparent hover:ring-[#31b9fd]/60">
+                        {avatar ? (
+                          <Image
+                            src={avatar}
+                            alt={`${r.name} avatar`}
+                            width={48}
+                            height={48}
+                            className="h-12 w-12 object-cover"
+                            unoptimized
+                          />
+                        ) : (
+                          <span className="text-sm font-semibold text-neutral-600">
+                            {r.name.split(' ').map((n: string) => n[0]).slice(0,2).join('')}
+                          </span>
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-neutral-950">{r.name}</p>
+                        <p className="text-xs text-neutral-600">{(r.data as any)?.basics?.label || 'Team Member'}</p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-sm text-neutral-700 line-clamp-3">
+                      {(r.data as any)?.basics?.summary || 'Experienced contributor across AI/ML and engineering.'}
+                    </p>
+                    <div className="mt-4">
+                      <Button onClick={() => setSelectedResume(r)} className="w-full justify-center hover:!bg-[#31b9fd] hover:!text-white">
+                        View Resume
+                      </Button>
+                    </div>
+                  </div>
+                )
+              })}
+              {/* Optional full-width tile to balance layout */}
+              {resumes.length % 3 !== 1 && (
+                <div className="hidden lg:block col-span-1" />
+              )}
+              </div>
+            </div>
           )}
         </Modal>
       </div>

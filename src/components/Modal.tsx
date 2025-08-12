@@ -9,7 +9,7 @@ import { FadeIn } from '@/components/FadeIn'
 interface ModalProps {
   isOpen: boolean
   onClose: () => void
-  title: string
+  title: React.ReactNode
   children: React.ReactNode
 }
 
@@ -63,17 +63,17 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
         >
           <motion.div
             ref={modalRef}
-            initial={{ scale: 0.95, opacity: 0 }}
+            initial={{ scale: 0.97, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            exit={{ scale: 0.97, opacity: 0 }}
+            transition={{ type: 'spring', damping: 20, stiffness: 360 }}
             className="relative w-full max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto bg-white rounded-2xl sm:rounded-3xl shadow-2xl"
           >
             <div className="sticky top-0 z-10 bg-white rounded-t-2xl sm:rounded-t-3xl border-b border-neutral-200">
-              <div className="flex items-center justify-between p-4 sm:p-6">
-                <h2 className="font-display text-lg sm:text-xl lg:text-2xl font-semibold text-neutral-950">
+              <div className="flex items-center justify-between p-3 sm:p-4">
+                <div className="font-display text-lg sm:text-xl lg:text-2xl font-semibold text-neutral-950">
                   {title}
-                </h2>
+                </div>
                 <button
                   onClick={onClose}
                   className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors"
