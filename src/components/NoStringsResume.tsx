@@ -143,5 +143,3 @@ export function NoStringsResume({ resume, photoSrc }: { resume: Resume; photoSrc
     </div>
   )
 }
-
-

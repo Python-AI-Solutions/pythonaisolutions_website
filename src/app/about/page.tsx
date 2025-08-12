@@ -15,7 +15,6 @@ import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
 import { RootLayout } from '@/components/RootLayout'
 import { Modal } from '@/components/Modal'
-import { ResumeModal } from '@/components/ResumeModal'
 import { NoStringsResume } from '@/components/NoStringsResume'
 import JohnResume from '../../../submodules/the-team/resumes/json/john_lee.json'
 import SumitJha from '../../../submodules/the-team/resumes/json/sumit_jha.json'
@@ -29,7 +28,7 @@ import AdityaPhoto from '../../../submodules/the-team/public/photos/Aditya_Patan
 import ChevulaPhoto from '../../../submodules/the-team/public/photos/Chevula_Jeevan.jpg'
 import HeetPhoto from '../../../submodules/the-team/public/photos/Heet_Shah.jpg'
 import PradyotPhoto from '../../../submodules/the-team/public/photos/Pradyot_Ranjan.jpg'
-import SumitPhoto from '../../../submodules/the-team/public/photos/Sumit_Jha.png'
+import SumitPhoto from '../../../submodules/the-team/public/photos/Sumit_Jha.webp'
 import { getAssetPath } from '@/lib/basePath'
 
 function Culture() {
@@ -358,7 +357,7 @@ const team = [
       {
         name: 'John Lee',
         role: 'Founder',
-        image: { src: getAssetPath('/john lee.jpg'), width: 400, height: 400 },
+        image: { src: getAssetPath('/John-Lee.webp'), width: 400, height: 400 },
         github: 'https://github.com/leej3',
         description: [
           'PhD-trained neuroscientist and open-source contributor with deep experience in scientific data analysis and software engineering.',
@@ -368,7 +367,7 @@ const team = [
       {
         name: 'Sumit Jha',
         role: 'Technical Lead',
-        image: { src: 'https://github.com/isumitjha.png', width: 400, height: 400 },
+        image: { src: getAssetPath('/Sumit_Jha.webp'), width: 400, height: 400 },
         github: 'https://github.com/isumitjha',
         linkedin: 'https://www.linkedin.com/in/7sumitjha/',
         description: [
@@ -386,7 +385,7 @@ function Team() {
   const getAvatarSrc = (entry: { name: string; data: any }) => {
     switch (entry.name) {
       case 'John Lee':
-        return getAssetPath('/john lee.jpg')
+        return getAssetPath('/John-Lee.webp')
       case 'Sumit Jha':
         return (SumitPhoto as unknown as string)
       case 'Heet Shah':
@@ -455,7 +454,11 @@ function Team() {
                               GitHub
                             </Button>
                           )}
-          
+                          {person.linkedin && (
+                            <Button href={person.linkedin} target="_blank" rel="noopener noreferrer">
+                              LinkedIn
+                            </Button>
+                          )}
                         </div>
                       </div>
                     </FadeIn>
