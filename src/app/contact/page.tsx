@@ -25,11 +25,11 @@ function TextInput({
         id={id}
         {...props}
         placeholder=" "
-        className="peer block w-full border border-neutral-300 bg-transparent px-6 pt-12 pb-4 text-base/6 text-neutral-950 ring-4 ring-transparent transition group-first:rounded-t-2xl group-last:rounded-b-2xl focus:border-neutral-950 focus:ring-neutral-950/5 focus:outline-hidden"
+        className="focus:outline-hidden peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl"
       />
       <label
         htmlFor={id}
-        className="pointer-events-none absolute top-1/2 left-6 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-not-placeholder-shown:-translate-y-4 peer-not-placeholder-shown:scale-75 peer-not-placeholder-shown:font-semibold peer-not-placeholder-shown:text-neutral-950 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950"
+        className="peer-not-placeholder-shown:-translate-y-4 peer-not-placeholder-shown:scale-75 peer-not-placeholder-shown:font-semibold peer-not-placeholder-shown:text-neutral-950 pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950"
       >
         {label}
       </label>
@@ -46,7 +46,7 @@ function RadioInput({
       <input
         type="radio"
         {...props}
-        className="h-6 w-6 flex-none appearance-none rounded-full border border-neutral-950/20 outline-hidden checked:border-[0.5rem] checked:border-neutral-950 focus-visible:ring-1 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
+        className="outline-hidden h-6 w-6 flex-none appearance-none rounded-full border border-neutral-950/20 checked:border-[0.5rem] checked:border-neutral-950 focus-visible:ring-1 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
       />
       <span className="text-base/6 text-neutral-950">{label}</span>
     </label>
@@ -64,7 +64,7 @@ function ContactForm() {
 
     try {
       const formDataObj = new FormData(e.currentTarget)
-      
+
       // Get form values
       const name = formDataObj.get('name') as string
       const email = formDataObj.get('email') as string
@@ -82,11 +82,16 @@ function ContactForm() {
       // Convert budget value to proper range
       const getBudgetRange = (value: string) => {
         switch (value) {
-          case '10': return '$10K – $50K'
-          case '50': return '$50K – $100K'
-          case '100': return '$100K – $150K'
-          case '150': return 'More than $150K'
-          default: return 'Not selected'
+          case '10':
+            return '$10K – $50K'
+          case '50':
+            return '$50K – $100K'
+          case '100':
+            return '$100K – $150K'
+          case '150':
+            return 'More than $150K'
+          default:
+            return 'Not selected'
         }
       }
 
@@ -103,16 +108,17 @@ ${message}`
 
       // Try Gmail compose URL first (most common)
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=support@pythonaisolutions.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-      
+
       // Open Gmail compose in new tab
       window.open(gmailUrl, '_blank')
-      
+
       // Reset form after successful submission
       e.currentTarget.reset()
-      
     } catch (error) {
       console.error('Form submission error:', error)
-      setSubmitMessage('There was an error. Please try again or contact us directly.')
+      setSubmitMessage(
+        'There was an error. Please try again or contact us directly.',
+      )
     } finally {
       setIsSubmitting(false)
     }
@@ -142,7 +148,9 @@ ${message}`
           <TextInput label="Message" name="message" required />
           <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
             <fieldset>
-              <legend className="text-base/6 text-neutral-500">Approximate budget</legend>
+              <legend className="text-base/6 text-neutral-500">
+                Approximate budget
+              </legend>
               <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
                 <RadioInput label="$10K – $50K" name="budget" value="10" />
                 <RadioInput label="$50K – $100K" name="budget" value="50" />
@@ -152,21 +160,23 @@ ${message}`
             </fieldset>
           </div>
         </div>
-        
+
         {submitMessage && (
-          <div className={`mt-6 p-4 rounded-lg ${
-            submitMessage.includes('error') 
-              ? 'bg-red-50 border border-red-200 text-red-800' 
-              : 'bg-green-50 border border-green-200 text-green-800'
-          }`}>
+          <div
+            className={`mt-6 rounded-lg p-4 ${
+              submitMessage.includes('error')
+                ? 'border border-red-200 bg-red-50 text-red-800'
+                : 'border border-green-200 bg-green-50 text-green-800'
+            }`}
+          >
             <p>{submitMessage}</p>
           </div>
         )}
-        
-        <div className="flex justify-center mt-10">
-          <Button 
-            type="submit" 
-            className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white" 
+
+        <div className="mt-10 flex justify-center">
+          <Button
+            type="submit"
+            className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Opening Email...' : "Let's work together"}
@@ -217,12 +227,21 @@ function ContactDetails() {
         </h2>
         <div className="mt-6 text-sm text-neutral-600">
           <p className="mb-4">
-            We take security seriously. If you&apos;ve found a security vulnerability, 
-            please report it responsibly to <Link href="mailto:security@pythonaisolutions.com" className="font-semibold text-neutral-950 hover:text-[#31b9fd]">security@pythonaisolutions.com</Link>.
+            We take security seriously. If you&apos;ve found a security
+            vulnerability, please report it responsibly to{' '}
+            <Link
+              href="mailto:security@pythonaisolutions.com"
+              className="font-semibold text-neutral-950 hover:text-[#31b9fd]"
+            >
+              security@pythonaisolutions.com
+            </Link>
+            .
           </p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
-              <h3 className="font-semibold text-neutral-950 mb-2">Response Commitment</h3>
+              <h3 className="mb-2 font-semibold text-neutral-950">
+                Response Commitment
+              </h3>
               <ul className="space-y-1 text-sm">
                 <li>• Acknowledgment within 72 hours</li>
                 <li>• Regular progress updates</li>
@@ -231,7 +250,9 @@ function ContactDetails() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-neutral-950 mb-2">Scope & Guidelines</h3>
+              <h3 className="mb-2 font-semibold text-neutral-950">
+                Scope & Guidelines
+              </h3>
               <ul className="space-y-1 text-sm">
                 <li>• Website and infrastructure security</li>
                 <li>• Data protection issues</li>
@@ -249,7 +270,7 @@ function ContactDetails() {
 export default function Contact() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="Contact us" title="Let&apos;s work together">
+      <PageIntro eyebrow="Contact us" title="Let's work together">
         <p>We can&apos;t wait to hear from you.</p>
       </PageIntro>
 

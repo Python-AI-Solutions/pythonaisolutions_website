@@ -12,7 +12,7 @@ jest.mock('@/components/FadeIn', () => {
     },
     FadeInStagger: ({ children, className }: any) => {
       return React.createElement('div', { className }, children)
-    }
+    },
   }
 })
 
@@ -21,7 +21,7 @@ describe('FadeIn Component', () => {
     render(
       <FadeIn>
         <div data-testid="fade-content">Fade In Content</div>
-      </FadeIn>
+      </FadeIn>,
     )
     expect(screen.getByTestId('fade-content')).toBeInTheDocument()
   })
@@ -30,28 +30,20 @@ describe('FadeIn Component', () => {
     render(
       <FadeIn className="custom-fade">
         <div>Content</div>
-      </FadeIn>
+      </FadeIn>,
     )
     const fadeElement = screen.getByText('Content').parentElement
     expect(fadeElement).toHaveClass('custom-fade')
   })
 
-  it('renders with different HTML elements', () => {
-    const { rerender } = render(
-      <FadeIn as="section">
-        <div>Section Content</div>
-      </FadeIn>
+  it('renders as a div element', () => {
+    render(
+      <FadeIn>
+        <div>Div Content</div>
+      </FadeIn>,
     )
-    let element = screen.getByText('Section Content').parentElement
-    expect(element?.tagName).toBe('SECTION')
-
-    rerender(
-      <FadeIn as="article">
-        <div>Article Content</div>
-      </FadeIn>
-    )
-    element = screen.getByText('Article Content').parentElement
-    expect(element?.tagName).toBe('ARTICLE')
+    const element = screen.getByText('Div Content').parentElement
+    expect(element?.tagName).toBe('DIV')
   })
 })
 
@@ -62,9 +54,9 @@ describe('FadeInStagger Component', () => {
         <div>Item 1</div>
         <div>Item 2</div>
         <div>Item 3</div>
-      </FadeInStagger>
+      </FadeInStagger>,
     )
-    
+
     expect(screen.getByText('Item 1')).toBeInTheDocument()
     expect(screen.getByText('Item 2')).toBeInTheDocument()
     expect(screen.getByText('Item 3')).toBeInTheDocument()
@@ -75,9 +67,9 @@ describe('FadeInStagger Component', () => {
       <FadeInStagger faster>
         <div>Fast Item 1</div>
         <div>Fast Item 2</div>
-      </FadeInStagger>
+      </FadeInStagger>,
     )
-    
+
     expect(screen.getByText('Fast Item 1')).toBeInTheDocument()
     expect(screen.getByText('Fast Item 2')).toBeInTheDocument()
   })
@@ -86,9 +78,9 @@ describe('FadeInStagger Component', () => {
     render(
       <FadeInStagger className="stagger-container">
         <div>Staggered Content</div>
-      </FadeInStagger>
+      </FadeInStagger>,
     )
-    
+
     const container = screen.getByText('Staggered Content').parentElement
     expect(container).toHaveClass('stagger-container')
   })

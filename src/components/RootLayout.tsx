@@ -1,10 +1,6 @@
 'use client'
 
-import {
-  createContext,
-  useContext,
-  useState,
-} from 'react'
+import { createContext, useContext, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
@@ -23,11 +19,7 @@ const RootLayoutContext = createContext<{
   setLogoHovered: React.Dispatch<React.SetStateAction<boolean>>
 } | null>(null)
 
-function Header({
-  invert = false,
-}: {
-  invert?: boolean
-}) {
+function Header({ invert = false }: { invert?: boolean }) {
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)!
   let pathname = usePathname()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -43,12 +35,9 @@ function Header({
   return (
     <Container>
       <div className="flex items-center justify-between">
-        <Link
-          href="/"
-          aria-label="Home"
-        >
+        <Link href="/" aria-label="Home">
           <Image
-            src={getAssetPath("/snakebrain.svg")}
+            src={getAssetPath('/snakebrain.svg')}
             alt="SnakeBrain Logo"
             width={180}
             height={60}
@@ -56,19 +45,19 @@ function Header({
             priority
           />
         </Link>
-        
+
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-x-4 sm:gap-x-8">
+        <div className="hidden items-center gap-x-4 sm:gap-x-8 md:flex">
           <nav className="flex items-center gap-x-3 sm:gap-x-8">
             <Link
               href="/"
               className={clsx(
-                'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                pathname === '/' || pathname === '' 
-                  ? 'text-[#31b9fd]' 
-                  : invert 
-                    ? 'text-white hover:text-[#31b9fd]' 
-                    : 'text-neutral-950 hover:text-[#31b9fd]'
+                'font-display text-sm font-semibold tracking-tight transition-all duration-200 hover:scale-105 sm:text-base',
+                pathname === '/' || pathname === ''
+                  ? 'text-[#31b9fd]'
+                  : invert
+                    ? 'text-white hover:text-[#31b9fd]'
+                    : 'text-neutral-950 hover:text-[#31b9fd]',
               )}
             >
               Home
@@ -76,12 +65,12 @@ function Header({
             <Link
               href="/services"
               className={clsx(
-                'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                pathname.startsWith('/services') 
-                  ? 'text-[#31b9fd]' 
-                  : invert 
-                    ? 'text-white hover:text-[#31b9fd]' 
-                    : 'text-neutral-950 hover:text-[#31b9fd]'
+                'font-display text-sm font-semibold tracking-tight transition-all duration-200 hover:scale-105 sm:text-base',
+                pathname.startsWith('/services')
+                  ? 'text-[#31b9fd]'
+                  : invert
+                    ? 'text-white hover:text-[#31b9fd]'
+                    : 'text-neutral-950 hover:text-[#31b9fd]',
               )}
             >
               Services
@@ -89,12 +78,12 @@ function Header({
             <Link
               href="/about"
               className={clsx(
-                'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                pathname.startsWith('/about') 
-                  ? 'text-[#31b9fd]' 
-                  : invert 
-                    ? 'text-white hover:text-[#31b9fd]' 
-                    : 'text-neutral-950 hover:text-[#31b9fd]'
+                'font-display text-sm font-semibold tracking-tight transition-all duration-200 hover:scale-105 sm:text-base',
+                pathname.startsWith('/about')
+                  ? 'text-[#31b9fd]'
+                  : invert
+                    ? 'text-white hover:text-[#31b9fd]'
+                    : 'text-neutral-950 hover:text-[#31b9fd]',
               )}
             >
               About Us
@@ -103,19 +92,19 @@ function Header({
             <Link
               href="/clientele"
               className={clsx(
-                'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                pathname.startsWith('/clientele') 
-                  ? 'text-[#31b9fd]' 
-                  : invert 
-                    ? 'text-white hover:text-[#31b9fd]' 
-                    : 'text-neutral-950 hover:text-[#31b9fd]'
+                'font-display text-sm font-semibold tracking-tight transition-all duration-200 hover:scale-105 sm:text-base',
+                pathname.startsWith('/clientele')
+                  ? 'text-[#31b9fd]'
+                  : invert
+                    ? 'text-white hover:text-[#31b9fd]'
+                    : 'text-neutral-950 hover:text-[#31b9fd]',
               )}
             >
               Clientele
             </Link>
           </nav>
-          <Button 
-            href="/contact" 
+          <Button
+            href="/contact"
             invert={invert}
             className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
           >
@@ -126,12 +115,18 @@ function Header({
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
+          className="flex h-8 w-8 flex-col items-center justify-center space-y-1.5 md:hidden"
           aria-label="Toggle mobile menu"
         >
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span
+            className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'translate-y-2 rotate-45' : ''}`}
+          ></span>
+          <span
+            className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}
+          ></span>
+          <span
+            className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-translate-y-2 -rotate-45' : ''}`}
+          ></span>
         </button>
       </div>
 
@@ -143,7 +138,7 @@ function Header({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden mt-4 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-neutral-200 overflow-hidden"
+            className="mt-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white/95 shadow-lg backdrop-blur-sm md:hidden"
           >
             <nav className="flex flex-col py-4">
               <Link
@@ -151,11 +146,11 @@ function Header({
                 onClick={closeMobileMenu}
                 className={clsx(
                   'px-6 py-3 font-display text-base font-medium tracking-tight transition-all duration-200 hover:bg-neutral-50',
-                  pathname === '/' || pathname === '' 
-                    ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
-                    : invert 
-                      ? 'text-white hover:text-[#31b9fd]' 
-                      : 'text-neutral-950 hover:text-[#31b9fd]'
+                  pathname === '/' || pathname === ''
+                    ? 'bg-[#31b9fd]/10 text-[#31b9fd]'
+                    : invert
+                      ? 'text-white hover:text-[#31b9fd]'
+                      : 'text-neutral-950 hover:text-[#31b9fd]',
                 )}
               >
                 Home
@@ -165,11 +160,11 @@ function Header({
                 onClick={closeMobileMenu}
                 className={clsx(
                   'px-6 py-3 font-display text-base font-medium tracking-tight transition-all duration-200 hover:bg-neutral-50',
-                  pathname.startsWith('/services') 
-                    ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
-                    : invert 
-                      ? 'text-white hover:text-[#31b9fd]' 
-                      : 'text-neutral-950 hover:text-[#31b9fd]'
+                  pathname.startsWith('/services')
+                    ? 'bg-[#31b9fd]/10 text-[#31b9fd]'
+                    : invert
+                      ? 'text-white hover:text-[#31b9fd]'
+                      : 'text-neutral-950 hover:text-[#31b9fd]',
                 )}
               >
                 Services
@@ -179,11 +174,11 @@ function Header({
                 onClick={closeMobileMenu}
                 className={clsx(
                   'px-6 py-3 font-display text-base font-medium tracking-tight transition-all duration-200 hover:bg-neutral-50',
-                  pathname.startsWith('/about') 
-                    ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
-                    : invert 
-                      ? 'text-white hover:text-[#31b9fd]' 
-                      : 'text-neutral-950 hover:text-[#31b9fd]'
+                  pathname.startsWith('/about')
+                    ? 'bg-[#31b9fd]/10 text-[#31b9fd]'
+                    : invert
+                      ? 'text-white hover:text-[#31b9fd]'
+                      : 'text-neutral-950 hover:text-[#31b9fd]',
                 )}
               >
                 About Us
@@ -193,18 +188,18 @@ function Header({
                 onClick={closeMobileMenu}
                 className={clsx(
                   'px-6 py-3 font-display text-base font-medium tracking-tight transition-all duration-200 hover:bg-neutral-50',
-                  pathname.startsWith('/clientele') 
-                    ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
-                    : invert 
-                      ? 'text-white hover:text-[#31b9fd]' 
-                      : 'text-neutral-950 hover:text-[#31b9fd]'
+                  pathname.startsWith('/clientele')
+                    ? 'bg-[#31b9fd]/10 text-[#31b9fd]'
+                    : invert
+                      ? 'text-white hover:text-[#31b9fd]'
+                      : 'text-neutral-950 hover:text-[#31b9fd]',
                 )}
               >
                 Clientele
               </Link>
               <div className="px-6 py-3">
-                <Button 
-                  href="/contact" 
+                <Button
+                  href="/contact"
                   invert={invert}
                   onClick={closeMobileMenu}
                   className="w-full justify-center transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
@@ -224,7 +219,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
   return (
     <MotionConfig>
       <header>
-        <div className="absolute top-2 right-0 left-0 z-40 pt-14">
+        <div className="absolute left-0 right-0 top-2 z-40 pt-14">
           <Header />
         </div>
       </header>
@@ -233,11 +228,9 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
         style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
         className="relative flex flex-auto overflow-hidden bg-white pt-14"
       >
-        <motion.div
-          className="relative isolate flex w-full flex-col pt-9"
-        >
+        <motion.div className="relative isolate flex w-full flex-col pt-9">
           <GridPattern
-            className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full mask-[linear-gradient(to_bottom_left,white_40%,transparent_50%)] fill-neutral-50 stroke-neutral-950/5"
+            className="mask-[linear-gradient(to_bottom_left,white_40%,transparent_50%)] absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-neutral-50 stroke-neutral-950/5"
             yOffset={-96}
             interactive
           />

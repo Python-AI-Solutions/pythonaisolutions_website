@@ -20,18 +20,18 @@ grep -RhoP "(?:src|href)=\"\/?[^\"?#]+" out 2>/dev/null | while read -r path; do
     # Remove quotes and leading slash
     clean_path=${path#\"}
     clean_path=${clean_path#/}
-    
+
     # Skip external URLs and data URLs
     if [[ $clean_path =~ ^https?:// ]] || [[ $clean_path =~ ^data: ]] || [[ $clean_path =~ ^mailto: ]]; then
         continue
     fi
-    
+
     # Check if file exists in out directory
     if [ ! -f "out/$clean_path" ]; then
         echo "❌ Missing: $path"
         missing_files+=("$clean_path")
     fi
-    
+
     ((found_references++))
 done
 
@@ -60,4 +60,4 @@ else
     echo ""
     echo "❌ Found ${#missing_files[@]} missing asset(s). Please fix these before deployment."
     exit 1
-fi 
+fi

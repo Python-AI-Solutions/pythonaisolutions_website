@@ -80,7 +80,7 @@ repos:
     hooks:
       - id: codespell
         exclude: ^(package-lock\.json|pnpm-lock\.yaml|yarn\.lock|\.next/|out/|node_modules/)
-        args: 
+        args:
           - '--skip=*.svg,*.png,*.jpg,*.jpeg,*.webp,*.gif,*.ico,*.woff,*.woff2'
           - '--ignore-words-list=thead,doesnt,couldnt,wouldnt,shouldnt,wont,cant,dont,isnt,arent,wasnt,werent,hasnt,havent,hadnt,didnt,doesnt'
 

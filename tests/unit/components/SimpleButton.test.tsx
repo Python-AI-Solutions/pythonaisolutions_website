@@ -6,7 +6,7 @@ describe('Simple Button Test', () => {
     render(<button>Test Button</button>)
     expect(screen.getByRole('button')).toBeInTheDocument()
   })
-  
+
   it('renders a link element', () => {
     render(<a href="/test">Test Link</a>)
     expect(screen.getByRole('link')).toBeInTheDocument()

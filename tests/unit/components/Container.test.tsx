@@ -7,7 +7,7 @@ describe('Container Component', () => {
     render(
       <Container>
         <div data-testid="child">Test Content</div>
-      </Container>
+      </Container>,
     )
     expect(screen.getByTestId('child')).toBeInTheDocument()
     expect(screen.getByText('Test Content')).toBeInTheDocument()
@@ -17,10 +17,11 @@ describe('Container Component', () => {
     render(
       <Container className="custom-container">
         <div>Content</div>
-      </Container>
+      </Container>,
     )
     // The outer container should have the custom class
-    const outerContainer = screen.getByText('Content').parentElement?.parentElement
+    const outerContainer =
+      screen.getByText('Content').parentElement?.parentElement
     expect(outerContainer).toHaveClass('custom-container')
   })
 
@@ -28,15 +29,16 @@ describe('Container Component', () => {
     const { rerender } = render(
       <Container as="section">
         <div>Section Content</div>
-      </Container>
+      </Container>,
     )
-    let container = screen.getByText('Section Content').parentElement?.parentElement
+    let container =
+      screen.getByText('Section Content').parentElement?.parentElement
     expect(container?.tagName).toBe('SECTION')
 
     rerender(
       <Container as="article">
         <div>Article Content</div>
-      </Container>
+      </Container>,
     )
     container = screen.getByText('Article Content').parentElement?.parentElement
     expect(container?.tagName).toBe('ARTICLE')
@@ -46,7 +48,7 @@ describe('Container Component', () => {
     render(
       <Container>
         <div>Styled Content</div>
-      </Container>
+      </Container>,
     )
     const innerContainer = screen.getByText('Styled Content').parentElement
     expect(innerContainer).toHaveClass('mx-auto')

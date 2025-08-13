@@ -7,7 +7,7 @@ describe('Border Component', () => {
     render(
       <Border>
         <div data-testid="border-content">Border Content</div>
-      </Border>
+      </Border>,
     )
     expect(screen.getByTestId('border-content')).toBeInTheDocument()
     expect(screen.getByText('Border Content')).toBeInTheDocument()
@@ -17,7 +17,7 @@ describe('Border Component', () => {
     render(
       <Border className="custom-border">
         <div>Content</div>
-      </Border>
+      </Border>,
     )
     const border = screen.getByText('Content').parentElement
     expect(border).toHaveClass('custom-border')
@@ -27,7 +27,7 @@ describe('Border Component', () => {
     render(
       <Border>
         <div>Default Position</div>
-      </Border>
+      </Border>,
     )
     const border = screen.getByText('Default Position').parentElement
     expect(border).toHaveClass('relative')
@@ -42,7 +42,7 @@ describe('Border Component', () => {
     render(
       <Border position="left">
         <div>Left Border</div>
-      </Border>
+      </Border>,
     )
     const border = screen.getByText('Left Border').parentElement
     expect(border).toHaveClass('relative')
@@ -57,7 +57,7 @@ describe('Border Component', () => {
     render(
       <Border position="top">
         <div>Top Border</div>
-      </Border>
+      </Border>,
     )
     const border = screen.getByText('Top Border').parentElement
     expect(border).toHaveClass('relative')
@@ -70,7 +70,7 @@ describe('Border Component', () => {
     render(
       <Border invert>
         <div>Inverted Border</div>
-      </Border>
+      </Border>,
     )
     const border = screen.getByText('Inverted Border').parentElement
     expect(border).toHaveClass('before:bg-white')
@@ -81,7 +81,7 @@ describe('Border Component', () => {
     const { rerender } = render(
       <Border as="section">
         <div>Section Border</div>
-      </Border>
+      </Border>,
     )
     let border = screen.getByText('Section Border').parentElement
     expect(border?.tagName).toBe('SECTION')
@@ -89,7 +89,7 @@ describe('Border Component', () => {
     rerender(
       <Border as="article">
         <div>Article Border</div>
-      </Border>
+      </Border>,
     )
     border = screen.getByText('Article Border').parentElement
     expect(border?.tagName).toBe('ARTICLE')

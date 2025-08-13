@@ -37,7 +37,7 @@ export const MDXComponents = {
     ...props
   }: React.ComponentPropsWithoutRef<typeof StatList>) {
     return (
-      <StatList className={clsx('my-32 max-w-none!', className)} {...props} />
+      <StatList className={clsx('max-w-none! my-32', className)} {...props} />
     )
   },
   StatListItem,
@@ -74,7 +74,7 @@ export const MDXComponents = {
   }) {
     return (
       <Border position="left" className={clsx('my-10 pl-8', className)}>
-        <p className="font-display text-sm font-bold tracking-widest text-neutral-950 uppercase">
+        <p className="font-display text-sm font-bold uppercase tracking-widest text-neutral-950">
           Top tip
         </p>
         <div className="mt-4">{children}</div>
@@ -88,7 +88,7 @@ export const MDXComponents = {
     return (
       <div
         className={clsx(
-          '*:mx-auto *:max-w-3xl [&>:first-child]:mt-0! [&>:last-child]:mb-0!',
+          '[&>:first-child]:mt-0! [&>:last-child]:mb-0! *:mx-auto *:max-w-3xl',
           className,
         )}
         {...props}

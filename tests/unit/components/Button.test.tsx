@@ -4,12 +4,20 @@ import userEvent from '@testing-library/user-event'
 
 // Mock the Button component
 jest.mock('@/components/Button', () => ({
-  Button: ({ children, href, onClick, disabled, ...props }) => {
+  Button: ({ children, href, onClick, disabled, ...props }: any) => {
     if (href) {
-      return <a href={href} {...props}>{children}</a>
+      return (
+        <a href={href} {...props}>
+          {children}
+        </a>
+      )
     }
-    return <button onClick={onClick} disabled={disabled} {...props}>{children}</button>
-  }
+    return (
+      <button onClick={onClick} disabled={disabled} {...props}>
+        {children}
+      </button>
+    )
+  },
 }))
 
 import { Button } from '@/components/Button'
@@ -17,7 +25,9 @@ import { Button } from '@/components/Button'
 describe('Button Component', () => {
   it('renders button with children', () => {
     render(<Button>Click me</Button>)
-    expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: /click me/i }),
+    ).toBeInTheDocument()
   })
 
   it('renders as a link when href is provided', () => {
@@ -36,10 +46,10 @@ describe('Button Component', () => {
   it('handles click events', async () => {
     const handleClick = jest.fn()
     const user = userEvent.setup()
-    
+
     render(<Button onClick={handleClick}>Clickable</Button>)
     const button = screen.getByRole('button', { name: /clickable/i })
-    
+
     await user.click(button)
     expect(handleClick).toHaveBeenCalledTimes(1)
   })

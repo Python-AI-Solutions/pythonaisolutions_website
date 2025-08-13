@@ -18,6 +18,7 @@ This is a Next.js 14 website for Python AI Solutions, showcasing AI services and
 ## Development Guidelines
 
 ### Code Style
+
 - Use TypeScript strict mode
 - Follow existing component patterns
 - Maintain consistent Tailwind CSS utility usage
@@ -25,6 +26,7 @@ This is a Next.js 14 website for Python AI Solutions, showcasing AI services and
 - Use semantic HTML elements
 
 ### File Organization
+
 - Components go in `src/components/`
 - Pages use Next.js app directory structure
 - Images should be in WebP format when possible
@@ -32,6 +34,7 @@ This is a Next.js 14 website for Python AI Solutions, showcasing AI services and
 - Keep scripts in `scripts/` directory
 
 ### Testing & Quality
+
 - Run `npm run lint` before committing changes
 - Run `npm run build` to ensure no build errors
 - Test responsive design at key breakpoints
@@ -40,6 +43,7 @@ This is a Next.js 14 website for Python AI Solutions, showcasing AI services and
 ## Common Tasks
 
 ### Adding a New Page
+
 1. Create a new directory in `src/app/`
 2. Add `page.tsx` for the page content
 3. Use existing layout patterns
@@ -47,12 +51,14 @@ This is a Next.js 14 website for Python AI Solutions, showcasing AI services and
 5. Add corresponding tests in `__tests__/pages/`
 
 ### Adding a Blog Post
+
 1. Create MDX file in `src/app/blog/`
 2. Include proper metadata
 3. Use existing blog post structure
 4. Optimize images to WebP format
 
 ### Modifying Components
+
 1. Check existing component patterns first
 2. Maintain TypeScript types
 3. Keep styling consistent with Tailwind utilities
@@ -60,6 +66,7 @@ This is a Next.js 14 website for Python AI Solutions, showcasing AI services and
 5. Update or add tests in `__tests__/components/`
 
 ### Writing Tests
+
 1. Place tests in `__tests__/` directory
 2. Follow existing test patterns
 3. Use React Testing Library for component tests
@@ -98,6 +105,9 @@ This is a Next.js 14 website for Python AI Solutions, showcasing AI services and
 - Keep the README.md updated with significant changes
 - Follow the existing code conventions
 
-## Contact & Support
+### Dependency Management
 
-For questions about the codebase or architecture decisions, refer to the main README.md or contact the development team.
+- **Primary Tool**: `pixi` for Python dependency management and task running
+- **Configuration**: All dependencies defined in `pixi.toml`
+- **Execution**: All Python scripts and workflows should be run through pixi commands
+- **Rationale**: Provides reproducible environments and simplified task management
