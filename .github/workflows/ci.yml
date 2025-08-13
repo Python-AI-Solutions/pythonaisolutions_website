@@ -36,7 +36,7 @@ jobs:
         run: npm run test:ci
 
       - name: Upload coverage reports
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           file: ./coverage/coverage-final.json
           flags: unittests
@@ -66,7 +66,7 @@ jobs:
         run: npm run build
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-files
           path: .next/
@@ -121,7 +121,7 @@ jobs:
         run: npm run test:e2e
 
       - name: Upload Playwright Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
