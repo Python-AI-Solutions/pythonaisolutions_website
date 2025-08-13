@@ -48,3 +48,6 @@ logs_*/
 
 # pre-commit
 .secrets.baseline
+
+# Submodule assets copied during build
+public/submodules/

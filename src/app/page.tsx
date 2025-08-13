@@ -655,7 +655,9 @@ export default function Home() {
 
       <Clients />
 
+      {/* Temporarily hidden - will be restored soon
       <CaseStudies />
+      */}
 
       <Services />
 

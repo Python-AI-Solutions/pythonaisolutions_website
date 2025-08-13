@@ -15,7 +15,7 @@ import { StatList, StatListItem } from '@/components/StatList'
 import { RootLayout } from '@/components/RootLayout'
 import { Modal } from '@/components/Modal'
 import { NoStringsResume } from '@/components/NoStringsResume'
-import { teamResumes } from '@/data/team-resumes'
+import { teamResumes, teamPhotos } from '@/data/team-resumes'
 import { getAssetPath } from '@/lib/basePath'
 
 function Culture() {
@@ -564,7 +564,10 @@ function Culture() {
 }
 
 const resumes = [
-  { name: teamResumes.johnLee.basics?.name ?? 'John Lee', data: teamResumes.johnLee },
+  {
+    name: teamResumes.johnLee.basics?.name ?? 'John Lee',
+    data: teamResumes.johnLee,
+  },
   { name: 'Sumit Jha', data: teamResumes.sumitJha },
   { name: 'Heet Shah', data: teamResumes.heetShah },
   { name: 'Chevula Jeevan', data: teamResumes.chevulaJeevan },
@@ -580,7 +583,11 @@ const team = [
       {
         name: 'John Lee',
         role: 'Founder',
-        image: { src: getAssetPath('/John-Lee.webp'), width: 400, height: 400 },
+        image: {
+          src: getAssetPath('/submodules/the-team/public/photos/John-Lee.webp'),
+          width: 400,
+          height: 400,
+        },
         github: 'https://github.com/leej3',
         description: [
           'PhD-trained neuroscientist and open-source contributor with deep experience in scientific data analysis and software engineering.',
@@ -591,7 +598,9 @@ const team = [
         name: 'Sumit Jha',
         role: 'Technical Lead',
         image: {
-          src: getAssetPath('/Sumit_Jha.webp'),
+          src: getAssetPath(
+            '/submodules/the-team/public/photos/Sumit_Jha.webp',
+          ),
           width: 400,
           height: 400,
         },
@@ -610,22 +619,11 @@ function Team() {
   const [isResumesOpen, setIsResumesOpen] = useState(false)
   const [selectedResume, setSelectedResume] = useState<any | null>(null)
   const getAvatarSrc = (entry: { name: string; data: any }) => {
-    switch (entry.name) {
-      case 'John Lee':
-        return getAssetPath('/John-Lee.webp')
-      case 'Sumit Jha':
-        return getAssetPath('/Sumit_Jha.webp')
-      case 'Heet Shah':
-        return getAssetPath('/Heet_Shah.webp')
-      case 'Chevula Jeevan':
-        return getAssetPath('/Chevula_Jeevan.webp')
-      case 'Aditya Patane':
-        return getAssetPath('/Aditya_Patane.webp')
-      case 'Pradyot Ranjan':
-        return getAssetPath('/Pradyot_Ranjan.webp')
-      default:
-        return '' // Abdul Qadeer or any missing photo → fallback to initials
+    const photoPath = teamPhotos[entry.name as keyof typeof teamPhotos]
+    if (photoPath) {
+      return getAssetPath(photoPath)
     }
+    return '' // Fallback to initials for missing photos
   }
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
