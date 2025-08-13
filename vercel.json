@@ -1,0 +1,11 @@
+{
+  "github": {
+    "enabled": true,
+    "autoAlias": true
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}
