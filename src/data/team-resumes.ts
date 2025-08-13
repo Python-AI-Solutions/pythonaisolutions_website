@@ -1,33 +1,30 @@
-// Mock team resume data - replacing submodule imports
+// Import team resume data from submodule
+import johnLeeData from '../../submodules/the-team/resumes/json/john_lee.json'
+import sumitJhaData from '../../submodules/the-team/resumes/json/sumit_jha.json'
+import heetShahData from '../../submodules/the-team/resumes/json/heet_shah.json'
+import chevulaJeevanData from '../../submodules/the-team/resumes/json/chevula_jeevan.json'
+import adityaPataneData from '../../submodules/the-team/resumes/json/aditya_patane.json'
+import abdulQadeerData from '../../submodules/the-team/resumes/json/abdul_qadeer.json'
+import pradyotRanjanData from '../../submodules/the-team/resumes/json/pradyot_ranjan.json'
+
 export const teamResumes = {
-  johnLee: {
-    basics: { name: 'John Lee', label: 'Founder' },
-    work: [{ company: 'Python AI Solutions', position: 'Founder' }],
-    skills: [{ name: 'Neuroscience', level: 'Expert' }]
-  },
-  sumitJha: {
-    basics: { name: 'Sumit Jha', label: 'Technical Lead' },
-    work: [{ company: 'Python AI Solutions', position: 'Technical Lead' }],
-    skills: [{ name: 'React', level: 'Expert' }]
-  },
-  heetShah: {
-    basics: { name: 'Heet Shah', label: 'AI Engineer' },
-    skills: [{ name: 'Machine Learning', level: 'Advanced' }]
-  },
-  chevulaJeevan: {
-    basics: { name: 'Chevula Jeevan', label: 'Data Scientist' },
-    skills: [{ name: 'Data Analysis', level: 'Advanced' }]
-  },
-  adityaPatane: {
-    basics: { name: 'Aditya Patane', label: 'Software Engineer' },
-    skills: [{ name: 'Software Engineering', level: 'Advanced' }]
-  },
-  abdulQadeer: {
-    basics: { name: 'Abdul Qadeer', label: 'DevOps Engineer' },
-    skills: [{ name: 'DevOps', level: 'Advanced' }]
-  },
-  pradyotRanjan: {
-    basics: { name: 'Pradyot Ranjan', label: 'Product Manager' },
-    skills: [{ name: 'Product Management', level: 'Advanced' }]
-  }
+  johnLee: johnLeeData,
+  sumitJha: sumitJhaData,
+  heetShah: heetShahData,
+  chevulaJeevan: chevulaJeevanData,
+  adityaPatane: adityaPataneData,
+  abdulQadeer: abdulQadeerData,
+  pradyotRanjan: pradyotRanjanData,
+}
+
+// Export photo paths from submodule - these will be validated at build time
+// All images should be in WebP format in the submodule
+export const teamPhotos = {
+  'John Lee': '/submodules/the-team/public/photos/John-Lee.webp',
+  'Sumit Jha': '/submodules/the-team/public/photos/Sumit_Jha.webp',
+  'Heet Shah': '/submodules/the-team/public/photos/Heet_Shah.webp',
+  'Chevula Jeevan': '/submodules/the-team/public/photos/Chevula_Jeevan.webp',
+  'Aditya Patane': '/submodules/the-team/public/photos/Aditya_Patane.webp',
+  'Abdul Qadeer': null, // No photo available
+  'Pradyot Ranjan': '/submodules/the-team/public/photos/Pradyot_Ranjan.webp',
 }

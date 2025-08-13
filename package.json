@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/copy-submodule-assets.js && node scripts/validate-team-images.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -19,7 +20,8 @@
     "test:unit": "jest",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:all": "npm run test:unit && npm run test:e2e"
+    "test:all": "npm run test:unit && npm run test:e2e",
+    "validate:images": "node scripts/validate-team-images.js"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
