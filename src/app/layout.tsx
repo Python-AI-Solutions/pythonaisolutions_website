@@ -5,7 +5,8 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
   title: {
     template: '%s - Python AI Solutions',
-    default: 'Python AI Solutions - Transforming businesses with intelligent automation',
+    default:
+      'Python AI Solutions - Transforming businesses with intelligent automation',
   },
   icons: {
     icon: [

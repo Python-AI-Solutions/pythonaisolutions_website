@@ -1,0 +1,110 @@
+# See https://pre-commit.com for more information
+repos:
+  # General file fixes
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: \.(md|mdx)$
+      - id: end-of-file-fixer
+        exclude: \.(svg|png|jpg|jpeg|webp|gif|ico)$
+      - id: check-yaml
+      - id: check-json
+        exclude: tsconfig.json
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+      - id: check-toml
+      - id: check-xml
+      - id: pretty-format-json
+        args: ['--autofix', '--no-sort-keys', '--indent=2']
+        exclude: ^(package-lock\.json|package\.json|tsconfig\.json|\.next/|out/)
+
+  # Python code formatting with ruff
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.9
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  # TypeScript/JavaScript formatting with prettier (local)
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: npx prettier --write --ignore-unknown
+        language: system
+        files: \.(js|jsx|ts|tsx|css|scss|json|md|mdx|yaml|yml)$
+        exclude: ^(\.next/|out/|build/|node_modules/|package-lock\.json)
+        pass_filenames: true
+
+  # ESLint for TypeScript/JavaScript
+  - repo: local
+    hooks:
+      - id: eslint
+        name: eslint
+        entry: npx eslint --fix
+        language: system
+        files: \.(js|jsx|ts|tsx)$
+        exclude: ^(\.next/|out/|build/|node_modules/)
+        pass_filenames: true
+
+  # TypeScript type checking
+  - repo: local
+    hooks:
+      - id: typescript
+        name: TypeScript type checking
+        entry: bash -c 'npm run typecheck'
+        language: system
+        pass_filenames: false
+        files: \.(ts|tsx)$
+
+  # Check for secrets (manual check)
+  - repo: local
+    hooks:
+      - id: check-secrets
+        name: Check for secrets
+        entry: echo "Reminder - Check for secrets before committing"
+        language: system
+        pass_filenames: false
+        always_run: true
+
+  # Spell checking
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        exclude: ^(package-lock\.json|pnpm-lock\.yaml|yarn\.lock|\.next/|out/|node_modules/)
+        args:
+          - '--skip=*.svg,*.png,*.jpg,*.jpeg,*.webp,*.gif,*.ico,*.woff,*.woff2'
+          - '--ignore-words-list=thead,doesnt,couldnt,wouldnt,shouldnt,wont,cant,dont,isnt,arent,wasnt,werent,hasnt,havent,hadnt,didnt,doesnt'
+
+  # Security audit for npm dependencies
+  - repo: local
+    hooks:
+      - id: npm-audit
+        name: npm audit
+        entry: bash -c 'npm audit --audit-level=high || true'
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+default_language_version:
+  python: python3.11
+
+ci:
+  skip: [typescript, npm-audit, prettier, eslint]
+  autofix_commit_msg: |
+    [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+    for more information, see https://pre-commit.ci
+  autofix_prs: true
+  autoupdate_branch: ''
+  autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+  autoupdate_schedule: weekly
+  submodules: false

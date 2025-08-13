@@ -18,6 +18,8 @@ build
 # misc
 .DS_Store
 *.pem
+package-lock.json
+pixi.lock
 
 # debug
 npm-debug.log*
@@ -33,3 +35,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# test artifacts
+test-results/
+playwright-report/
+__MACOSX/
+logs_*/
+*.zip
+
+# pixi
+.pixi/
+
+# pre-commit
+.secrets.baseline

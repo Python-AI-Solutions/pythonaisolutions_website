@@ -13,7 +13,7 @@ import { getAssetPath } from '@/lib/basePath'
 export const metadata: Metadata = {
   title: 'Clientele',
   description:
-    'Discover the diverse range of organizations we\'ve helped transform with our AI solutions.',
+    "Discover the diverse range of organizations we've helped transform with our AI solutions.",
 }
 
 const clients = [
@@ -21,26 +21,29 @@ const clients = [
     name: 'FamilyFund',
     logo: '/Python-AI-Solutions-Logo.webp',
     industry: 'Non-Profit',
-    testimonial: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    testimonial:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     author: 'Lorem Ipsum',
-    role: 'Placeholder'
+    role: 'Placeholder',
   },
   {
     name: 'Unseal',
     logo: '/Python-AI-Solutions-Logo.webp',
     industry: 'Healthcare Technology',
-    testimonial: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    testimonial:
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     author: 'Dolor Sit',
-    role: 'Amet'
+    role: 'Amet',
   },
   {
     name: 'Phobia',
     logo: '/Python-AI-Solutions-Logo.webp',
     industry: 'Mental Health',
-    testimonial: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    testimonial:
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     author: 'Consectetur Adipiscing',
-    role: 'Lorem'
-  }
+    role: 'Lorem',
+  },
 ]
 
 const industries = [
@@ -51,30 +54,36 @@ const industries = [
   'Technology',
   'Manufacturing',
   'Retail',
-  'Government'
+  'Government',
 ]
 
 export default function Clientele() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="Our Clientele" title="Trusted by organizations worldwide">
+      <PageIntro
+        eyebrow="Our Clientele"
+        title="Trusted by organizations worldwide"
+      >
         <p>
-          We work with a diverse range of organizations across various industries, 
-          helping them leverage AI to solve complex challenges and drive innovation.
+          We work with a diverse range of organizations across various
+          industries, helping them leverage AI to solve complex challenges and
+          drive innovation.
         </p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
-          <h2 className="font-display text-2xl font-semibold text-neutral-950 text-center mb-16">
+          <h2 className="mb-16 text-center font-display text-2xl font-semibold text-neutral-950">
             Industries We Serve
           </h2>
         </FadeIn>
         <FadeInStagger className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-8">
           {industries.map((industry) => (
             <FadeIn key={industry}>
-              <div className="text-center p-4 rounded-lg bg-neutral-50 hover:bg-neutral-100 transition-colors">
-                <p className="font-semibold text-sm text-neutral-950">{industry}</p>
+              <div className="rounded-lg bg-neutral-50 p-4 text-center transition-colors hover:bg-neutral-100">
+                <p className="text-sm font-semibold text-neutral-950">
+                  {industry}
+                </p>
               </div>
             </FadeIn>
           ))}
@@ -83,7 +92,7 @@ export default function Clientele() {
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
-          <h2 className="font-display text-2xl font-semibold text-neutral-950 text-center mb-16">
+          <h2 className="mb-16 text-center font-display text-2xl font-semibold text-neutral-950">
             Client Success Stories & Support/Testimonials
           </h2>
         </FadeIn>
@@ -94,7 +103,7 @@ export default function Clientele() {
                 <Border className="pt-16">
                   <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                     <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
-                      <div className="flex items-center gap-4 mb-6">
+                      <div className="mb-6 flex items-center gap-4">
                         <Image
                           src={getAssetPath(client.logo)}
                           alt={`${client.name} logo`}
@@ -106,20 +115,19 @@ export default function Clientele() {
                           <h2 className="font-display text-2xl font-semibold text-neutral-950">
                             {client.name}
                           </h2>
-                          <p className="text-sm text-neutral-600">{client.industry}</p>
+                          <p className="text-sm text-neutral-600">
+                            {client.industry}
+                          </p>
                         </div>
                       </div>
-                      <blockquote className="mt-6 max-w-2xl text-lg text-neutral-600 italic">
+                      <blockquote className="mt-6 max-w-2xl text-lg italic text-neutral-600">
                         &ldquo;{client.testimonial}&rdquo;
                       </blockquote>
                       <div className="mt-6 text-sm text-neutral-950">
                         <div className="font-semibold">{client.author}</div>
                         <div>{client.role}</div>
                       </div>
-                      <Button
-                        href="/contact"
-                        className="mt-8"
-                      >
+                      <Button href="/contact" className="mt-8">
                         See full text
                       </Button>
                     </div>
@@ -134,19 +142,17 @@ export default function Clientele() {
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
           <div className="text-center">
-            <h2 className="font-display text-2xl font-semibold text-neutral-950 mb-8">
+            <h2 className="mb-8 font-display text-2xl font-semibold text-neutral-950">
               Ready to Join Our Success Stories?
             </h2>
-            <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss how our AI solutions can help your organization achieve its goals.
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-neutral-600">
+              Let&apos;s discuss how our AI solutions can help your organization
+              achieve its goals.
             </p>
-            <Button href="/contact">
-              Get Started Today
-            </Button>
+            <Button href="/contact">Get Started Today</Button>
           </div>
         </FadeIn>
       </Container>
-
     </RootLayout>
   )
 }

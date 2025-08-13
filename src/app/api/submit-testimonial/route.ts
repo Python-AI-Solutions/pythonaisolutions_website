@@ -17,7 +17,7 @@ interface TestimonialData {
   results?: string
   challenges?: string
   achievements?: string[]
-  impactMetrics?: Array<{value: string, label: string}>
+  impactMetrics?: Array<{ value: string; label: string }>
 }
 
 export async function POST(request: NextRequest) {
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     if (!data.name || !data.quickQuote) {
       return NextResponse.json(
         { error: 'Missing required fields: name and quickQuote' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -47,7 +47,11 @@ export async function POST(request: NextRequest) {
       data.results || '',
       data.challenges || '',
       data.achievements ? data.achievements.join('; ') : '',
-      data.impactMetrics ? data.impactMetrics.map(metric => `${metric.value}: ${metric.label}`).join('; ') : ''
+      data.impactMetrics
+        ? data.impactMetrics
+            .map((metric) => `${metric.value}: ${metric.label}`)
+            .join('; ')
+        : '',
     ]
 
     // Append data to Google Sheets
@@ -59,28 +63,27 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        values: [rowData]
-      })
+        values: [rowData],
+      }),
     })
 
     if (!response.ok) {
       console.error('Google Sheets API error:', await response.text())
       return NextResponse.json(
         { error: 'Failed to save testimonial' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
     return NextResponse.json(
       { message: 'Testimonial submitted successfully' },
-      { status: 200 }
+      { status: 200 },
     )
-
   } catch (error) {
     console.error('Error submitting testimonial:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
-      { status: 500 }
+      { status: 500 },
     )
   }
-} 
+}

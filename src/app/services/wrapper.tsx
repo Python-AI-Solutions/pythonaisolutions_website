@@ -33,11 +33,11 @@ export default async function CaseStudyLayout({
               <Container>
                 <div className="mx-auto max-w-5xl">
                   <dl className="-mx-6 grid grid-cols-1 text-sm text-neutral-950 sm:mx-0 sm:grid-cols-3">
-                    <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-t-0 sm:border-l">
+                    <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Client</dt>
                       <dd>{caseStudy.client}</dd>
                     </div>
-                    <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-t-0 sm:border-l">
+                    <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Year</dt>
                       <dd>
                         <time dateTime={caseStudy.date.split('-')[0]}>
@@ -45,7 +45,7 @@ export default async function CaseStudyLayout({
                         </time>
                       </dd>
                     </div>
-                    <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-t-0 sm:border-l">
+                    <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Service</dt>
                       <dd>{caseStudy.service}</dd>
                     </div>
@@ -55,7 +55,7 @@ export default async function CaseStudyLayout({
             </div>
 
             <div className="border-y border-neutral-200 bg-neutral-100">
-              <div className="mx-auto -my-px max-w-304 bg-neutral-200">
+              <div className="max-w-304 -my-px mx-auto bg-neutral-200">
                 <GrayscaleTransitionImage
                   {...caseStudy.image}
                   quality={90}

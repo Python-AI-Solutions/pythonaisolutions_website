@@ -26,10 +26,13 @@ function Navigation() {
   return (
     <nav>
       <div className="flex flex-col">
-        <div className="font-display text-sm font-semibold tracking-wider text-neutral-950 mb-4">
+        <div className="mb-4 font-display text-sm font-semibold tracking-wider text-neutral-950">
           {navigation[0].title}
         </div>
-        <ul role="list" className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-700">
+        <ul
+          role="list"
+          className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-700"
+        >
           {navigation[0].links.map((link, linkIndex) => (
             <li key={linkIndex}>
               <Link
@@ -75,7 +78,7 @@ function NewsletterForm() {
           placeholder="Email address"
           autoComplete="email"
           aria-label="Email address"
-          className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pr-20 pl-6 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:ring-neutral-950/5 focus:outline-hidden"
+          className="focus:outline-hidden block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pl-6 pr-20 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:ring-neutral-950/5"
         />
         <div className="absolute inset-y-1 right-1 flex justify-end">
           <button
@@ -103,7 +106,7 @@ export function Footer() {
             <NewsletterForm />
           </div>
         </div>
-        <div className="mt-24 mb-20 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
+        <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
           <Link href="/" aria-label="Home">
             <Image
               src={getAssetPath('/snakebrain.svg')}

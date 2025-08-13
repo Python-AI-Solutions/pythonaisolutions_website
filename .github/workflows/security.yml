@@ -6,7 +6,7 @@ on:
     - cron: '0 3 * * 0'
   workflow_dispatch:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
   contents: read
@@ -38,34 +38,34 @@ jobs:
       - name: Check for dangling DNS records
         run: |
           echo "🔍 Checking for potential dangling DNS records..."
-          
+
           # Install subfinder
           wget -q https://github.com/projectdiscovery/subfinder/releases/download/v2.6.3/subfinder_2.6.3_linux_amd64.zip
           unzip -q subfinder_2.6.3_linux_amd64.zip
           chmod +x subfinder
-          
+
           # Get domains to check - add your domains here
           DOMAINS=(
             "pythonaisolutions.com"
             "pythonaisolutions.github.io"
           )
-          
+
           for domain in "${DOMAINS[@]}"; do
             echo "Scanning domain: $domain"
-            
+
             # Find subdomains
             ./subfinder -d "$domain" -silent -o "subdomains_$domain.txt" || true
-            
+
             if [ -f "subdomains_$domain.txt" ]; then
               echo "Found subdomains for $domain:"
               cat "subdomains_$domain.txt"
-              
+
               # Check each subdomain
               while read -r subdomain; do
                 if [ ! -z "$subdomain" ]; then
                   echo "Checking $subdomain..."
                   HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://$subdomain" --max-time 10 --connect-timeout 5 || echo "000")
-                  
+
                   case $HTTP_STATUS in
                     200|301|302|403)
                       echo "✅ $subdomain appears healthy (HTTP: $HTTP_STATUS)"
@@ -91,21 +91,21 @@ jobs:
       - name: Check for secrets in repository
         run: |
           echo "🔍 Scanning for potential secrets..."
-          
+
           # Simple regex patterns for common secrets
           echo "Checking for API keys, tokens, and secrets..."
-          
+
           # Check for common secret patterns (case insensitive)
           if grep -r -i -E "(api[_-]?key|secret|password|token)" --include="*.js" --include="*.ts" --include="*.tsx" --include="*.json" --exclude-dir=".git" --exclude-dir="node_modules" --exclude-dir=".next" . | grep -v -E "(//|/\*|\*|#).*"; then
             echo "⚠️  Potential secrets found in code"
           else
             echo "✅ No obvious secrets detected"
           fi
-          
+
           # Check for hardcoded URLs that might expose internal services
           echo "Checking for hardcoded URLs..."
           if grep -r -E "https?://[a-zA-Z0-9.-]+\.(local|internal|corp|dev)" --include="*.js" --include="*.ts" --include="*.tsx" --exclude-dir=".git" --exclude-dir="node_modules" --exclude-dir=".next" . || true; then
             echo "⚠️  Potential internal URLs found"
           else
             echo "✅ No internal URLs detected"
-          fi 
+          fi

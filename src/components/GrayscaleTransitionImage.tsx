@@ -29,7 +29,7 @@ export function GrayscaleTransitionImage(
     <div ref={ref} className="group relative">
       <MotionImage alt="" style={{ filter } as any} {...props} />
       <div
-        className="pointer-events-none absolute top-0 left-0 w-full opacity-0 transition duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute left-0 top-0 w-full opacity-0 transition duration-300 group-hover:opacity-100"
         aria-hidden="true"
       >
         <Image alt="" {...props} />
