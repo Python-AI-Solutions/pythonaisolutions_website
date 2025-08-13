@@ -19,6 +19,7 @@ build
 .DS_Store
 *.pem
 package-lock.json
+pixi.lock
 
 # debug
 npm-debug.log*

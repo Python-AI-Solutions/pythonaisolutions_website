@@ -1,0 +1,42 @@
+[project]
+name = "pythonaisolutions_website"
+version = "0.1.0"
+description = "Python AI Solutions website with pre-commit hooks"
+authors = ["Python AI Solutions"]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64", "osx-64"]
+
+[tasks]
+# Pre-commit tasks
+install-hooks = "pre-commit install"
+run-hooks = "pre-commit run --all-files"
+run-hook = { cmd = "pre-commit run", depends-on = [] }
+update-hooks = "pre-commit autoupdate"
+clean-hooks = "pre-commit clean"
+
+# Development tasks
+dev = "npm run dev"
+build = "npm run build"
+test = "npm test"
+test-e2e = "npx playwright test"
+lint = "npm run lint"
+typecheck = "npm run typecheck"
+
+# Combined tasks
+check = { depends-on = ["lint", "typecheck", "test"] }
+pre-commit = "pre-commit run --all-files"
+
+[dependencies]
+python = "3.11.*"
+pre-commit = ">=3.5"
+codespell = ">=2.2"
+ruff = ">=0.1"
+
+[feature.dev.dependencies]
+ipython = "*"
+pytest = "*"
+pytest-cov = "*"
+
+[environments]
+default = { solve-group = "default" }
+dev = { features = ["dev"], solve-group = "default" }
