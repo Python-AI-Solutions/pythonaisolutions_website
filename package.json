@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "export": "next build && next export",
+    "export": "next build",
     "deploy": "npm run build",
     "check-assets": "./scripts/check-assets.sh",
     "build-and-check": "npm run build && npm run check-assets",
