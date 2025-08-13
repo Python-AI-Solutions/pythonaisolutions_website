@@ -45,6 +45,8 @@ npm run dev
 yarn dev
 ```
 
+> **Note**: The site uses standard npm tooling for all development and deployment. Additional development tools (pre-commit hooks, Python scripts) are available via `pixi` but are **not required** to run the site.
+
 ## 🎨 Customization
 
 ### Tailwind CSS

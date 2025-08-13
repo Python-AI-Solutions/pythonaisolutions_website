@@ -1,7 +1,7 @@
 [project]
-name = "pythonaisolutions_website"
+name = "pythonaisolutions_website_dev_tools"
 version = "0.1.0"
-description = "Python AI Solutions website with pre-commit hooks"
+description = "Development tooling for Python AI Solutions website (pre-commit, linting, etc.) - NOT required for running the site"
 authors = ["Python AI Solutions"]
 channels = ["conda-forge"]
 platforms = ["osx-arm64", "linux-64", "osx-64"]

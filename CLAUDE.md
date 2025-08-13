@@ -105,9 +105,17 @@ This is a Next.js 14 website for Python AI Solutions, showcasing AI services and
 - Keep the README.md updated with significant changes
 - Follow the existing code conventions
 
-### Dependency Management
+## Development Setup
 
-- **Primary Tool**: `pixi` for Python dependency management and task running
-- **Configuration**: All dependencies defined in `pixi.toml`
-- **Execution**: All Python scripts and workflows should be run through pixi commands
-- **Rationale**: Provides reproducible environments and simplified task management
+### For Site Development
+
+- **Primary Tool**: `npm` for all Node.js dependencies and site development
+- **Getting Started**: Simply run `npm install && npm run dev`
+- **Deployment**: Uses standard npm commands in CI/CD
+
+### For Development Tooling (Claude/AI Assistant)
+
+- **Tool**: `pixi` for Python-based development tools
+- **Purpose**: Pre-commit hooks, linting, code quality scripts
+- **Configuration**: Defined in `pixi.toml`
+- **Note**: This is optional tooling for development convenience, not required for running the site
