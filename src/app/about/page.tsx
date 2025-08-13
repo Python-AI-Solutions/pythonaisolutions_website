@@ -1,6 +1,5 @@
 'use client'
 
-import { type Metadata } from 'next'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -16,19 +15,7 @@ import { StatList, StatListItem } from '@/components/StatList'
 import { RootLayout } from '@/components/RootLayout'
 import { Modal } from '@/components/Modal'
 import { NoStringsResume } from '@/components/NoStringsResume'
-import JohnResume from '../../../submodules/the-team/resumes/json/john_lee.json'
-import SumitJha from '../../../submodules/the-team/resumes/json/sumit_jha.json'
-import AbdulQadeer from '../../../submodules/the-team/resumes/json/abdul_qadeer.json'
-import AdityaPatane from '../../../submodules/the-team/resumes/json/aditya_patane.json'
-import HeetShah from '../../../submodules/the-team/resumes/json/heet_shah.json'
-import PradyotRanjan from '../../../submodules/the-team/resumes/json/pradyot_ranjan.json'
-import JeevanChevula from '../../../submodules/the-team/resumes/json/chevula_jeevan.json'
-// Headshot photos for avatar thumbnails in the resumes modal
-import AdityaPhoto from '../../../submodules/the-team/public/photos/Aditya_Patane.png'
-import ChevulaPhoto from '../../../submodules/the-team/public/photos/Chevula_Jeevan.jpg'
-import HeetPhoto from '../../../submodules/the-team/public/photos/Heet_Shah.jpg'
-import PradyotPhoto from '../../../submodules/the-team/public/photos/Pradyot_Ranjan.jpg'
-import SumitPhoto from '../../../submodules/the-team/public/photos/Sumit_Jha.webp'
+import { teamResumes } from '@/data/team-resumes'
 import { getAssetPath } from '@/lib/basePath'
 
 function Culture() {
@@ -577,13 +564,13 @@ function Culture() {
 }
 
 const resumes = [
-  { name: (JohnResume as any).basics?.name ?? 'John Lee', data: JohnResume },
-  { name: 'Sumit Jha', data: SumitJha },
-  { name: 'Heet Shah', data: HeetShah },
-  { name: 'Chevula Jeevan', data: JeevanChevula },
-  { name: 'Aditya Patane', data: AdityaPatane },
-  { name: 'Abdul Qadeer', data: AbdulQadeer },
-  { name: 'Pradyot Ranjan', data: PradyotRanjan },
+  { name: teamResumes.johnLee.basics?.name ?? 'John Lee', data: teamResumes.johnLee },
+  { name: 'Sumit Jha', data: teamResumes.sumitJha },
+  { name: 'Heet Shah', data: teamResumes.heetShah },
+  { name: 'Chevula Jeevan', data: teamResumes.chevulaJeevan },
+  { name: 'Aditya Patane', data: teamResumes.adityaPatane },
+  { name: 'Abdul Qadeer', data: teamResumes.abdulQadeer },
+  { name: 'Pradyot Ranjan', data: teamResumes.pradyotRanjan },
 ]
 
 const team = [
@@ -627,15 +614,15 @@ function Team() {
       case 'John Lee':
         return getAssetPath('/John-Lee.webp')
       case 'Sumit Jha':
-        return SumitPhoto as unknown as string
+        return getAssetPath('/Sumit_Jha.webp')
       case 'Heet Shah':
-        return HeetPhoto as unknown as string
+        return getAssetPath('/Heet_Shah.webp')
       case 'Chevula Jeevan':
-        return ChevulaPhoto as unknown as string
+        return getAssetPath('/Chevula_Jeevan.webp')
       case 'Aditya Patane':
-        return AdityaPhoto as unknown as string
+        return getAssetPath('/Aditya_Patane.webp')
       case 'Pradyot Ranjan':
-        return PradyotPhoto as unknown as string
+        return getAssetPath('/Pradyot_Ranjan.webp')
       default:
         return '' // Abdul Qadeer or any missing photo → fallback to initials
     }
