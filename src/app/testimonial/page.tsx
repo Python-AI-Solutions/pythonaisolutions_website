@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useId } from 'react'
+import { useState, useId, useEffect, useRef } from 'react'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Button } from '@/components/Button'
@@ -133,6 +133,60 @@ function TestimonialForm() {
     completeStory: false,
   })
   const [achievements, setAchievements] = useState([''])
+  const formRef = useRef<HTMLFormElement>(null)
+  const STORAGE_KEY = 'testimonial_form_data'
+
+  // Save form data to localStorage on changes
+  const saveFormData = () => {
+    if (!formRef.current) return
+    
+    const formData = new FormData(formRef.current)
+    const data: any = {}
+    
+    // Save form field values
+    for (let [key, value] of formData.entries()) {
+      data[key] = value
+    }
+    
+    // Save additional state
+    data.achievements = achievements
+    data.expandedSections = expandedSections
+    
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+  }
+
+  // Load form data from localStorage
+  useEffect(() => {
+    const savedData = localStorage.getItem(STORAGE_KEY)
+    if (savedData && formRef.current) {
+      try {
+        const data = JSON.parse(savedData)
+        
+        // Restore form field values
+        Object.keys(data).forEach(key => {
+          if (key !== 'achievements' && key !== 'expandedSections') {
+            const field = formRef.current?.querySelector(`[name="${key}"]`) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+            if (field) {
+              field.value = data[key] || ''
+            }
+          }
+        })
+        
+        // Restore additional state
+        if (data.achievements) setAchievements(data.achievements)
+        if (data.expandedSections) setExpandedSections(data.expandedSections)
+        
+      } catch (error) {
+        console.error('Error loading saved form data:', error)
+      }
+    }
+  }, [])
+
+  // Save form data whenever achievements or expanded sections change
+  useEffect(() => {
+    const timer = setTimeout(saveFormData, 500) // Debounce saves
+    return () => clearTimeout(timer)
+  }, [achievements, expandedSections])
 
   const toggleSection = (section: 'shareMore' | 'completeStory') => {
     setExpandedSections((prev) => ({
@@ -391,9 +445,6 @@ ${impactMetrics.join('\n')}
 
       // Open Gmail compose in new tab
       window.open(gmailUrl, '_blank')
-
-      // Reset form after successful submission
-      e.currentTarget.reset()
     } catch (error) {
       console.error('Form submission error:', error)
       setSubmitMessage(
@@ -406,7 +457,7 @@ ${impactMetrics.join('\n')}
 
   return (
     <FadeIn className="lg:order-last">
-      <form onSubmit={handleSubmit}>
+      <form ref={formRef} onSubmit={handleSubmit} onChange={saveFormData}>
         <h2 className="font-display text-sm font-semibold text-neutral-950 sm:text-base">
           Share your experience
         </h2>
@@ -732,24 +783,26 @@ ${impactMetrics.join('\n')}
               </p>
             </div>
 
-            <Button
-              type="submit"
-              formAction=""
-              onClick={(e) => {
-                e.preventDefault()
-                const form = e.currentTarget.closest('form')
-                if (form) {
-                  const formEvent = new Event('submit', {
-                    cancelable: true,
-                  }) as any
-                  formEvent.currentTarget = form
-                  handleCopyToClipboard(formEvent)
-                }
-              }}
-              className="bg-neutral-200 text-neutral-900 transition-colors duration-300 hover:!bg-neutral-300 hover:!text-neutral-950"
-            >
-              Copy to Clipboard
-            </Button>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Button
+                type="submit"
+                formAction=""
+                onClick={(e) => {
+                  e.preventDefault()
+                  const form = e.currentTarget.closest('form')
+                  if (form) {
+                    const formEvent = new Event('submit', {
+                      cancelable: true,
+                    }) as any
+                    formEvent.currentTarget = form
+                    handleCopyToClipboard(formEvent)
+                  }
+                }}
+                className="bg-neutral-200 text-neutral-900 transition-colors duration-300 hover:!bg-neutral-300 hover:!text-neutral-950"
+              >
+                Copy to Clipboard
+              </Button>
+            </div>
           </div>
         </div>
       </form>
