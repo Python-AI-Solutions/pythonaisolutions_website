@@ -155,32 +155,57 @@ function TestimonialForm() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
   }
 
-  // Load form data from localStorage
+  const [savedFormData, setSavedFormData] = useState<any>(null)
+
+  // Load saved data on component mount
   useEffect(() => {
     const savedData = localStorage.getItem(STORAGE_KEY)
-    if (savedData && formRef.current) {
+    if (savedData) {
       try {
         const data = JSON.parse(savedData)
+        setSavedFormData(data)
         
-        // Restore form field values
-        Object.keys(data).forEach(key => {
-          if (key !== 'achievements' && key !== 'expandedSections') {
-            const field = formRef.current?.querySelector(`[name="${key}"]`) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-            if (field) {
-              field.value = data[key] || ''
-            }
-          }
-        })
-        
-        // Restore additional state
+        // Restore achievements and expanded sections immediately
         if (data.achievements) setAchievements(data.achievements)
-        if (data.expandedSections) setExpandedSections(data.expandedSections)
+        
+        // Determine which sections should be expanded based on saved data
+        const shouldExpandShareMore = data.testimonial || false
+        const shouldExpandCompleteStory = data.email || data.role || data.company || 
+          data.projectType || data.timeline || data.challenges || data.results ||
+          data.impactValue1 || data.impactLabel1 || data.impactValue2 || data.impactLabel2 ||
+          data.impactValue3 || data.impactLabel3 || data.impactValue4 || data.impactLabel4
+        
+        setExpandedSections({
+          shareMore: data.expandedSections?.shareMore || shouldExpandShareMore,
+          completeStory: data.expandedSections?.completeStory || shouldExpandCompleteStory
+        })
         
       } catch (error) {
         console.error('Error loading saved form data:', error)
       }
     }
   }, [])
+
+  // Restore form field values after sections are expanded
+  useEffect(() => {
+    if (savedFormData && formRef.current) {
+      // Use a timeout to ensure DOM is fully rendered
+      const timer = setTimeout(() => {
+        if (formRef.current) {
+          Object.keys(savedFormData).forEach(key => {
+            if (key !== 'achievements' && key !== 'expandedSections') {
+              const field = formRef.current?.querySelector(`[name="${key}"]`) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+              if (field && savedFormData[key]) {
+                field.value = savedFormData[key]
+              }
+            }
+          })
+        }
+      }, 50)
+      
+      return () => clearTimeout(timer)
+    }
+  }, [savedFormData, expandedSections])
 
   // Save form data whenever achievements or expanded sections change
   useEffect(() => {
@@ -209,12 +234,11 @@ function TestimonialForm() {
     setAchievements((prev) => prev.filter((_, i) => i !== index))
   }
 
-  const handleCopyToClipboard = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const handleCopyToClipboard = async (form: HTMLFormElement) => {
     setCopyStatus('')
 
     try {
-      const formDataObj = new FormData(e.currentTarget)
+      const formDataObj = new FormData(form)
 
       // Get form values (same as in handleSubmit)
       const name = formDataObj.get('name') as string
@@ -785,17 +809,12 @@ ${impactMetrics.join('\n')}
 
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Button
-                type="submit"
-                formAction=""
+                type="button"
                 onClick={(e) => {
                   e.preventDefault()
                   const form = e.currentTarget.closest('form')
                   if (form) {
-                    const formEvent = new Event('submit', {
-                      cancelable: true,
-                    }) as any
-                    formEvent.currentTarget = form
-                    handleCopyToClipboard(formEvent)
+                    handleCopyToClipboard(form)
                   }
                 }}
                 className="bg-neutral-200 text-neutral-900 transition-colors duration-300 hover:!bg-neutral-300 hover:!text-neutral-950"
