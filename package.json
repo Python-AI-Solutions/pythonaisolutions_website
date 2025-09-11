@@ -24,6 +24,10 @@
     "validate:images": "node scripts/validate-team-images.js"
   },
   "browserslist": "defaults, not ie <= 11",
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.0.0"
+  },
   "dependencies": {
     "@leafac/rehype-shiki": "^2.2.1",
     "@mdx-js/loader": "^3.0.0",

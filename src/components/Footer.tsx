@@ -16,7 +16,7 @@ const navigation = [
       { title: 'Home', href: '/' },
       { title: 'Services', href: '/services' },
       { title: 'About Us', href: '/about' },
-      { title: 'Clientele', href: '/clientele' },
+      // { title: 'Clientele', href: '/clientele' }, // Temporarily hidden - insufficient content
       { title: 'Contact us', href: '/contact' },
     ],
   },
