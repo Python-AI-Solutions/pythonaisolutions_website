@@ -20,10 +20,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version-file: '.nvmrc'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies with retry
+        run: |
+          for i in 1 2 3; do
+            npm install && break || sleep 10
+          done
 
       - name: Run unit tests
         run: npm test

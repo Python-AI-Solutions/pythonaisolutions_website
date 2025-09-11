@@ -121,6 +121,30 @@ export function ResumeModal({ isOpen, onClose, resume }: ResumeModalProps) {
                         ))}
                       </ul>
                     )}
+                  {Array.isArray(job.projects) &&
+                    job.projects.length > 0 && (
+                      <div className="mt-3 space-y-3">
+                        {job.projects.map((project: any, projIdx: number) => (
+                          <div key={projIdx} className="rounded-lg border border-neutral-300 bg-neutral-50 p-3">
+                            <div className="text-sm font-medium text-neutral-900">
+                              {project.name}
+                            </div>
+                            {project.description && (
+                              <p className="mt-1 text-xs text-neutral-600">
+                                {project.description}
+                              </p>
+                            )}
+                            {Array.isArray(project.highlights) && project.highlights.length > 0 && (
+                              <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-neutral-700">
+                                {project.highlights.map((highlight: string, hIdx: number) => (
+                                  <li key={hIdx}>{highlight}</li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                 </li>
               ))}
             </ul>
@@ -145,6 +169,21 @@ export function ResumeModal({ isOpen, onClose, resume }: ResumeModalProps) {
                     <p className="mt-0.5 text-xs text-neutral-500">
                       {ed.startDate || '—'} — {ed.endDate || 'Present'}
                     </p>
+                  )}
+                  {Array.isArray(ed.courses) && ed.courses.length > 0 && (
+                    <div className="mt-2">
+                      <p className="text-xs font-medium text-neutral-700">Courses:</p>
+                      <div className="mt-1 flex flex-wrap gap-1">
+                        {ed.courses.map((course: string, i: number) => (
+                          <span
+                            key={i}
+                            className="rounded bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600"
+                          >
+                            {course}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   )}
                 </li>
               ))}
@@ -513,6 +552,30 @@ export function ResumeView({
                     ))}
                   </ul>
                 )}
+                {Array.isArray(job.projects) &&
+                  job.projects.length > 0 && (
+                    <div className="mt-3 space-y-3">
+                      {job.projects.map((project: any, projIdx: number) => (
+                        <div key={projIdx} className="rounded-lg border border-neutral-300 bg-neutral-50 p-3">
+                          <div className="text-sm font-medium text-neutral-900">
+                            {project.name}
+                          </div>
+                          {project.description && (
+                            <p className="mt-1 text-xs text-neutral-600">
+                              {project.description}
+                            </p>
+                          )}
+                          {Array.isArray(project.highlights) && project.highlights.length > 0 && (
+                            <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-neutral-700">
+                              {project.highlights.map((highlight: string, hIdx: number) => (
+                                <li key={hIdx}>{highlight}</li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
               </li>
             ))}
           </ul>
@@ -667,18 +730,34 @@ export function ResumeView({
 
       {awards2.length > 0 && (
         <section>
-          <h4 className="font-semibold text-neutral-950">Awards</h4>
+          <h4 className="font-semibold text-neutral-950">Awards & Recognitions</h4>
           <ul className="mt-3 space-y-2">
             {awards2.map((a: any, idx: number) => (
-              <li key={idx} className="text-sm">
-                <span className="font-medium text-neutral-900">{a.title}</span>
-                {a.awarder && (
-                  <span className="text-neutral-600"> — {a.awarder}</span>
+              <li key={idx} className="rounded-xl border border-neutral-200 bg-gradient-to-r from-yellow-50 to-transparent p-3">
+                <div className="font-medium text-neutral-900">
+                  {a.name || a.title}
+                  {a.url && (
+                    <a
+                      className="ml-2 text-neutral-700 underline hover:text-[#31b9fd]"
+                      href={a.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View
+                    </a>
+                  )}
+                </div>
+                {(a.issuer || a.awarder) && (
+                  <p className="mt-1 text-xs text-neutral-600">
+                    Issued by: {a.issuer || a.awarder}
+                  </p>
                 )}
                 {a.date && (
-                  <span className="text-neutral-500"> ({a.date})</span>
+                  <div className="mt-0.5 text-xs text-neutral-500">
+                    {a.date}
+                  </div>
                 )}
-                {a.summary && <p className="text-neutral-700">{a.summary}</p>}
+                {a.summary && <p className="mt-2 text-sm text-neutral-700">{a.summary}</p>}
               </li>
             ))}
           </ul>
@@ -738,17 +817,34 @@ export function ResumeView({
           )}
           {interests2.length > 0 && (
             <div className="mt-3">
-              <p className="font-medium text-neutral-900">Interests</p>
-              <ul className="mt-1 flex flex-wrap gap-2">
-                {interests2.map((it: any, i: number) => (
-                  <li
-                    key={i}
-                    className="rounded-full bg-neutral-100 px-3 py-1 text-xs text-neutral-700"
-                  >
-                    {it.name || it}
-                  </li>
+              <p className="font-medium text-neutral-900">Other Skills</p>
+              <div className="mt-2 space-y-3">
+                {interests2.map((interest: any, idx: number) => (
+                  <div key={idx}>
+                    {interest.name && interest.name !== "Other Skills" && (
+                      <p className="text-sm font-medium text-neutral-800">
+                        {interest.name}
+                      </p>
+                    )}
+                    {Array.isArray(interest.keywords) && interest.keywords.length > 0 ? (
+                      <div className="mt-1 flex flex-wrap gap-2">
+                        {interest.keywords.map((skill: string, i: number) => (
+                          <span
+                            key={i}
+                            className="rounded-full bg-blue-100 px-2 py-0.5 text-xs text-blue-800"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs text-neutral-700">
+                        {interest.name || interest}
+                      </span>
+                    )}
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           )}
         </section>

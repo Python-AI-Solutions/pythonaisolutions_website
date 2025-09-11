@@ -89,6 +89,7 @@ function Header({ invert = false }: { invert?: boolean }) {
               About Us
             </Link>
 
+{/* Clientele section temporarily hidden - insufficient content
             <Link
               href="/clientele"
               className={clsx(
@@ -102,6 +103,7 @@ function Header({ invert = false }: { invert?: boolean }) {
             >
               Clientele
             </Link>
+            */}
           </nav>
           <Button
             href="/contact"
@@ -183,6 +185,7 @@ function Header({ invert = false }: { invert?: boolean }) {
               >
                 About Us
               </Link>
+{/* Clientele section temporarily hidden - insufficient content
               <Link
                 href="/clientele"
                 onClick={closeMobileMenu}
@@ -197,6 +200,7 @@ function Header({ invert = false }: { invert?: boolean }) {
               >
                 Clientele
               </Link>
+              */}
               <div className="px-6 py-3">
                 <Button
                   href="/contact"

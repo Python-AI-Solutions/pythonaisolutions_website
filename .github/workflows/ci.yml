@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [18.17.0, 20.x]
 
     steps:
       - name: Checkout code
@@ -26,8 +26,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies with retry
+        run: |
+          for i in 1 2 3; do
+            npm install && break || sleep 10
+          done
 
       - name: Run linter
         run: npm run lint
@@ -57,10 +60,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version-file: '.nvmrc'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies with retry
+        run: |
+          for i in 1 2 3; do
+            npm install && break || sleep 10
+          done
 
       - name: Build application
         run: npm run build
@@ -85,10 +91,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version-file: '.nvmrc'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies with retry
+        run: |
+          for i in 1 2 3; do
+            npm install && break || sleep 10
+          done
 
       - name: Run TypeScript compiler
         run: npm run typecheck
@@ -106,13 +115,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version-file: '.nvmrc'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies with retry
+        run: |
+          for i in 1 2 3; do
+            npm install && break || sleep 10
+          done
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps
 
       - name: Build application
         run: npm run build

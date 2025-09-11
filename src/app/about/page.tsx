@@ -572,7 +572,7 @@ const resumes = [
   { name: 'Heet Shah', data: teamResumes.heetShah },
   { name: 'Chevula Jeevan', data: teamResumes.chevulaJeevan },
   { name: 'Aditya Patane', data: teamResumes.adityaPatane },
-  { name: 'Abdul Qadeer', data: teamResumes.abdulQadeer },
+  // { name: 'Nagendra Dharmireddi', data: teamResumes.nagendraDharmireddi },
   { name: 'Pradyot Ranjan', data: teamResumes.pradyotRanjan },
 ]
 
@@ -607,8 +607,8 @@ const team = [
         github: 'https://github.com/isumitjha',
         linkedin: 'https://www.linkedin.com/in/7sumitjha/',
         description: [
-          'Full‑stack software engineer focused on robust, production-ready web apps and APIs with React, Next.js, and Python backends.',
-          'Leads implementation across frontend and backend, optimizing developer workflows and delivering reliable, scalable features.',
+          'Full-stack software engineer focused on AI-powered applications and real-time graphics with Python backends (FastAPI, CUDA optimization) and React/WebGL frontends.',
+          'Owns end-to-end delivery, deep learning integration, medical imaging systems, interactive visualization, and leads implementation from ML models to deployment with Docker/Kubernetes.',
         ],
       },
     ],
