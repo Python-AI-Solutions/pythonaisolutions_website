@@ -12,7 +12,7 @@ test.describe('Home Page', () => {
 
   test('should have a hero section', async ({ page }) => {
     // Check for hero content
-    const heroText = page.locator('text=Welcome to Python AI Solutions')
+    const heroText = page.locator('text=Transforming businesses with AI-powered solutions')
     await expect(heroText).toBeVisible()
   })
 
