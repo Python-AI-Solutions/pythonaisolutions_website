@@ -111,12 +111,22 @@ export function getLogoContainerProps(
   clientName: string,
   context: 'testimonial' | 'clientele' | 'modal' = 'testimonial',
 ) {
+  console.log(
+    '🔍 getLogoContainerProps called with:',
+    clientName,
+    'context:',
+    context,
+  )
+
   const config =
     context === 'testimonial'
       ? getTestimonialLogoBackground(clientName)
       : getLogoBackground(clientName)
 
+  console.log('🎨 Config returned:', config)
+
   if (!config.needsBackground) {
+    console.log('❌ No background needed for:', clientName)
     return {
       className: config.className,
     }
@@ -129,6 +139,8 @@ export function getLogoContainerProps(
   ]
     .filter(Boolean)
     .join(' ')
+
+  console.log('✅ Background classes for', clientName, ':', classes)
 
   return {
     className: classes,
