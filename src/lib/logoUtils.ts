@@ -44,8 +44,8 @@ export function getLogoBackground(clientName: string): LogoBackgroundConfig {
     Omit<LogoBackgroundConfig, 'needsBackground'>
   > = {
     'justice innovation lab': {
-      background: 'bg-gradient-to-br from-blue-50 to-blue-100',
-      borderColor: 'border-blue-200',
+      background: 'bg-gradient-to-br from-blue-100 to-blue-200',
+      borderColor: 'border-blue-300',
       className: 'rounded-lg p-2',
     },
   }
@@ -59,8 +59,8 @@ export function getLogoBackground(clientName: string): LogoBackgroundConfig {
 
   // Default background for logos that need one but don't have specific styling
   return {
-    background: 'bg-gradient-to-br from-neutral-50 to-neutral-100',
-    borderColor: 'border-neutral-200',
+    background: 'bg-gradient-to-br from-neutral-100 to-neutral-200',
+    borderColor: 'border-neutral-300',
     className: 'rounded-lg p-2',
     needsBackground: true,
   }
@@ -82,11 +82,11 @@ export function getTestimonialLogoBackground(
     }
   }
 
-  // Make it more subtle for testimonials
+  // Keep it strong for testimonials too since visibility is the priority
   return {
     ...config,
-    background: config.background?.replace(/50/g, '25').replace(/100/g, '50'),
-    borderColor: config.borderColor?.replace(/200/g, '100'),
+    background: config.background, // Don't make it more subtle - visibility is key
+    borderColor: config.borderColor,
     className: 'rounded-lg p-3',
     needsBackground: true,
   }
