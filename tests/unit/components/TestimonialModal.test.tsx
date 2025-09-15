@@ -20,7 +20,7 @@ describe('Testimonial Modal Image Props', () => {
         width={64}
         height={64}
         className="h-12 w-12"
-        unoptimized
+        unoptimized={true}
       />,
     )
 

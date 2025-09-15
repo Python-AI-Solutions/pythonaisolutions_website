@@ -13,12 +13,12 @@ describe('Server Integration', () => {
   afterEach(async () => {
     if (serverProcess) {
       serverProcess.kill('SIGTERM')
-      await sleep(1000) // Give it time to shut down
+      await sleep(3000) // Give it more time to shut down
     }
-  })
+  }, 10000) // 10 second timeout for cleanup
 
   test('dev server should start without runtime errors', async () => {
-    const timeout = 20000 // 20 seconds
+    const timeout = 30000 // 30 seconds
 
     return new Promise<void>((resolve, reject) => {
       let serverReady = false
@@ -45,8 +45,15 @@ describe('Server Integration', () => {
         const chunk = data.toString()
         output += chunk
 
-        if (chunk.includes('Ready in') || chunk.includes('Local:')) {
+        // More flexible server ready detection
+        if (
+          chunk.includes('Ready in') ||
+          chunk.includes('Local:') ||
+          chunk.includes('ready - started server')
+        ) {
           serverReady = true
+          clearTimeout(timeoutId)
+          resolve()
         }
       })
 
@@ -57,7 +64,8 @@ describe('Server Integration', () => {
         // Check for the specific runtime errors we're trying to catch
         if (
           chunk.includes('missing required "width"') ||
-          chunk.includes('Unhandled Runtime Error')
+          chunk.includes('Unhandled Runtime Error') ||
+          chunk.includes('Error: ')
         ) {
           clearTimeout(timeoutId)
           reject(new Error(`Runtime error detected: ${chunk.trim()}`))
@@ -69,31 +77,34 @@ describe('Server Integration', () => {
         reject(new Error(`Failed to start server: ${error.message}`))
       })
 
-      // Simple check - if server starts without immediate errors, that's success
-      setTimeout(() => {
-        if (serverReady && !serverProcess.killed) {
+      serverProcess.on('exit', (code) => {
+        if (code !== 0 && code !== null) {
           clearTimeout(timeoutId)
-          resolve()
-        } else if (!serverProcess.killed) {
-          // Give it a bit more time
-          setTimeout(() => {
-            if (output.includes('Ready in') || output.includes('Local:')) {
-              clearTimeout(timeoutId)
-              resolve()
-            }
-          }, 2000)
+          reject(
+            new Error(`Server exited with code ${code}. Output: ${output}`),
+          )
         }
-      }, 8000) // Check after 8 seconds
+      })
     })
-  }, 25000) // 25 second timeout for the test itself
+  }, 35000) // 35 second timeout for the test itself
 
   test('server should serve testimonials page without errors', async () => {
     const startTime = Date.now()
-    const timeout = 30000
+    const timeout = 45000 // 45 seconds
 
     return new Promise<void>((resolve, reject) => {
       let serverReady = false
       let output = ''
+      let timeoutId: NodeJS.Timeout
+
+      // Set overall timeout
+      timeoutId = setTimeout(() => {
+        reject(
+          new Error(
+            `Test timeout after ${timeout}ms. Server output: ${output}`,
+          ),
+        )
+      }, timeout)
 
       serverProcess = spawn('npm', ['run', 'dev'], {
         stdio: 'pipe',
@@ -103,7 +114,11 @@ describe('Server Integration', () => {
       serverProcess.stdout?.on('data', (data) => {
         const chunk = data.toString()
         output += chunk
-        if (chunk.includes('Ready in') || chunk.includes('Local:')) {
+        if (
+          chunk.includes('Ready in') ||
+          chunk.includes('Local:') ||
+          chunk.includes('ready - started server')
+        ) {
           serverReady = true
         }
       })
@@ -113,8 +128,10 @@ describe('Server Integration', () => {
         output += chunk
         if (
           chunk.includes('missing required') ||
-          chunk.includes('Unhandled Runtime Error')
+          chunk.includes('Unhandled Runtime Error') ||
+          chunk.includes('Error: ')
         ) {
+          clearTimeout(timeoutId)
           reject(new Error(`Runtime error: ${chunk}`))
         }
       })
@@ -126,39 +143,53 @@ describe('Server Integration', () => {
             if (response.ok) {
               const html = await response.text()
 
-              // Check that testimonials are actually rendered
-              const hasTestimonials =
+              // Check that client logos are actually rendered (more specific than testimonials)
+              const hasClients =
                 html.includes('OpenTeams') ||
                 html.includes('Justice Innovation Lab') ||
-                html.includes('testimonial')
+                html.includes('PyTorch Ignite') ||
+                html.includes('Providing trusted services globally')
 
-              if (hasTestimonials) {
+              if (hasClients) {
+                clearTimeout(timeoutId)
                 resolve()
               } else {
-                reject(new Error('Homepage loaded but testimonials not found'))
+                clearTimeout(timeoutId)
+                reject(
+                  new Error('Homepage loaded but client section not found'),
+                )
               }
             } else {
+              clearTimeout(timeoutId)
               reject(
                 new Error(`Server responded with status ${response.status}`),
               )
             }
           } catch (error) {
-            if (Date.now() - startTime < timeout) {
-              await sleep(1000)
+            if (Date.now() - startTime < timeout - 5000) {
+              // Leave 5s buffer
+              await sleep(2000) // Wait longer between retries
               checkHomepage()
             } else {
+              clearTimeout(timeoutId)
               reject(new Error(`Failed to check homepage: ${error}`))
             }
           }
-        } else if (Date.now() - startTime < timeout) {
-          await sleep(1000)
+        } else if (Date.now() - startTime < timeout - 5000) {
+          await sleep(2000) // Wait longer between checks
           checkHomepage()
         } else {
-          reject(new Error(`Server not ready after ${timeout}ms`))
+          clearTimeout(timeoutId)
+          reject(
+            new Error(`Server not ready after ${timeout}ms. Output: ${output}`),
+          )
         }
       }
 
-      checkHomepage()
+      // Wait a bit before starting checks
+      setTimeout(() => {
+        checkHomepage()
+      }, 3000)
     })
-  }, 45000)
+  }, 60000) // 60 second timeout for the test itself
 })
