@@ -8,7 +8,7 @@ import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { RootLayout } from '@/components/RootLayout'
-import { getAssetPath } from '@/lib/basePath'
+import { testimonials } from '@/data/testimonials'
 
 export const metadata: Metadata = {
   title: 'Clientele',
@@ -16,35 +16,8 @@ export const metadata: Metadata = {
     "Discover the diverse range of organizations we've helped transform with our AI solutions.",
 }
 
-const clients = [
-  {
-    name: 'FamilyFund',
-    logo: '/Python-AI-Solutions-Logo.webp',
-    industry: 'Non-Profit',
-    testimonial:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    author: 'Lorem Ipsum',
-    role: 'Placeholder',
-  },
-  {
-    name: 'Unseal',
-    logo: '/Python-AI-Solutions-Logo.webp',
-    industry: 'Healthcare Technology',
-    testimonial:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    author: 'Dolor Sit',
-    role: 'Amet',
-  },
-  {
-    name: 'Phobia',
-    logo: '/Python-AI-Solutions-Logo.webp',
-    industry: 'Mental Health',
-    testimonial:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    author: 'Consectetur Adipiscing',
-    role: 'Lorem',
-  },
-]
+// Use real testimonials data
+const clients = testimonials
 
 const industries = [
   'Healthcare',
@@ -97,38 +70,94 @@ export default function Clientele() {
           </h2>
         </FadeIn>
         <div className="space-y-24 lg:space-y-32">
-          {clients.map((client, index) => (
-            <FadeIn key={client.name}>
+          {clients.map((client) => (
+            <FadeIn key={client.client}>
               <article>
                 <Border className="pt-16">
                   <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                     <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
                       <div className="mb-6 flex items-center gap-4">
                         <Image
-                          src={getAssetPath(client.logo)}
-                          alt={`${client.name} logo`}
+                          src={client.logo}
+                          alt={`${client.client} logo`}
                           width={120}
                           height={60}
-                          className="h-12 w-auto"
+                          className="h-12 w-auto object-contain"
+                          unoptimized
                         />
                         <div>
                           <h2 className="font-display text-2xl font-semibold text-neutral-950">
-                            {client.name}
+                            {client.client}
                           </h2>
                           <p className="text-sm text-neutral-600">
-                            {client.industry}
+                            {client.year}
                           </p>
                         </div>
                       </div>
-                      <blockquote className="mt-6 max-w-2xl text-lg italic text-neutral-600">
-                        &ldquo;{client.testimonial}&rdquo;
-                      </blockquote>
-                      <div className="mt-6 text-sm text-neutral-950">
-                        <div className="font-semibold">{client.author}</div>
-                        <div>{client.role}</div>
-                      </div>
+                      {client.testimonial && (
+                        <>
+                          <blockquote className="mt-6 max-w-2xl text-lg italic text-neutral-600">
+                            &ldquo;{client.testimonial.content}&rdquo;
+                          </blockquote>
+                          <div className="mt-6 text-sm text-neutral-950">
+                            <div className="font-semibold">
+                              {client.testimonial.author.name}
+                            </div>
+                            <div>{client.testimonial.author.role}</div>
+                          </div>
+                        </>
+                      )}
+
+                      {/* Key Achievements section */}
+                      {client.detailedReport?.achievements?.length > 0 && (
+                        <div className="mt-8">
+                          <h3 className="mb-4 text-base font-semibold text-neutral-950">
+                            Key Achievements
+                          </h3>
+                          <ul className="space-y-2">
+                            {client.detailedReport.achievements.map(
+                              (achievement, index) => (
+                                <li
+                                  key={index}
+                                  className="flex items-start gap-3"
+                                >
+                                  <div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-[#31b9fd]"></div>
+                                  <p className="text-sm text-neutral-700">
+                                    {achievement}
+                                  </p>
+                                </li>
+                              ),
+                            )}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Impact & Results section */}
+                      {client.detailedReport?.impact?.length > 0 && (
+                        <div className="mt-8">
+                          <h3 className="mb-4 text-base font-semibold text-neutral-950">
+                            Impact & Results
+                          </h3>
+                          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+                            {client.detailedReport.impact.map((item, index) => (
+                              <div
+                                key={index}
+                                className="rounded-lg border border-[#31b9fd]/20 bg-gradient-to-br from-[#31b9fd]/10 to-transparent p-3"
+                              >
+                                <div className="text-lg font-bold text-[#31b9fd]">
+                                  {item.value}
+                                </div>
+                                <div className="text-xs text-neutral-600">
+                                  {item.label}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
                       <Button href="/contact" className="mt-8">
-                        See full text
+                        Get Started Today
                       </Button>
                     </div>
                   </div>
