@@ -22,12 +22,7 @@ export const testimonials = [
         'Provided excellent client consultation and communication',
         'Successfully adapted to diverse organizational contexts',
       ],
-      impact: [
-        { value: '100%', label: 'Client satisfaction' },
-        { value: 'Fast', label: 'Learning curve' },
-        { value: 'Expert', label: 'Technical knowledge' },
-        { value: 'Versatile', label: 'Consulting approach' },
-      ],
+      impact: [],
       fullTestimonial:
         'John is a professional who always stays up to date technically, a fast learner, and a good listener of your needs. His experience in consulting for both private companies and government agencies makes him adapt quickly to any situation.',
     },

@@ -13,20 +13,13 @@ import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
-import logoJusticeInnovationLab from '@/images/clients/justice-innovation-lab/logo-dark.svg'
 import logoJusticeInnovationLabLight from '@/images/clients/justice-innovation-lab/logo-light.svg'
-import logoSustech from '@/images/clients/sustech/logo-dark.svg'
 import logoSustechLight from '@/images/clients/sustech/logo-light.svg'
-import logoCmn from '@/images/clients/cmn/logo-dark.svg'
 import logoCmnLight from '@/images/clients/cmn/logo-light.svg'
-import logoDataScienceNimh from '@/images/clients/data-science-nimh/logo-dark.svg'
 import logoDataScienceNimhLight from '@/images/clients/data-science-nimh/logo-light.svg'
-import logoCirun from '@/images/clients/cirun/logo-dark.svg'
 import logoCirunLight from '@/images/clients/cirun/logo-light.svg'
-import logoPytorchIgnite from '@/images/clients/Pytorch-Ignite/logo-dark.svg'
 import logoPytorchIgniteLight from '@/images/clients/Pytorch-Ignite/logo-light.svg'
-import logoBioImaginix from '@/images/clients/BioImaginix/logo-dark.svg'
-import logoBioImaginixLight from '@/images/clients/BioImaginix/logo-light.svg'
+import logoOpenteams from '@/images/clients/openteams/OT-Color-WithTagline-Horizontal-NoBackground-1.webp'
 import imageLaptop from '@/images/laptop.jpg'
 import { RootLayout } from '@/components/RootLayout'
 import { getAssetPath } from '@/lib/basePath'
@@ -40,11 +33,11 @@ const clients = [
     logoJusticeInnovationLabLight,
     'https://www.justiceinnovationlab.org/',
   ],
-  ['BioImaginix', logoBioImaginixLight, 'https://www.bioimaginix.com/'],
   ['DSST', logoDataScienceNimhLight, 'https://cmn.nimh.nih.gov/dsst'],
   ['CMN', logoCmnLight, 'https://cmn.nimh.nih.gov'],
   ['SUStech', logoSustechLight, 'https://sustech.ie/'],
   ['Cirun', logoCirunLight, 'https://cirun.io/'],
+  ['OpenTeams', logoOpenteams, 'https://www.openteams.com/'],
   [
     'Futurus',
     'https://futurus.ie/wp-content/themes/bootscore/assets/img/logo/futurus_logo.png',
@@ -85,7 +78,7 @@ function Clients() {
                       unoptimized
                       width={typeof logo === 'string' ? 200 : undefined}
                       height={typeof logo === 'string' ? 80 : undefined}
-                      className="mx-auto max-h-16 cursor-pointer sm:max-h-20"
+                      className="mx-auto h-16 w-auto cursor-pointer object-contain sm:h-20"
                     />
                   </a>
                 </FadeIn>
@@ -235,7 +228,9 @@ function CaseStudies() {
                               <Image
                                 src={project.logo}
                                 alt={project.client}
-                                className="h-24 w-24"
+                                width={96}
+                                height={96}
+                                className="h-24 w-auto object-contain"
                                 unoptimized
                               />
                             ) : null}
@@ -318,7 +313,9 @@ function CaseStudies() {
                                   <Image
                                     src={project.logo}
                                     alt={project.client}
-                                    className="h-28 w-28 lg:h-32 lg:w-32"
+                                    width={128}
+                                    height={128}
+                                    className="h-28 w-auto object-contain lg:h-32"
                                     unoptimized
                                   />
                                 ) : null}
@@ -415,7 +412,7 @@ function CaseStudies() {
                   alt={selectedTestimonial.client}
                   width={64}
                   height={64}
-                  className="h-12 w-12 sm:h-16 sm:w-16"
+                  className="h-12 w-auto object-contain sm:h-16"
                   unoptimized
                 />
               ) : null}

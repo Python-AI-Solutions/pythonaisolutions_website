@@ -67,12 +67,29 @@ This is a Next.js 14 website for Python AI Solutions, showcasing AI services and
 
 ### Writing Tests
 
-1. Place tests in `__tests__/` directory
-2. Follow existing test patterns
-3. Use React Testing Library for component tests
-4. Mock external dependencies appropriately
-5. Run `npm test` to verify tests pass
-6. Check coverage with `npm run test:coverage`
+**Philosophy: Test the Real System, Not Mocks**
+
+1. **Prefer integration over unit tests** - Test actual components and data flow
+2. **Minimize mocking** - Only mock external APIs, not internal components
+3. **Test functionality, not content** - Avoid brittle tests that break on text changes
+4. **Use real data structures** - Import and validate actual testimonials, team data, etc.
+5. **Include server startup tests** - Catch runtime errors that mocks miss
+6. **Focus on user-facing bugs** - Missing props, broken links, data validation
+
+**Structure:**
+
+- Unit tests: `tests/unit/` - Data validation, component props, utilities
+- Integration tests: `tests/integration/` - Server startup, real component rendering
+- E2E tests: `tests/e2e/` - Full user workflows with Playwright
+
+**Anti-patterns to avoid:**
+
+- Testing exact text content (fragile, high maintenance)
+- Mocking everything (misses real integration issues)
+- Complex test setup that doesn't match production
+- Tests that pass but app is broken
+
+Run `npm run test:unit` for fast feedback, `npm run test:integration` to catch real bugs.
 
 ## Performance Considerations
 
