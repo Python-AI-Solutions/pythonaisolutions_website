@@ -25,6 +25,10 @@ import { RootLayout } from '@/components/RootLayout'
 import { getAssetPath } from '@/lib/basePath'
 import { Modal } from '@/components/Modal'
 import { testimonials } from '@/data/testimonials'
+import {
+  getTestimonialLogoBackground,
+  getClientGridLogoBackground,
+} from '@/lib/logoUtils'
 
 const clients = [
   ['PyTorch Ignite', logoPytorchIgniteLight, 'https://pytorch.org/ignite/'],
@@ -70,16 +74,20 @@ function Clients() {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-transform duration-200 hover:scale-105"
+                    className="block transition-transform duration-200 hover:scale-105"
                   >
-                    <Image
-                      src={logo}
-                      alt={client}
-                      unoptimized
-                      width={typeof logo === 'string' ? 200 : undefined}
-                      height={typeof logo === 'string' ? 80 : undefined}
-                      className="mx-auto h-16 w-auto cursor-pointer object-contain sm:h-20"
-                    />
+                    <div
+                      className={`${getClientGridLogoBackground(client).background} ${getClientGridLogoBackground(client).className} border ${getClientGridLogoBackground(client).borderColor}`}
+                    >
+                      <Image
+                        src={logo}
+                        alt={client}
+                        unoptimized
+                        width={typeof logo === 'string' ? 200 : undefined}
+                        height={typeof logo === 'string' ? 80 : undefined}
+                        className="mx-auto h-12 w-auto cursor-pointer object-contain sm:h-16"
+                      />
+                    </div>
                   </a>
                 </FadeIn>
               </li>
@@ -225,14 +233,18 @@ function CaseStudies() {
                         <article className="relative flex w-full cursor-pointer flex-col rounded-3xl bg-white p-4 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
                           <h3 className="flex justify-center">
                             {project.logo ? (
-                              <Image
-                                src={project.logo}
-                                alt={project.client}
-                                width={96}
-                                height={96}
-                                className="h-24 w-auto object-contain"
-                                unoptimized
-                              />
+                              <div
+                                className={`${getTestimonialLogoBackground(project.client).background} ${getTestimonialLogoBackground(project.client).className} border ${getTestimonialLogoBackground(project.client).borderColor}`}
+                              >
+                                <Image
+                                  src={project.logo}
+                                  alt={project.client}
+                                  width={96}
+                                  height={96}
+                                  className="h-20 w-auto object-contain"
+                                  unoptimized
+                                />
+                              </div>
                             ) : null}
                           </h3>
                           {project.testimonial && (
@@ -310,14 +322,18 @@ function CaseStudies() {
                             <article className="relative flex w-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
                               <h3 className="flex justify-center">
                                 {project.logo ? (
-                                  <Image
-                                    src={project.logo}
-                                    alt={project.client}
-                                    width={128}
-                                    height={128}
-                                    className="h-28 w-auto object-contain lg:h-32"
-                                    unoptimized
-                                  />
+                                  <div
+                                    className={`${getTestimonialLogoBackground(project.client).background} ${getTestimonialLogoBackground(project.client).className} border ${getTestimonialLogoBackground(project.client).borderColor}`}
+                                  >
+                                    <Image
+                                      src={project.logo}
+                                      alt={project.client}
+                                      width={128}
+                                      height={128}
+                                      className="h-24 w-auto object-contain lg:h-28"
+                                      unoptimized
+                                    />
+                                  </div>
                                 ) : null}
                               </h3>
                               {project.testimonial && (
@@ -407,14 +423,18 @@ function CaseStudies() {
           <div className="space-y-4 sm:space-y-6">
             <div className="mb-4 flex flex-col items-center gap-4 sm:mb-6 sm:flex-row">
               {selectedTestimonial.logo ? (
-                <Image
-                  src={selectedTestimonial.logo}
-                  alt={selectedTestimonial.client}
-                  width={64}
-                  height={64}
-                  className="h-12 w-auto object-contain sm:h-16"
-                  unoptimized
-                />
+                <div
+                  className={`${getTestimonialLogoBackground(selectedTestimonial.client).background} ${getTestimonialLogoBackground(selectedTestimonial.client).className} border ${getTestimonialLogoBackground(selectedTestimonial.client).borderColor}`}
+                >
+                  <Image
+                    src={selectedTestimonial.logo}
+                    alt={selectedTestimonial.client}
+                    width={64}
+                    height={64}
+                    className="h-10 w-auto object-contain sm:h-12"
+                    unoptimized
+                  />
+                </div>
               ) : null}
               <div className="flex-1 text-center sm:text-right">
                 <h2 className="text-lg font-bold text-neutral-950 sm:text-xl">
