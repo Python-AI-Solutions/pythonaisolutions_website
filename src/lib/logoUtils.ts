@@ -83,11 +83,12 @@ export function getTestimonialLogoBackground(
 ): LogoBackgroundConfig {
   const config = getLogoBackground(clientName)
 
-  // Make it more subtle for testimonials
+  // Make it much more subtle for testimonials - barely visible
   return {
     ...config,
-    background: config.background.replace(/50/g, '25').replace(/100/g, '50'),
-    className: 'rounded-md p-1.5',
+    background: config.background.replace(/50/g, '25').replace(/100/g, '25'),
+    borderColor: config.borderColor?.replace(/200/g, '100'),
+    className: 'rounded-md p-2',
   }
 }
 

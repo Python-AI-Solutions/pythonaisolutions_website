@@ -9,7 +9,6 @@ import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { RootLayout } from '@/components/RootLayout'
 import { testimonials } from '@/data/testimonials'
-import { getTestimonialLogoBackground } from '@/lib/logoUtils'
 
 export const metadata: Metadata = {
   title: 'Clientele',
@@ -78,18 +77,14 @@ export default function Clientele() {
                   <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                     <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
                       <div className="mb-6 flex items-center gap-4">
-                        <div
-                          className={`${getTestimonialLogoBackground(client.client).background} ${getTestimonialLogoBackground(client.client).className} border ${getTestimonialLogoBackground(client.client).borderColor}`}
-                        >
-                          <Image
-                            src={client.logo}
-                            alt={`${client.client} logo`}
-                            width={120}
-                            height={60}
-                            className="h-12 w-auto object-contain"
-                            unoptimized
-                          />
-                        </div>
+                        <Image
+                          src={client.logo}
+                          alt={`${client.client} logo`}
+                          width={120}
+                          height={60}
+                          className="h-16 w-auto object-contain"
+                          unoptimized
+                        />
                         <div>
                           <h2 className="font-display text-2xl font-semibold text-neutral-950">
                             {client.client}
