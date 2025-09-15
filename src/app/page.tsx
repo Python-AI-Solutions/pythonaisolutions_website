@@ -228,8 +228,8 @@ function CaseStudies() {
                     style={{ width: `${100 / totalSlidesMobile}%` }}
                   >
                     <FadeIn>
-                      {/* Clientele page temporarily hidden - removed link wrapper */}
-                      <article className="relative flex w-full flex-col rounded-3xl bg-white p-4 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
+                      <Link href="/clientele" className="block">
+                        <article className="relative flex w-full cursor-pointer flex-col rounded-3xl bg-white p-4 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
                           <h3 className="flex justify-center">
                             {project.logo ? (
                               <Image
@@ -283,6 +283,7 @@ function CaseStudies() {
                             </button>
                           )}
                         </article>
+                      </Link>
                     </FadeIn>
                   </div>
                 ))}
@@ -310,8 +311,8 @@ function CaseStudies() {
                       .slice(slideIndex * 3, slideIndex * 3 + 3)
                       .map((project) => (
                         <FadeIn key={project.client} className="w-1/3 min-w-0">
-                          {/* Clientele page temporarily hidden - removed link wrapper */}
-                          <article className="relative flex w-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
+                          <Link href="/clientele" className="block">
+                            <article className="relative flex w-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
                               <h3 className="flex justify-center">
                                 {project.logo ? (
                                   <Image
@@ -366,6 +367,7 @@ function CaseStudies() {
                                 </button>
                               )}
                             </article>
+                          </Link>
                         </FadeIn>
                       ))}
                   </div>
@@ -411,6 +413,8 @@ function CaseStudies() {
                 <Image
                   src={selectedTestimonial.logo}
                   alt={selectedTestimonial.client}
+                  width={64}
+                  height={64}
                   className="h-12 w-12 sm:h-16 sm:w-16"
                   unoptimized
                 />

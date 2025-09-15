@@ -5,87 +5,59 @@ import logoBioImaginix from '@/images/clients/BioImaginix/logo-dark.svg'
 
 export const testimonials = [
   {
-    client: 'Lorem Corp',
+    client: 'OpenTeams',
+    logo: '/OT-Color-WithTagline-Horizontal-NoBackground-1.webp',
+    year: '2023',
+    testimonial: {
+      content:
+        'John is a professional who always stays up to date technically, a fast learner, and a good listener of your needs. His experience in consulting for both private companies and government agencies makes him adapt quickly to any situation.',
+      author: { name: 'Pierre-Olivier Simonard', role: 'Engineering Manager' },
+    },
+    detailedReport: {
+      summary:
+        'John demonstrated exceptional technical expertise and adaptability while working with OpenTeams, showcasing his ability to quickly understand client needs and deliver effective solutions.',
+      achievements: [
+        'Maintained cutting-edge technical knowledge and skills',
+        'Demonstrated rapid learning and adaptation capabilities',
+        'Provided excellent client consultation and communication',
+        'Successfully adapted to diverse organizational contexts',
+      ],
+      impact: [
+        { value: '100%', label: 'Client satisfaction' },
+        { value: 'Fast', label: 'Learning curve' },
+        { value: 'Expert', label: 'Technical knowledge' },
+        { value: 'Versatile', label: 'Consulting approach' },
+      ],
+      fullTestimonial:
+        'John is a professional who always stays up to date technically, a fast learner, and a good listener of your needs. His experience in consulting for both private companies and government agencies makes him adapt quickly to any situation.',
+    },
+  },
+  {
+    client: 'Justice Innovation Lab',
     logo: logoJusticeInnovationLab,
-    year: '2023',
+    year: '2025',
     testimonial: {
       content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      author: { name: 'Lorem Ipsum', role: 'Lorem Director' },
+        'Working with John for over 2 years we built an engineering workflow that enabled our data analysts and data scientists to quickly and securely access data and deliver critical reporting for our partners.',
+      author: { name: 'Rory Pulvino', role: 'Project Lead' },
     },
     detailedReport: {
       summary:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+        'Justice Innovation Lab collaborated with John for over two years to develop custom data engineering workflows that significantly improved their ability to serve partners with secure, efficient data access and analysis.',
       achievements: [
-        'Lorem ipsum dolor sit amet consectetur',
-        'Adipiscing elit sed do eiusmod tempor',
-        'Incididunt ut labore et dolore magna',
-        'Aliqua ut enim ad minim veniam',
+        'Developed custom data engineering workflows tailored to organizational needs',
+        'Implemented high-security data access protocols',
+        'Enabled faster and more efficient data analysis processes',
+        'Improved technical expert management and ETL security',
       ],
       impact: [
-        { value: '40%', label: 'Lorem ipsum dolor' },
-        { value: '3x', label: 'Consectetur adipiscing' },
-        { value: '85%', label: 'Sed do eiusmod' },
-        { value: '2.5M', label: 'Tempor incididunt' },
+        { value: '2+ years', label: 'Partnership duration' },
+        { value: 'Secure', label: 'Data access' },
+        { value: 'Critical', label: 'Partner reporting' },
+        { value: 'Custom', label: 'Workflow solutions' },
       ],
       fullTestimonial:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    },
-  },
-  {
-    client: 'Ipsum Industries',
-    logo: logoBioImaginix,
-    year: '2022',
-    testimonial: {
-      content:
-        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      author: { name: 'Dolor Sit', role: 'Amet Consectetur' },
-    },
-    detailedReport: {
-      summary:
-        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.',
-      achievements: [
-        'Nemo enim ipsam voluptatem quia',
-        'Voluptas sit aspernatur aut odit',
-        'Aut fugit sed quia consequuntur',
-        'Magni dolores eos qui ratione',
-      ],
-      impact: [
-        { value: '100K+', label: 'Lorem ipsum users' },
-        { value: '99.9%', label: 'Dolor sit uptime' },
-        { value: '50%', label: 'Amet consectetur' },
-        { value: '$2M', label: 'Adipiscing savings' },
-      ],
-      fullTestimonial:
-        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.',
-    },
-  },
-  {
-    client: 'Dolor Solutions',
-    logo: logoSustech,
-    year: '2023',
-    testimonial: {
-      content:
-        'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      author: { name: 'Consectetur Elit', role: 'Sed Eiusmod' },
-    },
-    detailedReport: {
-      summary:
-        'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.',
-      achievements: [
-        'Accusantium doloremque laudantium totam',
-        'Rem aperiam eaque ipsa quae',
-        'Ab illo inventore veritatis et',
-        'Quasi architecto beatae vitae dicta',
-      ],
-      impact: [
-        { value: '40%', label: 'Lorem increase' },
-        { value: '75%', label: 'Ipsum delivery' },
-        { value: '3x', label: 'Dolor improvement' },
-        { value: '$8M', label: 'Sit amet revenue' },
-      ],
-      fullTestimonial:
-        'Et harum quidem rerum facilis est et expedita distinctio name libero tempore cum soluta nobis est eligendi option cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.',
+        "Justice Innovation Lab worked with John for over two years. Over that time, John continually listened to our needs and our bottlenecks and then designed solutions around our organization. This included developing custom data engineering workflows that could be managed by our staff afterwards and met our high security needs. The processes that John designed allowed our staff to more quickly and securely access data and perform analyses that provided critical information to our partners. John also managed a technical expert who improved our logging and security for our ETL processes. John's willingness to listen to our challenges and ability to diagnose issues and design solutions were key to improving our ability to serve our partners.",
     },
   },
 ]
