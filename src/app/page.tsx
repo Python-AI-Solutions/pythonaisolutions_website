@@ -214,7 +214,7 @@ function CaseStudies() {
                   width: `${totalSlidesMobile * 100}%`,
                 }}
               >
-                {projects.map((project, index) => (
+                {projects.map((project) => (
                   <div
                     key={project.client}
                     className="w-full flex-shrink-0"

@@ -153,36 +153,41 @@ describe('Server Integration', () => {
               if (hasClients) {
                 clearTimeout(timeoutId)
                 resolve()
+                return
               } else {
                 clearTimeout(timeoutId)
                 reject(
                   new Error('Homepage loaded but client section not found'),
                 )
+                return
               }
             } else {
               clearTimeout(timeoutId)
               reject(
                 new Error(`Server responded with status ${response.status}`),
               )
+              return
             }
           } catch (error) {
             if (Date.now() - startTime < timeout - 5000) {
               // Leave 5s buffer
               await sleep(2000) // Wait longer between retries
-              checkHomepage()
+              return checkHomepage()
             } else {
               clearTimeout(timeoutId)
               reject(new Error(`Failed to check homepage: ${error}`))
+              return
             }
           }
         } else if (Date.now() - startTime < timeout - 5000) {
           await sleep(2000) // Wait longer between checks
-          checkHomepage()
+          return checkHomepage()
         } else {
           clearTimeout(timeoutId)
           reject(
             new Error(`Server not ready after ${timeout}ms. Output: ${output}`),
           )
+          return
         }
       }
 

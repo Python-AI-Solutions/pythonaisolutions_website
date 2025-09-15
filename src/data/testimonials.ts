@@ -1,12 +1,15 @@
 // Testimonials data
-import logoJusticeInnovationLab from '@/images/clients/justice-innovation-lab/logo-dark.svg'
-import logoSustech from '@/images/clients/sustech/logo-dark.svg'
-import logoBioImaginix from '@/images/clients/BioImaginix/logo-dark.svg'
+import logoJusticeInnovationLab from '@/images/clients/justice-innovation-lab/logo-light.svg'
+import logoSustech from '@/images/clients/sustech/logo-light.svg'
+import logoOpenteams from '@/images/clients/openteams/OT-Color-WithTagline-Horizontal-NoBackground-1.webp'
+import logoFuturus from '@/images/clients/futurus/futurus_logo.png'
+import logoPytorchIgnite from '@/images/clients/Pytorch-Ignite/logo-light.svg'
+import logoDataScienceNimh from '@/images/clients/data-science-nimh/logo-light.svg'
 
 export const testimonials = [
   {
     client: 'OpenTeams',
-    logo: '/OT-Color-WithTagline-Horizontal-NoBackground-1.webp',
+    logo: logoOpenteams,
     year: '2023',
     testimonial: {
       content:
