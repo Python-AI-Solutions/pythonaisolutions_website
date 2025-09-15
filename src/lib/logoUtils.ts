@@ -25,16 +25,28 @@ const LOGOS_NEEDING_BACKGROUNDS = [
 export function getLogoBackground(clientName: string): LogoBackgroundConfig {
   const lowerName = clientName.toLowerCase()
 
+  // Debug logging
+  console.log(
+    'getLogoBackground called with:',
+    clientName,
+    'lowercase:',
+    lowerName,
+  )
+
   // Check if this logo needs a background
   const needsBackground = LOGOS_NEEDING_BACKGROUNDS.some((logoName) =>
     lowerName.includes(logoName),
   )
 
+  console.log('needsBackground:', needsBackground, 'for client:', clientName)
+
   if (!needsBackground) {
-    // No background needed - just padding
+    // TEMPORARY: Force pink background on ALL logos for debugging
     return {
+      background: 'bg-pink-300',
+      borderColor: 'border-pink-400',
       className: 'rounded-lg p-2',
-      needsBackground: false,
+      needsBackground: true,
     }
   }
 
@@ -44,8 +56,8 @@ export function getLogoBackground(clientName: string): LogoBackgroundConfig {
     Omit<LogoBackgroundConfig, 'needsBackground'>
   > = {
     'justice innovation lab': {
-      background: 'bg-gradient-to-br from-blue-100 to-blue-200',
-      borderColor: 'border-blue-300',
+      background: 'bg-gradient-to-br from-pink-400 to-pink-500',
+      borderColor: 'border-pink-600',
       className: 'rounded-lg p-2',
     },
   }
