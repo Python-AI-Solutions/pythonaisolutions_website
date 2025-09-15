@@ -3,59 +3,49 @@
  */
 
 export interface LogoBackgroundConfig {
-  background: string
+  background?: string
   borderColor?: string
   className: string
+  needsBackground: boolean
 }
 
 /**
+ * Logos that need backgrounds on white backgrounds (typically light/white logos)
+ */
+const LOGOS_NEEDING_BACKGROUNDS = [
+  'justice innovation lab',
+  'jil',
+  // Add other logos that are primarily white/light colored
+]
+
+/**
  * Get smart background configuration for a logo based on the client name
- * This helps ensure logos display well regardless of their design system
+ * Only applies backgrounds to logos that actually need them
  */
 export function getLogoBackground(clientName: string): LogoBackgroundConfig {
   const lowerName = clientName.toLowerCase()
 
-  // Company-specific background strategies
-  const configs: Record<string, LogoBackgroundConfig> = {
-    // Companies that typically use dark logos
-    openteams: {
-      background: 'bg-gradient-to-br from-neutral-50 to-neutral-100',
-      borderColor: 'border-neutral-200',
+  // Check if this logo needs a background
+  const needsBackground = LOGOS_NEEDING_BACKGROUNDS.some((logoName) =>
+    lowerName.includes(logoName),
+  )
+
+  if (!needsBackground) {
+    // No background needed - just padding
+    return {
       className: 'rounded-lg p-2',
-    },
+      needsBackground: false,
+    }
+  }
+
+  // Company-specific background strategies for logos that need them
+  const configs: Record<
+    string,
+    Omit<LogoBackgroundConfig, 'needsBackground'>
+  > = {
     'justice innovation lab': {
       background: 'bg-gradient-to-br from-blue-50 to-blue-100',
       borderColor: 'border-blue-200',
-      className: 'rounded-lg p-2',
-    },
-    pytorch: {
-      background: 'bg-gradient-to-br from-orange-50 to-red-50',
-      borderColor: 'border-orange-200',
-      className: 'rounded-lg p-2',
-    },
-    futurus: {
-      background: 'bg-gradient-to-br from-green-50 to-emerald-50',
-      borderColor: 'border-green-200',
-      className: 'rounded-lg p-2',
-    },
-    sustech: {
-      background: 'bg-gradient-to-br from-purple-50 to-indigo-50',
-      borderColor: 'border-purple-200',
-      className: 'rounded-lg p-2',
-    },
-    cirun: {
-      background: 'bg-gradient-to-br from-cyan-50 to-blue-50',
-      borderColor: 'border-cyan-200',
-      className: 'rounded-lg p-2',
-    },
-    cmn: {
-      background: 'bg-gradient-to-br from-slate-50 to-gray-50',
-      borderColor: 'border-slate-200',
-      className: 'rounded-lg p-2',
-    },
-    dsst: {
-      background: 'bg-gradient-to-br from-violet-50 to-purple-50',
-      borderColor: 'border-violet-200',
       className: 'rounded-lg p-2',
     },
   }
@@ -63,15 +53,16 @@ export function getLogoBackground(clientName: string): LogoBackgroundConfig {
   // Find matching config
   for (const [key, config] of Object.entries(configs)) {
     if (lowerName.includes(key)) {
-      return config
+      return { ...config, needsBackground: true }
     }
   }
 
-  // Default fallback - subtle neutral background
+  // Default background for logos that need one but don't have specific styling
   return {
-    background: 'bg-gradient-to-br from-neutral-50 to-gray-50',
+    background: 'bg-gradient-to-br from-neutral-50 to-neutral-100',
     borderColor: 'border-neutral-200',
     className: 'rounded-lg p-2',
+    needsBackground: true,
   }
 }
 
@@ -83,24 +74,51 @@ export function getTestimonialLogoBackground(
 ): LogoBackgroundConfig {
   const config = getLogoBackground(clientName)
 
-  // Make it much more subtle for testimonials - barely visible
+  if (!config.needsBackground) {
+    // No background needed - just padding for spacing
+    return {
+      className: 'rounded-lg p-3',
+      needsBackground: false,
+    }
+  }
+
+  // Make it more subtle for testimonials
   return {
     ...config,
-    background: config.background.replace(/50/g, '25').replace(/100/g, '25'),
+    background: config.background?.replace(/50/g, '25').replace(/100/g, '50'),
     borderColor: config.borderColor?.replace(/200/g, '100'),
-    className: 'rounded-md p-2',
+    className: 'rounded-lg p-3',
+    needsBackground: true,
   }
 }
 
 /**
- * Get background for client grid logos (even more subtle)
+ * Helper function to generate logo container classes
  */
-export function getClientGridLogoBackground(
+export function getLogoContainerProps(
   clientName: string,
-): LogoBackgroundConfig {
+  context: 'testimonial' | 'clientele' | 'modal' = 'testimonial',
+) {
+  const config =
+    context === 'testimonial'
+      ? getTestimonialLogoBackground(clientName)
+      : getLogoBackground(clientName)
+
+  if (!config.needsBackground) {
+    return {
+      className: config.className,
+    }
+  }
+
+  const classes = [
+    config.background,
+    config.className,
+    config.borderColor ? `border ${config.borderColor}` : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return {
-    background: 'bg-neutral-900/5 hover:bg-neutral-900/10',
-    borderColor: 'border-neutral-900/10',
-    className: 'rounded-lg p-3 transition-colors',
+    className: classes,
   }
 }

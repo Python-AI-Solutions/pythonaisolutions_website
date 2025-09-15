@@ -25,6 +25,7 @@ import { RootLayout } from '@/components/RootLayout'
 import { getAssetPath } from '@/lib/basePath'
 import { Modal } from '@/components/Modal'
 import { testimonials } from '@/data/testimonials'
+import { getLogoContainerProps } from '@/lib/logoUtils'
 
 const clients = [
   ['PyTorch Ignite', logoPytorchIgniteLight, 'https://pytorch.org/ignite/'],
@@ -225,7 +226,12 @@ function CaseStudies() {
                         <article className="relative flex w-full cursor-pointer flex-col rounded-3xl bg-white p-4 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
                           <h3 className="flex justify-center">
                             {project.logo ? (
-                              <div className="rounded-lg p-3">
+                              <div
+                                {...getLogoContainerProps(
+                                  project.client,
+                                  'testimonial',
+                                )}
+                              >
                                 <Image
                                   src={project.logo}
                                   alt={project.client}
@@ -312,7 +318,12 @@ function CaseStudies() {
                             <article className="relative flex w-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
                               <h3 className="flex justify-center">
                                 {project.logo ? (
-                                  <div className="rounded-lg p-4">
+                                  <div
+                                    {...getLogoContainerProps(
+                                      project.client,
+                                      'testimonial',
+                                    )}
+                                  >
                                     <Image
                                       src={project.logo}
                                       alt={project.client}
@@ -411,7 +422,12 @@ function CaseStudies() {
           <div className="space-y-4 sm:space-y-6">
             <div className="mb-4 flex flex-col items-center gap-4 sm:mb-6 sm:flex-row">
               {selectedTestimonial.logo ? (
-                <div className="rounded-lg p-2">
+                <div
+                  {...getLogoContainerProps(
+                    selectedTestimonial.client,
+                    'modal',
+                  )}
+                >
                   <Image
                     src={selectedTestimonial.logo}
                     alt={selectedTestimonial.client}
