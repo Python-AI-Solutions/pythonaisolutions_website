@@ -13,25 +13,19 @@ import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
-import logoJusticeInnovationLab from '@/images/clients/justice-innovation-lab/logo-dark.svg'
 import logoJusticeInnovationLabLight from '@/images/clients/justice-innovation-lab/logo-light.svg'
-import logoSustech from '@/images/clients/sustech/logo-dark.svg'
 import logoSustechLight from '@/images/clients/sustech/logo-light.svg'
-import logoCmn from '@/images/clients/cmn/logo-dark.svg'
 import logoCmnLight from '@/images/clients/cmn/logo-light.svg'
-import logoDataScienceNimh from '@/images/clients/data-science-nimh/logo-dark.svg'
 import logoDataScienceNimhLight from '@/images/clients/data-science-nimh/logo-light.svg'
-import logoCirun from '@/images/clients/cirun/logo-dark.svg'
 import logoCirunLight from '@/images/clients/cirun/logo-light.svg'
-import logoPytorchIgnite from '@/images/clients/Pytorch-Ignite/logo-dark.svg'
 import logoPytorchIgniteLight from '@/images/clients/Pytorch-Ignite/logo-light.svg'
-import logoBioImaginix from '@/images/clients/BioImaginix/logo-dark.svg'
-import logoBioImaginixLight from '@/images/clients/BioImaginix/logo-light.svg'
+import logoOpenteams from '@/images/clients/openteams/OT-Color-WithTagline-Horizontal-NoBackground-1.webp'
 import imageLaptop from '@/images/laptop.jpg'
 import { RootLayout } from '@/components/RootLayout'
 import { getAssetPath } from '@/lib/basePath'
 import { Modal } from '@/components/Modal'
 import { testimonials } from '@/data/testimonials'
+import { getLogoContainerProps } from '@/lib/logoUtils'
 
 const clients = [
   ['PyTorch Ignite', logoPytorchIgniteLight, 'https://pytorch.org/ignite/'],
@@ -40,11 +34,11 @@ const clients = [
     logoJusticeInnovationLabLight,
     'https://www.justiceinnovationlab.org/',
   ],
-  ['BioImaginix', logoBioImaginixLight, 'https://www.bioimaginix.com/'],
   ['DSST', logoDataScienceNimhLight, 'https://cmn.nimh.nih.gov/dsst'],
   ['CMN', logoCmnLight, 'https://cmn.nimh.nih.gov'],
   ['SUStech', logoSustechLight, 'https://sustech.ie/'],
   ['Cirun', logoCirunLight, 'https://cirun.io/'],
+  ['OpenTeams', logoOpenteams, 'https://www.openteams.com/'],
   [
     'Futurus',
     'https://futurus.ie/wp-content/themes/bootscore/assets/img/logo/futurus_logo.png',
@@ -85,7 +79,7 @@ function Clients() {
                       unoptimized
                       width={typeof logo === 'string' ? 200 : undefined}
                       height={typeof logo === 'string' ? 80 : undefined}
-                      className="mx-auto max-h-16 cursor-pointer sm:max-h-20"
+                      className="mx-auto h-16 w-auto cursor-pointer object-contain sm:h-20"
                     />
                   </a>
                 </FadeIn>
@@ -221,23 +215,32 @@ function CaseStudies() {
                   width: `${totalSlidesMobile * 100}%`,
                 }}
               >
-                {projects.map((project, index) => (
+                {projects.map((project) => (
                   <div
                     key={project.client}
                     className="w-full flex-shrink-0"
                     style={{ width: `${100 / totalSlidesMobile}%` }}
                   >
                     <FadeIn>
-                      {/* Clientele page temporarily hidden - removed link wrapper */}
-                      <article className="relative flex w-full flex-col rounded-3xl bg-white p-4 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
+                      <Link href="/clientele" className="block">
+                        <article className="relative flex w-full cursor-pointer flex-col rounded-3xl bg-white p-4 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
                           <h3 className="flex justify-center">
                             {project.logo ? (
-                              <Image
-                                src={project.logo}
-                                alt={project.client}
-                                className="h-24 w-24"
-                                unoptimized
-                              />
+                              <div
+                                {...getLogoContainerProps(
+                                  project.client,
+                                  'testimonial',
+                                )}
+                              >
+                                <Image
+                                  src={project.logo}
+                                  alt={project.client}
+                                  width={96}
+                                  height={96}
+                                  className="h-20 w-auto object-contain"
+                                  unoptimized
+                                />
+                              </div>
                             ) : null}
                           </h3>
                           {project.testimonial && (
@@ -283,6 +286,7 @@ function CaseStudies() {
                             </button>
                           )}
                         </article>
+                      </Link>
                     </FadeIn>
                   </div>
                 ))}
@@ -310,16 +314,25 @@ function CaseStudies() {
                       .slice(slideIndex * 3, slideIndex * 3 + 3)
                       .map((project) => (
                         <FadeIn key={project.client} className="w-1/3 min-w-0">
-                          {/* Clientele page temporarily hidden - removed link wrapper */}
-                          <article className="relative flex w-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
+                          <Link href="/clientele" className="block">
+                            <article className="relative flex w-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:shadow-md">
                               <h3 className="flex justify-center">
                                 {project.logo ? (
-                                  <Image
-                                    src={project.logo}
-                                    alt={project.client}
-                                    className="h-28 w-28 lg:h-32 lg:w-32"
-                                    unoptimized
-                                  />
+                                  <div
+                                    {...getLogoContainerProps(
+                                      project.client,
+                                      'testimonial',
+                                    )}
+                                  >
+                                    <Image
+                                      src={project.logo}
+                                      alt={project.client}
+                                      width={128}
+                                      height={128}
+                                      className="h-24 w-auto object-contain lg:h-28"
+                                      unoptimized
+                                    />
+                                  </div>
                                 ) : null}
                               </h3>
                               {project.testimonial && (
@@ -366,6 +379,7 @@ function CaseStudies() {
                                 </button>
                               )}
                             </article>
+                          </Link>
                         </FadeIn>
                       ))}
                   </div>
@@ -408,12 +422,21 @@ function CaseStudies() {
           <div className="space-y-4 sm:space-y-6">
             <div className="mb-4 flex flex-col items-center gap-4 sm:mb-6 sm:flex-row">
               {selectedTestimonial.logo ? (
-                <Image
-                  src={selectedTestimonial.logo}
-                  alt={selectedTestimonial.client}
-                  className="h-12 w-12 sm:h-16 sm:w-16"
-                  unoptimized
-                />
+                <div
+                  {...getLogoContainerProps(
+                    selectedTestimonial.client,
+                    'modal',
+                  )}
+                >
+                  <Image
+                    src={selectedTestimonial.logo}
+                    alt={selectedTestimonial.client}
+                    width={64}
+                    height={64}
+                    className="h-12 w-auto object-contain sm:h-16"
+                    unoptimized
+                  />
+                </div>
               ) : null}
               <div className="flex-1 text-center sm:text-right">
                 <h2 className="text-lg font-bold text-neutral-950 sm:text-xl">
