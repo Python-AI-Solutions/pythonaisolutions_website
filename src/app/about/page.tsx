@@ -572,7 +572,6 @@ const resumes = [
   { name: 'Heet Shah', data: teamResumes.heetShah },
   { name: 'Chevula Jeevan', data: teamResumes.chevulaJeevan },
   { name: 'Aditya Patane', data: teamResumes.adityaPatane },
-  // { name: 'Nagendra Dharmireddi', data: teamResumes.nagendraDharmireddi },
   { name: 'Pradyot Ranjan', data: teamResumes.pradyotRanjan },
 ]
 
