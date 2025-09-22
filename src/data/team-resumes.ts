@@ -4,7 +4,6 @@ import sumitJhaData from '../../submodules/the-team/resumes/json/sumit_jha.json'
 import heetShahData from '../../submodules/the-team/resumes/json/heet_shah.json'
 import chevulaJeevanData from '../../submodules/the-team/resumes/json/chevula_jeevan.json'
 import adityaPataneData from '../../submodules/the-team/resumes/json/aditya_patane.json'
-// import nagendraDharmireddiData from '../../submodules/the-team/resumes/json/nagendra_dharmireddi.json'
 import pradyotRanjanData from '../../submodules/the-team/resumes/json/pradyot_ranjan.json'
 
 export const teamResumes = {
@@ -13,7 +12,6 @@ export const teamResumes = {
   heetShah: heetShahData,
   chevulaJeevan: chevulaJeevanData,
   adityaPatane: adityaPataneData,
-  // nagendraDharmireddi: nagendraDharmireddiData,
   pradyotRanjan: pradyotRanjanData,
 }
 
@@ -25,6 +23,5 @@ export const teamPhotos = {
   'Heet Shah': '/submodules/the-team/public/photos/Heet_Shah.webp',
   'Chevula Jeevan': '/submodules/the-team/public/photos/Chevula_Jeevan.webp',
   'Aditya Patane': '/submodules/the-team/public/photos/Aditya_Patane.webp',
-  // 'Nagendra Dharmireddi': '/submodules/the-team/public/photos/Nagendra_Dharmireddi.webp',
   'Pradyot Ranjan': '/submodules/the-team/public/photos/Pradyot_Ranjan.webp',
 }
