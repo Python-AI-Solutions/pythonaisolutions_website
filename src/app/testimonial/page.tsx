@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useId, useEffect, useRef } from 'react'
+import { useState, useId, useEffect, useRef, useCallback } from 'react'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Button } from '@/components/Button'
@@ -137,7 +137,7 @@ function TestimonialForm() {
   const STORAGE_KEY = 'testimonial_form_data'
 
   // Save form data to localStorage on changes
-  const saveFormData = () => {
+  const saveFormData = useCallback(() => {
     if (!formRef.current) return
     
     const formData = new FormData(formRef.current)
@@ -153,7 +153,7 @@ function TestimonialForm() {
     data.expandedSections = expandedSections
     
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
-  }
+  }, [achievements, expandedSections])
 
   const [savedFormData, setSavedFormData] = useState<any>(null)
 
@@ -211,7 +211,7 @@ function TestimonialForm() {
   useEffect(() => {
     const timer = setTimeout(saveFormData, 500) // Debounce saves
     return () => clearTimeout(timer)
-  }, [achievements, expandedSections])
+  }, [achievements, expandedSections, saveFormData])
 
   const toggleSection = (section: 'shareMore' | 'completeStory') => {
     setExpandedSections((prev) => ({
