@@ -1,21 +1,31 @@
-name: Deploy to GitHub Pages
+# Cloudflare Pages Deployment
+#
+# Prerequisites (managed in parent cloudflare-management repo):
+# - Cloudflare Pages project "pythonaisolutions-website" created via Terraform
+# - DNS CNAME www.pythonaisolutions.com → pythonaisolutions-website.pages.dev
+# - Custom domain configured in Pages project
+#
+# GitHub secret required:
+# - CF_API_KEY: Cloudflare API token with Pages Edit permission
+
+name: Deploy to Cloudflare Pages
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  deployments: write
 
-concurrency:
-  group: 'pages'
-  cancel-in-progress: false
+env:
+  PROJECT_NAME: pythonaisolutions-website
+  BUILD_DIR: out
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,15 +36,40 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies with retry
+        run: |
+          for i in 1 2 3; do
+            npm install && break || sleep 10
+          done
 
-      - name: Build with Next.js
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test:ci
+
+      - name: Validate team images exist
+        run: npm run validate:images
+
+      - name: Build static site
         run: npm run build
         env:
           NODE_ENV: production
+
+      - name: Check build output
+        run: |
+          if [ -d "$BUILD_DIR" ]; then
+            echo "✅ Build successful - $BUILD_DIR directory exists"
+            echo "Build size: $(du -sh $BUILD_DIR | cut -f1)"
+          else
+            echo "❌ Build failed - $BUILD_DIR directory not found"
+            exit 1
+          fi
 
       - name: Validate assets
         run: |
@@ -45,29 +80,25 @@ jobs:
       - name: Security scan of build output
         run: |
           echo "🛡️ Scanning build output for security issues..."
-          # Check for potential secrets in build files
-          find out -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) | \
+          find $BUILD_DIR -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) | \
             xargs grep -l -i -E "(api[_-]?key|secret|password|token)" || echo "No secrets detected in build"
 
-          # Check for external resources that might be insecure
-          find out -name "*.html" | xargs grep -h -o 'src="http://[^"]*"' | \
+          find $BUILD_DIR -name "*.html" | xargs grep -h -o 'src="http://[^"]*"' | \
             sed 's/src="//;s/"//' | sort | uniq | while read -r url; do
               echo "⚠️  Insecure HTTP resource found: $url"
             done || echo "No insecure HTTP resources found"
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: out
+      - name: Install wrangler
+        run: npm install -g wrangler
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy preview
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_KEY }}
+        run: wrangler pages deploy ./${{ env.BUILD_DIR }} --project-name ${{ env.PROJECT_NAME }} --branch ${{ github.head_ref }}
+
+      - name: Deploy production
+        if: ${{ github.event_name == 'push' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_KEY }}
+        run: wrangler pages deploy ./${{ env.BUILD_DIR }} --project-name ${{ env.PROJECT_NAME }} --branch main --commit-dirty=true
