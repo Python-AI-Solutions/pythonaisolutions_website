@@ -38,8 +38,8 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          # Set base path for GitHub Pages subdirectory
-          BASE_PATH: /${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}
+          # Set base path for GitHub Pages subdirectory (repo name is already in GitHub Pages URL)
+          BASE_PATH: /pr-preview/pr-${{ github.event.pull_request.number }}
 
       # Build already exports to 'out' directory due to output: 'export' in next.config
       # No need for separate export step
