@@ -89,6 +89,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        priority
                       />
                     </div>
                   </div>
@@ -102,6 +103,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -115,6 +117,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -128,6 +131,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -141,6 +145,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -154,6 +159,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -167,6 +173,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -180,6 +187,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -193,6 +201,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -206,6 +215,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -219,6 +229,7 @@ function ServicesList() {
                         width={400}
                         height={300}
                         className="rounded-lg object-cover shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+                        loading="lazy"
                       />
                     </div>
                   </div>
