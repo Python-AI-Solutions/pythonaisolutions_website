@@ -86,13 +86,6 @@ jest.mock(
   { virtual: true },
 )
 
-jest.mock(
-  '../../../submodules/the-team/resumes/json/pradyot_ranjan.json',
-  () => ({
-    basics: { name: 'Pradyot Ranjan', label: 'Developer' },
-  }),
-  { virtual: true },
-)
 
 jest.mock(
   '../../../submodules/the-team/resumes/json/chevula_jeevan.json',
@@ -115,11 +108,6 @@ jest.mock(
 )
 jest.mock(
   '../../../submodules/the-team/public/photos/Heet_Shah.jpg',
-  () => 'test-photo.jpg',
-  { virtual: true },
-)
-jest.mock(
-  '../../../submodules/the-team/public/photos/Pradyot_Ranjan.jpg',
   () => 'test-photo.jpg',
   { virtual: true },
 )
