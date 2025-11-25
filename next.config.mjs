@@ -16,6 +16,8 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   output: 'export',
   trailingSlash: true,
+  basePath: process.env.BASE_PATH || '',
+  assetPrefix: process.env.BASE_PATH || '',
   images: {
     unoptimized: true,
     loader: 'default',
