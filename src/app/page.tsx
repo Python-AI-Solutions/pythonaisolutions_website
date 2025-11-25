@@ -649,6 +649,11 @@ function Services() {
 export default function Home() {
   return (
     <RootLayout>
+      {/* TEST BANNER FOR PREVIEW - REMOVE THIS */}
+      <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 text-center font-bold text-lg">
+        🚀 TEST PREVIEW: This is a test change for preview functionality - {new Date().toLocaleString()}
+      </div>
+      
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn>
           <div className="max-w-2xl">

@@ -113,7 +113,7 @@ jobs:
             const sha = context.payload.pull_request.head.sha.substring(0, 7);
             const previewUrl = '${{ steps.cloudflare-preview.outputs.preview_url }}';
             
-            const comment = `## 🚀 Cloudflare Pages Preview Deployed!
+            const comment = `## 🚀 Preview Deployed!
             
             **Preview URL:** ${previewUrl}
             
