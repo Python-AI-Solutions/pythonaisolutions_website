@@ -568,6 +568,8 @@ const resumes = [
     name: teamResumes.johnLee.basics?.name ?? 'John Lee',
     data: teamResumes.johnLee,
   },
+  { name: 'Peter Kidney',data: teamResumes.peterKidney },
+  { name: 'Dr. Claire Murphy',data: teamResumes.claireMurphy },
   { name: 'Sumit Jha', data: teamResumes.sumitJha },
   { name: 'Heet Shah', data: teamResumes.heetShah },
   { name: 'Chevula Jeevan', data: teamResumes.chevulaJeevan },
