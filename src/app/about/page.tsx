@@ -568,6 +568,8 @@ const resumes = [
     name: teamResumes.johnLee.basics?.name ?? 'John Lee',
     data: teamResumes.johnLee,
   },
+  { name: 'Peter Kidney',data: teamResumes.peterKidney },
+  { name: 'Dr. Claire Murphy',data: teamResumes.claireMurphy },
   { name: 'Sumit Jha', data: teamResumes.sumitJha },
   { name: 'Heet Shah', data: teamResumes.heetShah },
   { name: 'Chevula Jeevan', data: teamResumes.chevulaJeevan },
@@ -587,9 +589,40 @@ const team = [
           height: 400,
         },
         github: 'https://github.com/leej3',
+        linkedin: 'https://www.linkedin.com/in/leej3/',
         description: [
-          'PhD-trained neuroscientist and open-source contributor with deep experience in scientific data analysis and software engineering.',
-          'Published research in neuroscience and brain segmentation; committed to democratizing ethical and accessible AI.',
+          'John, a PhD trained neuroscientist, has deep expertise in scientific data analysis, software engineering, applying AI technologies, and biomedical research. Both in academia and industry he has honed his skill in transforming complex scientific workflows into practical, efficient technology solutions. He believes in empowering healthcare professionals with intelligent tools that enhance decision-making, streamline diagnostics, and ultimately improve patient outcomes.',
+          'As founder of Python AI Solutions Ltd., John leverages his experience in delivering tailored solutions that measurably enhance diagnostic efficiency, reduce costs, and increase throughput for pathology laboratories, healthcare providers, and community health organizations. His commitment to accessible and ethical AI ensures technology solutions integrate smoothly into existing clinical workflows, providing laboratories with the flexibility and adaptability required to continuously improve performance.',
+        ],
+      },
+      {
+        name: 'Peter Kidney',
+        role: 'Commercial Strategy',
+        image: {
+          src: getAssetPath('/submodules/the-team/public/photos/Peter_Kidney.webp'),
+          width: 400,
+          height: 400,
+        },
+        linkedin: 'https://www.linkedin.com/in/peter-kidney-427808b6/',
+        description: [
+          'Chartered Accountant with deep expertise in medical diagnostics and healthcare commercialization.',
+          'Co-founded a medical diagnostics company that secured €17 million in funding, obtained CE-marking for 17 diagnostic products, and established partnerships with 42 international distributors.',
+          'Provides essential insights into regulatory pathways, business planning, and commercialization strategies for healthcare startups.',
+        ],
+      },
+      {
+        name: 'Dr. Claire Murphy',
+        role: 'Medical Advisor',
+        image: {
+          src: getAssetPath('/submodules/the-team/public/photos/Claire_Murphy.webp'),
+          width: 400,
+          height: 400,
+        },
+        linkedin: 'https://www.linkedin.com/in/claire-murphy-2ba775a7/',
+        description: [
+          'Irish physician with over a decade of experience in Dublin hospitals, including St. James\'s Hospital and the National Maternity Hospital.',
+          'Extensive expertise in women\'s health and screening programs, with deep understanding of clinical workflows from laboratories to colposcopy clinics.',
+          'Ensures practical, effective, and clinically integrated solutions for healthcare technology implementations.',
         ],
       },
       {
@@ -866,20 +899,22 @@ export default function About() {
     <RootLayout>
       <PageIntro title="About Us">
         <p>
-          Our team brings diverse expertise in scientific research, data
-          science, programming, and software engineering, serving organizations
-          across various sectors and geographies.
+          Our team combines deep expertise in biomedical research, clinical
+          workflows, scientific data analysis, and software engineering.
         </p>
 
         <p>
-          We have extensive experience working with research institutions,
-          government agencies, energy companies, financial institutions,
-          non-profits, and startups worldwide.
+          We focus on developing tailored solutions that improve diagnostic
+          efficiency, reduce operational costs, and enhance performance for
+          pathology laboratories, healthcare providers, and community health
+          organizations.
         </p>
 
         <p>
-          We are active contributors to the open source community and excel at
-          delivering projects with remote and global teams.
+          With a strong commitment to ethical and accessible AI, we actively
+          contribute to the open-source community and specialize in delivering
+          high-quality, adaptable projects through collaboration with remote and
+          globally distributed teams.
         </p>
       </PageIntro>
 
