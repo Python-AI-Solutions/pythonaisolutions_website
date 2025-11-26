@@ -899,20 +899,22 @@ export default function About() {
     <RootLayout>
       <PageIntro title="About Us">
         <p>
-          Our team brings diverse expertise in scientific research, data
-          science, programming, and software engineering, serving organizations
-          across various sectors and geographies.
+          Our team combines deep expertise in biomedical research, clinical
+          workflows, scientific data analysis, and software engineering.
         </p>
 
         <p>
-          We have extensive experience working with research institutions,
-          government agencies, energy companies, financial institutions,
-          non-profits, and startups worldwide.
+          We focus on developing tailored solutions that improve diagnostic
+          efficiency, reduce operational costs, and enhance performance for
+          pathology laboratories, healthcare providers, and community health
+          organizations.
         </p>
 
         <p>
-          We are active contributors to the open source community and excel at
-          delivering projects with remote and global teams.
+          With a strong commitment to ethical and accessible AI, we actively
+          contribute to the open-source community and specialize in delivering
+          high-quality, adaptable projects through collaboration with remote and
+          globally distributed teams.
         </p>
       </PageIntro>
 
