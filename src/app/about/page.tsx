@@ -589,9 +589,10 @@ const team = [
           height: 400,
         },
         github: 'https://github.com/leej3',
+        linkedin: 'https://www.linkedin.com/in/leej3/',
         description: [
-          'PhD-trained neuroscientist and open-source contributor with deep experience in scientific data analysis and software engineering.',
-          'Published research in neuroscience and brain segmentation; committed to democratizing ethical and accessible AI.',
+          'John, a PhD trained neuroscientist, has deep expertise in scientific data analysis, software engineering, applying AI technologies, and biomedical research. Both in academia and industry he has honed his skill in transforming complex scientific workflows into practical, efficient technology solutions. He believes in empowering healthcare professionals with intelligent tools that enhance decision-making, streamline diagnostics, and ultimately improve patient outcomes.',
+          'As founder of Python AI Solutions Ltd., John leverages his experience in delivering tailored solutions that measurably enhance diagnostic efficiency, reduce costs, and increase throughput for pathology laboratories, healthcare providers, and community health organizations. His commitment to accessible and ethical AI ensures technology solutions integrate smoothly into existing clinical workflows, providing laboratories with the flexibility and adaptability required to continuously improve performance.',
         ],
       },
       {
