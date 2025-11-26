@@ -595,6 +595,36 @@ const team = [
         ],
       },
       {
+        name: 'Peter Kidney',
+        role: 'Commercial Strategy',
+        image: {
+          src: getAssetPath('/submodules/the-team/public/photos/Peter_Kidney.webp'),
+          width: 400,
+          height: 400,
+        },
+        linkedin: 'https://www.linkedin.com/in/peter-kidney-427808b6/',
+        description: [
+          'Chartered Accountant with deep expertise in medical diagnostics and healthcare commercialization.',
+          'Co-founded a medical diagnostics company that secured €17 million in funding, obtained CE-marking for 17 diagnostic products, and established partnerships with 42 international distributors.',
+          'Provides essential insights into regulatory pathways, business planning, and commercialization strategies for healthcare startups.',
+        ],
+      },
+      {
+        name: 'Dr. Claire Murphy',
+        role: 'Medical Advisor',
+        image: {
+          src: getAssetPath('/submodules/the-team/public/photos/Claire_Murphy.webp'),
+          width: 400,
+          height: 400,
+        },
+        linkedin: 'https://www.linkedin.com/in/claire-murphy-2ba775a7/',
+        description: [
+          'Irish physician with over a decade of experience in Dublin hospitals, including St. James\'s Hospital and the National Maternity Hospital.',
+          'Extensive expertise in women\'s health and screening programs, with deep understanding of clinical workflows from laboratories to colposcopy clinics.',
+          'Ensures practical, effective, and clinically integrated solutions for healthcare technology implementations.',
+        ],
+      },
+      {
         name: 'Sumit Jha',
         role: 'Technical Lead',
         image: {
