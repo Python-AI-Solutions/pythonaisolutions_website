@@ -1,0 +1,42 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="infraGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#31b9fd;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:0.1" />
+    </linearGradient>
+    <pattern id="infraGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#31b9fd" stroke-width="0.5" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#infraGradient)"/>
+  <rect width="800" height="600" fill="url(#infraGrid)"/>
+  
+  <!-- Kubernetes/Container Icon -->
+  <g transform="translate(350, 250)">
+    <path d="M50 0 L86.6 25 L86.6 75 L50 100 L13.4 75 L13.4 25 Z" 
+          fill="none" stroke="#31b9fd" stroke-width="2" opacity="0.3"/>
+    <circle cx="50" cy="50" r="15" fill="#31b9fd" opacity="0.2"/>
+    <path d="M35 50 L50 35 L65 50 L50 65 Z" fill="#31b9fd" opacity="0.25"/>
+  </g>
+  
+  <!-- Cloud/Server Icons -->
+  <g transform="translate(200, 320)">
+    <rect x="0" y="0" width="60" height="40" rx="4" fill="#31b9fd" opacity="0.15"/>
+    <rect x="0" y="50" width="60" height="40" rx="4" fill="#31b9fd" opacity="0.15"/>
+    <rect x="0" y="100" width="60" height="40" rx="4" fill="#31b9fd" opacity="0.15"/>
+  </g>
+  
+  <g transform="translate(540, 320)">
+    <rect x="0" y="0" width="60" height="40" rx="4" fill="#31b9fd" opacity="0.15"/>
+    <rect x="0" y="50" width="60" height="40" rx="4" fill="#31b9fd" opacity="0.15"/>
+    <rect x="0" y="100" width="60" height="40" rx="4" fill="#31b9fd" opacity="0.15"/>
+  </g>
+  
+  <!-- Connection Lines -->
+  <line x1="260" y1="360" x2="350" y2="300" stroke="#31b9fd" stroke-width="1" opacity="0.2"/>
+  <line x1="450" y1="300" x2="540" y2="360" stroke="#31b9fd" stroke-width="1" opacity="0.2"/>
+  <line x1="260" y1="400" x2="540" y2="400" stroke="#31b9fd" stroke-width="1" opacity="0.2" stroke-dasharray="5,5"/>
+  
+  <text x="400" y="480" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="#31b9fd" opacity="0.4">Infrastructure as Code</text>
+  <text x="400" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="14" text-anchor="middle" fill="#31b9fd" opacity="0.3">Kubernetes • Terraform • Docker • CI/CD</text>
+</svg>
