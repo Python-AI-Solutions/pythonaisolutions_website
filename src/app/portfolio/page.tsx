@@ -361,8 +361,8 @@ function Portfolio() {
       >
         <p>
           Explore our collection of innovative AI solutions and tools. From
-          healthcare applications to developer tools, we've built systems that
-          push the boundaries of what's possible with artificial intelligence.
+          healthcare applications to developer tools, we&apos;ve built systems that
+          push the boundaries of what&apos;s possible with artificial intelligence.
         </p>
       </PageIntro>
 
@@ -412,7 +412,7 @@ function Portfolio() {
               Have a project in mind?
             </h2>
             <p className="mt-4 text-lg text-neutral-300">
-              Let's collaborate to bring your AI vision to life. Our team is ready
+              Let&apos;s collaborate to bring your AI vision to life. Our team is ready
               to tackle your most challenging problems.
             </p>
             <div className="mt-8">

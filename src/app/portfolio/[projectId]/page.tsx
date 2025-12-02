@@ -418,7 +418,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               Interested in Similar Solutions?
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-              Let's discuss how we can help bring your vision to life with
+              Let&apos;s discuss how we can help bring your vision to life with
               cutting-edge AI solutions tailored to your needs.
             </p>
             <div className="mt-5 flex flex-wrap justify-center gap-3">
