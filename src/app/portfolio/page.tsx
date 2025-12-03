@@ -112,6 +112,29 @@ const projects = [
       'Automated scaling and self-healing',
     ],
   },
+  {
+    id: 'archive-flow',
+    title: 'ArchiveFlow',
+    category: 'Data Management',
+    description:
+      'A lab data entry and validation platform for neuroscience research. Validates experiments against NWB schemas and integrates with eLabFTW and LabArchives ELN backends.',
+    techStack: ['Python', 'Streamlit', 'eLabFTW API', 'Playwright', 'Pytest'],
+    features: [
+      'Dynamic form tables for surgery & behavior data',
+      'Real-time NWB schema validation (17+ fields)',
+      'Multi-format export (JSON, CSV)',
+      'Dual ELN support (eLabFTW, LabArchives)',
+    ],
+    status: 'Production Ready',
+    statusColor: 'bg-green-500',
+    image: '/portfolio/placeholder.svg',
+    github: null,
+    demo: null,
+    achievements: [
+      'Production ready for lab deployment',
+      'Validates against ndx-fiber-photometry NWB schema',
+    ],
+  },
   // Beta Projects
   {
     id: 'evaluation-exploration',
@@ -152,25 +175,6 @@ const projects = [
     github: 'https://github.com/Python-AI-Solutions/agentic-neurodata-conversion',
     demo: null,
     achievements: ['Used by 10+ research laboratories', 'Part of NIMH initiative'],
-  },
-  {
-    id: 'archive-flow',
-    title: 'Archive Flow',
-    category: 'Data Management',
-    description:
-      'An intelligent document archival and retrieval system that uses AI to organize, categorize, and enable semantic search across large document repositories.',
-    techStack: ['Python', 'Elasticsearch', 'React', 'FastAPI', 'Redis'],
-    features: [
-      'Automated document categorization',
-      'Semantic search capabilities',
-      'Version control for documents',
-      'Advanced access control',
-    ],
-    status: 'In Development',
-    statusColor: 'bg-yellow-500',
-    image: '/portfolio/placeholder.svg',
-    github: null, // To be added when open-sourced
-    demo: null,
   },
 ]
 
