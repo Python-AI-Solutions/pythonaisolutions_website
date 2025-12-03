@@ -191,8 +191,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     status: 'Beta',
     statusColor: 'bg-blue-500',
-    image: '/portfolio/placeholder.svg',
-    screenshots: ['/portfolio/placeholder.svg'],
+    image: '/portfolio/evaluation-exploration.png',
+    screenshots: ['/portfolio/evaluation-exploration.png'],
     github: 'https://github.com/Python-AI-Solutions/validation-project',
     demo: null,
     achievements: [
@@ -278,8 +278,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     status: 'Production Ready',
     statusColor: 'bg-green-500',
-    image: '/portfolio/placeholder.svg',
-    screenshots: ['/portfolio/placeholder.svg'],
+    image: '/portfolio/archive-flow.png',
+    screenshots: ['/portfolio/archive-flow.png'],
     github: null,
     demo: null,
     achievements: [

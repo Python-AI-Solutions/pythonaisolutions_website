@@ -127,7 +127,7 @@ const projects = [
     ],
     status: 'Production Ready',
     statusColor: 'bg-green-500',
-    image: '/portfolio/placeholder.svg',
+    image: '/portfolio/archive-flow.png',
     github: null,
     demo: null,
     achievements: [
@@ -151,7 +151,7 @@ const projects = [
     ],
     status: 'Beta',
     statusColor: 'bg-blue-500',
-    image: '/portfolio/placeholder.svg',
+    image: '/portfolio/evaluation-exploration.png',
     github: 'https://github.com/Python-AI-Solutions/validation-project',
     demo: null,
   },
