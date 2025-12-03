@@ -118,18 +118,18 @@ const projects = [
     title: 'Evaluation Exploration',
     category: 'Developer Tools',
     description:
-      'A comprehensive testing and evaluation framework for AI models. Provides automated testing, performance benchmarking, and detailed analytics for machine learning pipelines.',
-    techStack: ['Python', 'MLflow', 'Docker', 'Kubernetes', 'React'],
+      'A framework for comparing seven validation techniques to catch LLM hallucinations in RAG systems. Run RAGAS, LLM-as-Judge, metamorphic testing, and more—all locally with deterministic results.',
+    techStack: ['Python', 'Flask', 'Sentence Transformers', 'Claude API', 'Ollama'],
     features: [
-      'Automated model evaluation',
-      'A/B testing framework',
-      'Performance monitoring dashboard',
-      'Integration with popular ML frameworks',
+      'Seven validation pipelines (P0-P6)',
+      'Hybrid BM25 + vector search retrieval',
+      'Web dashboard with dark/light mode',
+      'Per-pipeline cost and latency tracking',
     ],
     status: 'Beta',
     statusColor: 'bg-blue-500',
     image: '/portfolio/placeholder.svg',
-    github: null, // To be added when open-sourced
+    github: 'https://github.com/Python-AI-Solutions/validation-project',
     demo: null,
   },
   // In Development Projects
