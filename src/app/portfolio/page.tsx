@@ -137,19 +137,19 @@ const projects = [
   // Beta Projects
   {
     id: 'evaluation-exploration',
-    title: 'Evaluation Exploration',
+    title: 'LLM Evaluation Exploration',
     category: 'Developer Tools',
     description:
-      'A framework for comparing seven validation techniques to catch LLM hallucinations in RAG systems. Run RAGAS, LLM-as-Judge, metamorphic testing, and more—all locally with deterministic results.',
+      'An exploration of different techniques for evaluating LLM outputs in RAG systems. Demonstrates various validation approaches including RAGAS scoring, LLM-as-Judge, metamorphic testing, and knowledge graph verification.',
     techStack: ['Python', 'Flask', 'Sentence Transformers', 'Claude API', 'Ollama'],
     features: [
-      'Seven validation pipelines (P0-P6)',
-      'Hybrid BM25 + vector search retrieval',
-      'Web dashboard with dark/light mode',
-      'Per-pipeline cost and latency tracking',
+      'Multiple validation approaches explored',
+      'Hybrid retrieval with BM25 and vector search',
+      'Web interface for running evaluations',
+      'Cost and latency comparison',
     ],
-    status: 'Beta',
-    statusColor: 'bg-blue-500',
+    status: 'Exploration',
+    statusColor: 'bg-purple-500',
     image: '/portfolio/evaluation-exploration.png',
     github: 'https://github.com/Python-AI-Solutions/validation-project',
     demo: null,
