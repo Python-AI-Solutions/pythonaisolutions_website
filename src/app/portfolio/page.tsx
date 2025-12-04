@@ -72,21 +72,21 @@ const projects = [
   {
     id: 'nostrings-resume',
     title: 'NoStrings Resume',
-    category: 'AI-Powered Tools',
+    category: 'Developer Tools',
     description:
-      'An intelligent resume builder and analyzer that helps job seekers create optimized resumes. Uses NLP to match resume content with job descriptions and provides actionable improvement suggestions.',
-    techStack: ['Next.js', 'React', 'Python', 'OpenAI API', 'PostgreSQL'],
+      'A privacy-first resume builder that runs entirely in your browser. Create professional resumes with multiple export formats (PDF, DOCX, HTML, JSON Resume, HR-Open) while keeping your data on your device with zero server dependencies.',
+    techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn/ui'],
     features: [
-      'AI-powered resume optimization',
-      'ATS compatibility checker',
-      'Real-time content suggestions',
-      'Multiple professional templates',
+      'Client-side architecture with localStorage',
+      'JSON Resume Schema v1.2.1 compliance',
+      'Multiple export formats (PDF, DOCX, HTML, JSON, HR-Open)',
+      'Theme customization with live preview',
     ],
     status: 'Production Ready',
     statusColor: 'bg-green-500',
     image: '/portfolio/NoStringsResume.png',
     github: 'https://github.com/NoStringsDevelopment/no-strings-resume',
-    demo: null, // Demo coming soon
+    demo: 'https://nostringsresume.org',
   },
   {
     id: 'infrastructure',
