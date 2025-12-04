@@ -8,6 +8,7 @@ import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { RootLayout } from '@/components/RootLayout'
+import { ScreenshotCarousel } from '@/components/ScreenshotCarousel'
 import { projectDetails } from '@/data/projects'
 
 export async function generateMetadata({
@@ -161,37 +162,13 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
         </FadeIn>
         </div>
 
-        {/* Main Project Image */}
+        {/* Project Screenshots Carousel */}
         <FadeIn className="mt-8">
           <div className="mx-auto max-w-5xl">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#31b9fd]/10 to-[#31b9fd]/5 shadow-xl">
-              {project.image.endsWith('.svg') ? (
-                <div className="relative h-80 bg-[url('/grid.svg')] opacity-20">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="mb-2 text-6xl font-bold text-[#31b9fd]/20">
-                        {project.title.charAt(0)}
-                      </div>
-                      <div className="text-base font-medium text-[#31b9fd]/60">
-                        {project.category}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="relative aspect-video">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={1200}
-                    height={675}
-                    className="h-full w-full object-cover object-top"
-                    priority
-                    unoptimized
-                  />
-                </div>
-              )}
-            </div>
+            <ScreenshotCarousel 
+              screenshots={project.screenshots || [project.image]} 
+              title={project.title}
+            />
           </div>
         </FadeIn>
 
@@ -376,39 +353,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
           </div>
         )}
 
-        {/* Additional Screenshots */}
-        {project.screenshots && project.screenshots.length > 1 && (
-          <div className="mx-auto mt-12 max-w-5xl">
-            <FadeIn>
-              <div className="mb-4">
-                <h2 className="font-display text-2xl font-semibold text-neutral-950">
-                  More Screenshots
-                </h2>
-                <p className="mt-1 text-sm text-neutral-600">
-                  Additional views of the application in action
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {project.screenshots.slice(1).map((screenshot, index) => (
-                  <div key={index} className="group relative overflow-hidden rounded-xl border border-neutral-200 bg-gradient-to-br from-[#31b9fd]/10 to-[#31b9fd]/5 shadow-sm transition-all duration-200 hover:shadow-lg">
-                    <div className="relative aspect-video">
-                      <Image
-                        src={screenshot}
-                        alt={`${project.title} screenshot ${index + 2}`}
-                        width={800}
-                        height={450}
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        unoptimized
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        )}
 
         {/* Call to Action */}
         <div className="mx-auto max-w-5xl">

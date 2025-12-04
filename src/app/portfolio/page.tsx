@@ -160,20 +160,20 @@ const projects = [
     title: 'Agentic Neurodata Conversion',
     category: 'Scientific Computing',
     description:
-      'An AI-powered platform for converting neuroscience electrophysiology data to standardized NWB format. Features a three-agent architecture with natural language interface, automated format detection, and intelligent validation for DANDI archive readiness.',
-    techStack: ['Python', 'FastAPI', 'Claude AI', 'PyNWB', 'NeuroConv', 'SpikeInterface'],
+      'An AI assistant that handles NWB conversion workflow through conversation. Three specialized agents (Conversation, Conversion, Evaluation) work together to detect recording formats, collect metadata naturally, and validate output with clear explanations.',
+    techStack: ['Python', 'FastAPI', 'Claude Sonnet 4.5', 'NeuroConv', 'NWBInspector', 'WebSocket'],
     features: [
-      'Natural language metadata collection',
-      'Automated format detection (SpikeGLX, OpenEphys, Neuropixels)',
-      'AI-powered validation and issue analysis',
-      'Conversational chat interface',
+      'Automated format detection for electrophysiology data',
+      'Natural language metadata collection with provenance tracking',
+      'AI-powered validation with quality scoring (0-100)',
+      'Interactive HTML reports and real-time progress updates',
     ],
     status: 'In Development',
     statusColor: 'bg-yellow-500',
-    image: '/portfolio/placeholder.svg',
+    image: '/portfolio/nwb-converter-validation.png',
     github: 'https://github.com/Python-AI-Solutions/agentic-neurodata-conversion',
     demo: null,
-    achievements: ['Used by 10+ research laboratories', 'Part of NIMH initiative'],
+    achievements: ['Three-agent MCP architecture', 'DANDI compliance tracking'],
   },
 ]
 
