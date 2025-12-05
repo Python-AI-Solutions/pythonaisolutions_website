@@ -52,8 +52,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     status: 'Research Prototype',
     statusColor: 'bg-amber-500',
-    image: '/portfolio/CervicalAIScreener.png',
-    screenshots: ['/portfolio/CervicalAIScreener.png'],
+    image: '/portfolio/CervicalAIScreener.webp',
+    screenshots: ['/portfolio/CervicalAIScreener.webp'],
     github: 'https://github.com/Python-AI-Solutions/agentic-cervical-screener',
     demo: null,
     achievements: [
@@ -97,8 +97,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     status: 'Production Ready',
     statusColor: 'bg-green-500',
-    image: '/portfolio/NoStringsResume.png',
-    screenshots: ['/portfolio/NoStringsResume.png'],
+    image: '/portfolio/NoStringsResume.webp',
+    screenshots: ['/portfolio/NoStringsResume.webp'],
     github: 'https://github.com/NoStringsDevelopment/no-strings-resume',
     demo: 'https://nostringsresume.org',
     achievements: [
@@ -141,8 +141,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     status: 'Production Ready',
     statusColor: 'bg-green-500',
-    image: '/portfolio/infrastructure-architecture.png',
-    screenshots: ['/portfolio/infrastructure-architecture.png'],
+    image: '/portfolio/infrastructure-architecture.webp',
+    screenshots: ['/portfolio/infrastructure-architecture.webp'],
     github: 'https://github.com/Python-AI-Solutions/websites-management',
     demo: null,
     achievements: [
@@ -191,8 +191,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     status: 'Exploration',
     statusColor: 'bg-purple-500',
-    image: '/portfolio/evaluation-exploration.png',
-    screenshots: ['/portfolio/evaluation-exploration.png'],
+    image: '/portfolio/evaluation-exploration.webp',
+    screenshots: ['/portfolio/evaluation-exploration.webp'],
     github: 'https://github.com/Python-AI-Solutions/validation-project',
     demo: null,
     achievements: [
@@ -241,11 +241,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     status: 'In Development',
     statusColor: 'bg-yellow-500',
-    image: '/portfolio/nwb-converter-chat.png',
+    image: '/portfolio/nwb-converter-chat.webp',
     screenshots: [
-      '/portfolio/nwb-converter-chat.png',
-      '/portfolio/nwb-converter-validation.png',
-      '/portfolio/nwb-converter-provenance.png'
+      '/portfolio/nwb-converter-chat.webp',
+      '/portfolio/nwb-converter-validation.webp',
+      '/portfolio/nwb-converter-provenance.webp'
     ],
     github: 'https://github.com/Python-AI-Solutions/agentic-neurodata-conversion',
     demo: null,

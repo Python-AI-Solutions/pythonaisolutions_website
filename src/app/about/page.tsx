@@ -187,7 +187,7 @@ function Culture() {
         <div className="space-y-8">
           <div className="flex justify-center">
             <Image
-              src={getAssetPath('/our-mission.png')}
+              src={getAssetPath('/our-mission.webp')}
               alt="Our Mission"
               width={300}
               height={300}
