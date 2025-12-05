@@ -10,6 +10,9 @@ export interface ProjectDetail {
   techStack: string[]
   features: string[]
   status: string
+  // IMPORTANT: statusColor must be a complete Tailwind class (e.g., 'bg-green-500').
+  // This file must be included in tailwind.config.js `content` array for these
+  // classes to be found by Tailwind's JIT compiler and included in the CSS bundle.
   statusColor: string
   image: string
   screenshots?: string[]
