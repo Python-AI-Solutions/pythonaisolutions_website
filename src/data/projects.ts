@@ -111,14 +111,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
     shortDescription:
       'Production infrastructure-as-code system managing Kubernetes deployment across AWS and on-premises environments with comprehensive documentation and security hardening.',
     fullDescription:
-      'A real-world infrastructure project demonstrating how to manage Kubernetes clusters and cloud resources using Infrastructure as Code (IaC) principles. The system combines Terraform for cloud resource provisioning, Kubernetes for container orchestration, and a custom security setup using WireGuard VPN. This project shows the practical decisions made when building and maintaining a hybrid infrastructure setup, including architecture design, security practices, and operational procedures.',
+      'A real-world infrastructure project demonstrating how to manage Kubernetes clusters and cloud resources using Infrastructure as Code (IaC) principles. The system combines OpenTofu (the community maintained equivalent to Terraform) for cloud resource provisioning, Kubernetes for container orchestration, and a custom security setup using WireGuard VPN. This project shows the practical decisions made when building and maintaining a hybrid infrastructure setup, including architecture design, security practices, and operational procedures.',
     problem:
-      'Managing infrastructure across different environments (on-premises and cloud) requires clear processes, reliable provisioning, and proper security controls. Manual infrastructure management leads to inconsistencies and makes it difficult to recreate environments. Teams need documentation and procedures to understand how systems are deployed and maintained.',
+      'Managing infrastructure across different environments (on-premises and cloud) requires clear processes, reliable provisioning, and robust security controls. Manual infrastructure management leads to inconsistencies and makes it difficult to recreate environments. Teams need documentation and procedures to understand how systems are deployed and maintained.',
     solution:
-      'We built an Infrastructure as Code solution using Terraform to manage cloud resources, Kubernetes for container orchestration, and WireGuard for secure network access. The project includes modular Terraform code, comprehensive documentation covering setup and operations, and a hybrid architecture connecting on-premises and AWS infrastructure.',
+      'We built an Infrastructure as Code solution using OpenTofu to manage cloud resources, Kubernetes for container orchestration, and WireGuard for secure network access. The project includes modular OpenTofu code, comprehensive documentation covering setup and operations, and a hybrid architecture connecting on-premises and AWS infrastructure.',
     whatWeDid: [
       'Designed and implemented a single-node Kubernetes cluster on on-premises Debian host with AWS EC2 bastion',
-      'Created modular Terraform code (44 files) organizing infrastructure into reusable components',
+      'Created modular OpenTofu code (44 files) organizing infrastructure into reusable components',
       'Implemented WireGuard VPN for secure access between on-premises and cloud infrastructure',
       'Configured Cloudflare DNS management and Traefik ingress controller',
       'Set up GitHub Actions workflows for deployment automation with staging/prod environments',
@@ -126,9 +126,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Integrated ArgoCD for GitOps-based deployments',
       'Implemented Kubernetes RBAC, etcd encryption, and audit logging',
     ],
-    techStack: ['Kubernetes', 'Terraform', 'Docker', 'GitHub Actions', 'AWS', 'GCP', 'WireGuard', 'Traefik', 'ArgoCD', 'Cloudflare'],
+    techStack: ['Kubernetes', 'OpenTofu', 'Docker', 'GitHub Actions', 'AWS', 'GCP', 'WireGuard', 'Traefik', 'ArgoCD', 'Cloudflare'],
     features: [
-      'Infrastructure as Code with modular Terraform modules',
+      'Infrastructure as Code with modular OpenTofu modules',
       'Hybrid cloud setup (on-premises + AWS)',
       'Secure network access via WireGuard VPN',
       'Kubernetes cluster with security hardening',
@@ -143,7 +143,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     github: 'https://github.com/Python-AI-Solutions/websites-management',
     demo: null,
     achievements: [
-      'Automated infrastructure provisioning with Terraform',
+      'Automated infrastructure provisioning with OpenTofu',
       'Secure multi-environment deployment via WireGuard VPN',
       'Well-documented architecture and operational procedures',
       'Modular code design enabling infrastructure reusability',
