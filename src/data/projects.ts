@@ -253,47 +253,47 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Quality scoring system for validation results',
     ],
   },
-  'archive-flow': {
-    id: 'archive-flow',
-    title: 'ArchiveFlow',
-    category: 'Data Management',
-    shortDescription:
-      'A lab data entry and validation platform for neuroscience research that validates experiments against NWB schemas and integrates with Electronic Lab Notebooks.',
-    fullDescription:
-      'ArchiveFlow is a comprehensive Streamlit-based data entry and validation platform that streamlines lab data collection for neuroscience research. The system validates experiments against the ndx-fiber-photometry NWB (Neurodata Without Borders) schema and enables direct upload to multiple Electronic Lab Notebook (ELN) backends including eLabFTW and LabArchives. Built with an adapter pattern for flexible ELN integration, it ensures consistent data formats and catches missing fields before archiving.',
-    problem:
-      'Neuroscience research labs generate extensive experimental metadata—from surgical procedures to behavioral sessions—that must be meticulously documented and validated against standardized schemas like NWB. Traditional methods involve manual data entry into spreadsheets or paper forms, leading to inconsistent data formats across lab members, missing required fields discovered only during data archiving, difficulty integrating with Electronic Lab Notebooks, and tedious re-entry when uploading to eLabFTW or LabArchives.',
-    solution:
-      'ArchiveFlow provides a unified Streamlit interface for structured data entry with dynamic forms for surgeries, behavior sessions, and experiments. The platform validates 17+ required fields in real-time against the ndx-fiber-photometry schema, warns about out-of-range values, and supports one-click upload to multiple ELN backends through a unified adapter pattern.',
-    whatWeDid: [
-      'Built dynamic surgery entry form with expandable sections for viral vectors, injection sites, implants, and subjects',
-      'Created flexible behavior session tracking form with customizable outcome columns and multi-subject support',
-      'Implemented adapter pattern supporting both eLabFTW and LabArchives backends with unified validation',
-      'Developed NWB schema parser that validates experiments against ndx-fiber-photometry requirements',
-      'Built comprehensive Playwright E2E tests for form functionality and pytest tests for validation workflows',
-      'Integrated eLabFTW API for creating and updating experiments with structured metadata',
-    ],
-    techStack: ['Python', 'Streamlit', 'eLabFTW API', 'Playwright', 'Pytest', 'REST APIs', 'JSON', 'CSV'],
-    features: [
-      'Dynamic form tables for viruses, injections, implants, and subjects',
-      'Customizable outcome columns per behavior session',
-      'Real-time validation of 17+ required fields against NWB schema',
-      'Data range validation for coordinates, wavelengths, and numerical aperture',
-      'Multi-format export (JSON for ELN, CSV for spreadsheets)',
-      'One-click upload to eLabFTW',
-      'Dual ELN support (eLabFTW and LabArchives)',
-    ],
-    status: 'Production Ready',
-    statusColor: 'bg-green-500',
-    image: '/portfolio/archive-flow.png',
-    screenshots: ['/portfolio/archive-flow.png'],
-    github: null,
-    demo: null,
-    achievements: [
-      'Production ready for lab deployment',
-      'Validates against ndx-fiber-photometry NWB schema',
-      'Dual ELN backend support (eLabFTW, LabArchives)',
-      'Comprehensive E2E test coverage',
-    ],
-  },
+  // 'archive-flow': {
+  //   id: 'archive-flow',
+  //   title: 'ArchiveFlow',
+  //   category: 'Data Management',
+  //   shortDescription:
+  //     'A lab data entry and validation platform for neuroscience research that validates experiments against NWB schemas and integrates with Electronic Lab Notebooks.',
+  //   fullDescription:
+  //     'ArchiveFlow is a comprehensive Streamlit-based data entry and validation platform that streamlines lab data collection for neuroscience research. The system validates experiments against the ndx-fiber-photometry NWB (Neurodata Without Borders) schema and enables direct upload to multiple Electronic Lab Notebook (ELN) backends including eLabFTW and LabArchives. Built with an adapter pattern for flexible ELN integration, it ensures consistent data formats and catches missing fields before archiving.',
+  //   problem:
+  //     'Neuroscience research labs generate extensive experimental metadata—from surgical procedures to behavioral sessions—that must be meticulously documented and validated against standardized schemas like NWB. Traditional methods involve manual data entry into spreadsheets or paper forms, leading to inconsistent data formats across lab members, missing required fields discovered only during data archiving, difficulty integrating with Electronic Lab Notebooks, and tedious re-entry when uploading to eLabFTW or LabArchives.',
+  //   solution:
+  //     'ArchiveFlow provides a unified Streamlit interface for structured data entry with dynamic forms for surgeries, behavior sessions, and experiments. The platform validates 17+ required fields in real-time against the ndx-fiber-photometry schema, warns about out-of-range values, and supports one-click upload to multiple ELN backends through a unified adapter pattern.',
+  //   whatWeDid: [
+  //     'Built dynamic surgery entry form with expandable sections for viral vectors, injection sites, implants, and subjects',
+  //     'Created flexible behavior session tracking form with customizable outcome columns and multi-subject support',
+  //     'Implemented adapter pattern supporting both eLabFTW and LabArchives backends with unified validation',
+  //     'Developed NWB schema parser that validates experiments against ndx-fiber-photometry requirements',
+  //     'Built comprehensive Playwright E2E tests for form functionality and pytest tests for validation workflows',
+  //     'Integrated eLabFTW API for creating and updating experiments with structured metadata',
+  //   ],
+  //   techStack: ['Python', 'Streamlit', 'eLabFTW API', 'Playwright', 'Pytest', 'REST APIs', 'JSON', 'CSV'],
+  //   features: [
+  //     'Dynamic form tables for viruses, injections, implants, and subjects',
+  //     'Customizable outcome columns per behavior session',
+  //     'Real-time validation of 17+ required fields against NWB schema',
+  //     'Data range validation for coordinates, wavelengths, and numerical aperture',
+  //     'Multi-format export (JSON for ELN, CSV for spreadsheets)',
+  //     'One-click upload to eLabFTW',
+  //     'Dual ELN support (eLabFTW and LabArchives)',
+  //   ],
+  //   status: 'Production Ready',
+  //   statusColor: 'bg-green-500',
+  //   image: '/portfolio/archive-flow.png',
+  //   screenshots: ['/portfolio/archive-flow.png'],
+  //   github: null,
+  //   demo: null,
+  //   achievements: [
+  //     'Production ready for lab deployment',
+  //     'Validates against ndx-fiber-photometry NWB schema',
+  //     'Dual ELN backend support (eLabFTW, LabArchives)',
+  //     'Comprehensive E2E test coverage',
+  //   ],
+  // },
 }
