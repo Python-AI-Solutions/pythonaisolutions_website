@@ -1,6 +1,5 @@
 'use client'
 
-import { type Metadata } from 'next'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState, useMemo } from 'react'
@@ -10,7 +9,7 @@ import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { RootLayout } from '@/components/RootLayout'
-import { getAssetPath } from '@/lib/basePath'
+import { projectDetails, type ProjectDetail } from '@/data/projects'
 
 // Icons for links
 const GithubIcon = () => (
@@ -44,140 +43,26 @@ const ExternalLinkIcon = () => (
   </svg>
 )
 
-const projects = [
-  // Production Ready Projects
-  {
-    id: 'cervical-screener',
-    title: 'Cervical Screener',
-    category: 'Healthcare AI',
-    description:
-      'An AI-powered medical imaging solution for cervical cancer screening. This advanced system leverages deep learning to analyze cytology slides, providing healthcare professionals with accurate and efficient diagnostic support.',
-    techStack: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'FastAPI'],
-    features: [
-      'Automated cell detection and classification',
-      'Real-time analysis pipeline',
-      'Clinical-grade accuracy metrics',
-      'HIPAA-compliant data handling',
-    ],
-    status: 'Production Ready',
-    statusColor: 'bg-green-500',
-    image: '/portfolio/CervicalAIScreener.png',
-    github: 'https://github.com/Python-AI-Solutions/agentic-cervical-screener',
-    demo: null,
-    achievements: [
-      'Winner - Health Innovation Hub AI Call',
-      'Processing 1000+ slides per day capability',
-    ],
-  },
-  {
-    id: 'nostrings-resume',
-    title: 'NoStrings Resume',
-    category: 'Developer Tools',
-    description:
-      'A privacy-first resume builder that runs entirely in your browser. Create professional resumes with multiple export formats (PDF, DOCX, HTML, JSON Resume, HR-Open) while keeping your data on your device with zero server dependencies.',
-    techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn/ui'],
-    features: [
-      'Client-side architecture with localStorage',
-      'JSON Resume Schema v1.2.1 compliance',
-      'Multiple export formats (PDF, DOCX, HTML, JSON, HR-Open)',
-      'Theme customization with live preview',
-    ],
-    status: 'Production Ready',
-    statusColor: 'bg-green-500',
-    image: '/portfolio/NoStringsResume.png',
-    github: 'https://github.com/NoStringsDevelopment/no-strings-resume',
-    demo: 'https://nostringsresume.org',
-  },
-  {
-    id: 'infrastructure',
-    title: 'Infrastructure & DevOps',
-    category: 'Platform Engineering',
-    description:
-      'Production infrastructure-as-code system managing Kubernetes deployment across AWS and on-premises environments with comprehensive documentation and security hardening. Hybrid cloud setup using Terraform, WireGuard VPN, and ArgoCD for GitOps deployments.',
-    techStack: ['Kubernetes', 'Terraform', 'Docker', 'GitHub Actions', 'AWS', 'GCP', 'WireGuard', 'Traefik', 'ArgoCD'],
-    features: [
-      'Infrastructure as Code with modular Terraform modules',
-      'Hybrid cloud setup (on-premises + AWS)',
-      'Secure network access via WireGuard VPN',
-      'GitOps deployment with ArgoCD',
-    ],
-    status: 'Production Ready',
-    statusColor: 'bg-green-500',
-    image: '/portfolio/infrastructure-architecture.png',
-    github: 'https://github.com/Python-AI-Solutions/websites-management',
-    demo: null,
-    achievements: [
-      'Automated infrastructure provisioning with Terraform',
-      'Secure multi-environment deployment via WireGuard VPN',
-    ],
-  },
-  {
-    id: 'archive-flow',
-    title: 'ArchiveFlow',
-    category: 'Data Management',
-    description:
-      'A lab data entry and validation platform for neuroscience research. Validates experiments against NWB schemas and integrates with eLabFTW and LabArchives ELN backends.',
-    techStack: ['Python', 'Streamlit', 'eLabFTW API', 'Playwright', 'Pytest'],
-    features: [
-      'Dynamic form tables for surgery & behavior data',
-      'Real-time NWB schema validation (17+ fields)',
-      'Multi-format export (JSON, CSV)',
-      'Dual ELN support (eLabFTW, LabArchives)',
-    ],
-    status: 'Production Ready',
-    statusColor: 'bg-green-500',
-    image: '/portfolio/archive-flow.png',
-    github: null,
-    demo: null,
-    achievements: [
-      'Production ready for lab deployment',
-      'Validates against ndx-fiber-photometry NWB schema',
-    ],
-  },
-  // Beta Projects
-  {
-    id: 'evaluation-exploration',
-    title: 'LLM Evaluation Exploration',
-    category: 'Developer Tools',
-    description:
-      'An exploration of different techniques for evaluating LLM outputs in RAG systems. Demonstrates various validation approaches including RAGAS scoring, LLM-as-Judge, metamorphic testing, and knowledge graph verification.',
-    techStack: ['Python', 'Flask', 'Sentence Transformers', 'Claude API', 'Ollama'],
-    features: [
-      'Multiple validation approaches explored',
-      'Hybrid retrieval with BM25 and vector search',
-      'Web interface for running evaluations',
-      'Cost and latency comparison',
-    ],
-    status: 'Exploration',
-    statusColor: 'bg-purple-500',
-    image: '/portfolio/evaluation-exploration.png',
-    github: 'https://github.com/Python-AI-Solutions/validation-project',
-    demo: null,
-  },
-  // In Development Projects
-  {
-    id: 'nwb-converter',
-    title: 'Agentic Neurodata Conversion',
-    category: 'Scientific Computing',
-    description:
-      'An AI assistant that handles NWB conversion workflow through conversation. Three specialized agents (Conversation, Conversion, Evaluation) work together to detect recording formats, collect metadata naturally, and validate output with clear explanations.',
-    techStack: ['Python', 'FastAPI', 'Claude Sonnet 4.5', 'NeuroConv', 'NWBInspector', 'WebSocket'],
-    features: [
-      'Automated format detection for electrophysiology data',
-      'Natural language metadata collection with provenance tracking',
-      'AI-powered validation with quality scoring (0-100)',
-      'Interactive HTML reports and real-time progress updates',
-    ],
-    status: 'In Development',
-    statusColor: 'bg-yellow-500',
-    image: '/portfolio/nwb-converter-validation.png',
-    github: 'https://github.com/Python-AI-Solutions/agentic-neurodata-conversion',
-    demo: null,
-    achievements: ['Three-agent MCP architecture', 'DANDI compliance tracking'],
-  },
-]
+// Transform projectDetails into the format needed for display
+// This uses projects.ts as the single source of truth
+const projects = Object.values(projectDetails).map((project) => ({
+  id: project.id,
+  title: project.title,
+  category: project.category,
+  description: project.shortDescription,
+  techStack: project.techStack,
+  features: project.features,
+  status: project.status,
+  statusColor: project.statusColor,
+  image: project.image,
+  github: project.github,
+  demo: project.demo,
+  achievements: project.achievements,
+}))
 
-function ProjectCard({ project }: { project: typeof projects[0] }) {
+type PortfolioProject = typeof projects[number]
+
+function ProjectCard({ project }: { project: PortfolioProject }) {
   const [isHovered, setIsHovered] = useState(false)
   const router = useRouter()
 
