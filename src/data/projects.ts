@@ -204,13 +204,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
     title: 'Agentic Neurodata Conversion',
     category: 'Scientific Computing',
     shortDescription:
-      'An AI assistant for converting neuroscience electrophysiology data to standardized NWB format.',
+      'A multi-agent NWB conversion assistant that grounds LLM behavior in community standards, existing tools, and evaluations so outputs are scientifically trustworthy, not just schema-valid.',
     fullDescription:
-      'The Agentic Neurodata Conversion System is an AI assistant that streamlines NWB conversion through natural conversation. Three specialized AI agents work together: the Conversation Agent handles user interaction and metadata collection, the Conversion Agent detects data formats and runs conversions, and the Evaluation Agent validates output and explains issues. The system aims to simplify format detection, metadata collection, and validation for researchers converting neuroscience data to NWB format.',
+      'Agentic Neurodata Conversion is a three-agent system (Conversation, Conversion, Evaluation) for turning electrophysiology recordings into NWB through a chat interface. Its central goal is to tame agent behaviour by anchoring decisions in structured knowledge from the NWB ecosystem: schemas and ontologies, community-maintained conversion pipelines, reference datasets, and established QC tools. The project demonstrates spec-driven, heavily tested agent workflows that keep LLMs useful while making their outputs traceable, explainable, and suitable for sharing and DANDI upload.',
     problem:
-      'Converting electrophysiology data to NWB format requires understanding both source formats (like SpikeGLX and OpenEphys) and the NWB schema. Researchers must identify their data format, collect required metadata fields (experimenter, institution, subject details, electrode locations), run conversions, and interpret validation errors. DANDI archive submissions require strict compliance with NWB standards. This technical process can be time-consuming, especially for researchers without extensive programming experience.',
+      'In both NWB workflows and LLM-assisted tooling, “valid output” and “good scientific data” are not the same thing. It is easy to produce NWB files that pass basic validators yet misrepresent the experiment (wrong units, missing context, mislabelled structures), and equally easy for LLMs to generate convincing conversion code or metadata that only a domain expert would spot as wrong. Researchers lack agentic tools that systematically tie AI suggestions back to community ontologies, proven conversion scripts, and real example datasets, or that help them distinguish superficially valid files from data that is actually safe to share and reuse.',
     solution:
-      'An AI assistant that guides users through the conversion workflow via conversation. Users describe their experiment, and the system detects the data format by analyzing files (binary data, companion metadata, directory structure). Instead of filling out forms, users provide information naturally: "8-week-old male mice, hippocampal recordings from Dr. Smith\'s lab at MIT." The AI extracts structured metadata, asks for missing information, and tracks where values came from for DANDI compliance. After conversion, NWBInspector validates the file, and the AI explains issues clearly with suggested fixes.',
+      'The system constrains LLMs by making them operate over existing, trusted artefacts instead of free-form invention. Agents use community tools such as NeuroConv and NWBInspector, consult schemas and emerging ontology-backed services, and compare behaviour against curated test and example datasets. Each important decision is accompanied by provenance (what rule, tool, dataset, or eval run it came from), plus targeted tests and evaluations, so experts can quickly audit where the model is extrapolating and decide whether an NWB file is merely valid or genuinely ready for archiving. Future work is aimed at incorporating patterns from community templates like CatalystNeuro’s “my-lab-to-nwb” cookiecutter projects so agent behaviour increasingly reflects how labs actually organise their conversions.',
     whatWeDid: [
       'Built three-agent AI architecture using Claude Sonnet 4.5 via MCP (Model Context Protocol)',
       'Developed FastAPI + WebSocket backend for REST operations and real-time updates',
@@ -223,7 +223,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Implemented metadata provenance tracking documenting where every value came from',
       'Built conversation memory tracking last messages to avoid asking for same information twice',
     ],
-    techStack: ['Python', 'FastAPI', 'WebSocket', 'Claude Sonnet 4.5', 'NeuroConv', 'NWBInspector', 'Pixi', 'Pydantic', 'MCP'],
+    techStack: ['Python', 'FastAPI', 'WebSocket', 'NeuroConv', 'NWBInspector', 'Pydantic', 'MCP'],
     features: [
       'Automated format detection for electrophysiology data',
       'Natural language metadata collection with ISO 8601 parsing',
@@ -297,4 +297,3 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
   },
 }
-
