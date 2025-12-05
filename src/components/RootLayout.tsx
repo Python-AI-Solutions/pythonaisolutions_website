@@ -76,6 +76,19 @@ function Header({ invert = false }: { invert?: boolean }) {
               Services
             </Link>
             <Link
+              href="/portfolio"
+              className={clsx(
+                'font-display text-sm font-semibold tracking-tight transition-all duration-200 hover:scale-105 sm:text-base',
+                pathname.startsWith('/portfolio')
+                  ? 'text-[#31b9fd]'
+                  : invert
+                    ? 'text-white hover:text-[#31b9fd]'
+                    : 'text-neutral-950 hover:text-[#31b9fd]',
+              )}
+            >
+              Portfolio
+            </Link>
+            <Link
               href="/about"
               className={clsx(
                 'font-display text-sm font-semibold tracking-tight transition-all duration-200 hover:scale-105 sm:text-base',
@@ -170,6 +183,20 @@ function Header({ invert = false }: { invert?: boolean }) {
                 )}
               >
                 Services
+              </Link>
+              <Link
+                href="/portfolio"
+                onClick={closeMobileMenu}
+                className={clsx(
+                  'px-6 py-3 font-display text-base font-medium tracking-tight transition-all duration-200 hover:bg-neutral-50',
+                  pathname.startsWith('/portfolio')
+                    ? 'bg-[#31b9fd]/10 text-[#31b9fd]'
+                    : invert
+                      ? 'text-white hover:text-[#31b9fd]'
+                      : 'text-neutral-950 hover:text-[#31b9fd]',
+                )}
+              >
+                Portfolio
               </Link>
               <Link
                 href="/about"

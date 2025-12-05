@@ -620,12 +620,18 @@ function Services() {
               </FadeIn>
             </div>
 
-            <div className="pt-4">
+            <div className="flex gap-4 pt-4">
               <Button
                 href="/services"
                 className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
               >
                 Learn More
+              </Button>
+              <Button
+                href="/portfolio"
+                className="bg-[#31b9fd] text-white transition-colors duration-300 hover:!bg-[#3db7f1]"
+              >
+                View Portfolio
               </Button>
             </div>
           </div>
