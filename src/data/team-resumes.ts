@@ -4,7 +4,6 @@ import peterKidneyData from '../../submodules/the-team/resumes/json/peter_kidney
 import claireMurphyData from '../../submodules/the-team/resumes/json/claire_murphy.json'
 import sumitJhaData from '../../submodules/the-team/resumes/json/sumit_jha.json'
 import heetShahData from '../../submodules/the-team/resumes/json/heet_shah.json'
-import chevulaJeevanData from '../../submodules/the-team/resumes/json/chevula_jeevan.json'
 import adityaPataneData from '../../submodules/the-team/resumes/json/aditya_patane.json'
 
 export const teamResumes = {
@@ -13,7 +12,6 @@ export const teamResumes = {
   claireMurphy: claireMurphyData,
   sumitJha: sumitJhaData,
   heetShah: heetShahData,
-  chevulaJeevan: chevulaJeevanData,
   adityaPatane: adityaPataneData,
 }
 
@@ -23,7 +21,6 @@ export const teamPhotos = {
   'John Lee': '/submodules/the-team/public/photos/John-Lee.webp',
   'Sumit Jha': '/submodules/the-team/public/photos/Sumit_Jha.webp',
   'Heet Shah': '/submodules/the-team/public/photos/Heet_Shah.webp',
-  'Chevula Jeevan': '/submodules/the-team/public/photos/Chevula_Jeevan.webp',
   'Aditya Patane': '/submodules/the-team/public/photos/Aditya_Patane.webp',
   'Peter Kidney': '/submodules/the-team/public/photos/Peter_Kidney.webp',
   'Dr. Claire Murphy': '/submodules/the-team/public/photos/Claire_Murphy.webp',

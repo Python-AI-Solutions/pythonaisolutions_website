@@ -19,6 +19,8 @@ export interface ProjectDetail {
   github: string | null
   demo: string | null
   achievements: string[]
+  /** Optional flag to hide code/GitHub actions for this project. */
+  hideCodeActions?: boolean
 }
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -56,6 +58,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     screenshots: ['/portfolio/CervicalAIScreener.webp'],
     github: 'https://github.com/Python-AI-Solutions/agentic-cervical-screener',
     demo: null,
+    hideCodeActions: true,
     achievements: [
       'Winner - Health Innovation Hub AI Call',
       'Early research prototype and demo implementation',

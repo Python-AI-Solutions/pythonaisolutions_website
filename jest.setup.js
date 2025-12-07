@@ -87,23 +87,10 @@ jest.mock(
 )
 
 
-jest.mock(
-  '../../../submodules/the-team/resumes/json/chevula_jeevan.json',
-  () => ({
-    basics: { name: 'Chevula Jeevan', label: 'Developer' },
-  }),
-  { virtual: true },
-)
-
 // Mock submodule photo imports
 jest.mock(
   '../../../submodules/the-team/public/photos/Aditya_Patane.png',
   () => 'test-photo.png',
-  { virtual: true },
-)
-jest.mock(
-  '../../../submodules/the-team/public/photos/Chevula_Jeevan.jpg',
-  () => 'test-photo.jpg',
   { virtual: true },
 )
 jest.mock(

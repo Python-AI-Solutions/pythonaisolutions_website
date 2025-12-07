@@ -572,7 +572,6 @@ const resumes = [
   { name: 'Dr. Claire Murphy',data: teamResumes.claireMurphy },
   { name: 'Sumit Jha', data: teamResumes.sumitJha },
   { name: 'Heet Shah', data: teamResumes.heetShah },
-  { name: 'Chevula Jeevan', data: teamResumes.chevulaJeevan },
   { name: 'Aditya Patane', data: teamResumes.adityaPatane },
 ]
 

@@ -57,6 +57,7 @@ const projects = Object.values(projectDetails).map((project) => ({
   image: project.image,
   github: project.github,
   demo: project.demo,
+   hideCodeActions: project.hideCodeActions,
   achievements: project.achievements,
 }))
 
@@ -173,26 +174,27 @@ function ProjectCard({ project }: { project: PortfolioProject }) {
 
           {/* Action Buttons */}
           <div className="mt-auto flex gap-3 pt-6">
-            {project.github ? (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
-              >
-                <GithubIcon />
-                View Code
-              </a>
-            ) : (
-              <button
-                disabled
-                className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-neutral-200 px-4 py-2 text-sm font-medium text-neutral-400"
-              >
-                <GithubIcon />
-                Coming Soon
-              </button>
-            )}
+            {!project.hideCodeActions &&
+              (project.github ? (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+                >
+                  <GithubIcon />
+                  View Code
+                </a>
+              ) : (
+                <button
+                  disabled
+                  className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-neutral-200 px-4 py-2 text-sm font-medium text-neutral-400"
+                >
+                  <GithubIcon />
+                  Coming Soon
+                </button>
+              ))}
             
             {project.demo && (
               <a
