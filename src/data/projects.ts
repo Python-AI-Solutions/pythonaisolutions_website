@@ -18,9 +18,8 @@ export interface ProjectDetail {
   screenshots?: string[]
   github: string | null
   demo: string | null
-  achievements: string[]
-  /** Optional flag to hide code/GitHub actions for this project. */
   hideCodeActions?: boolean
+  achievements: string[]
 }
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -58,7 +57,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
     screenshots: ['/portfolio/CervicalAIScreener.webp'],
     github: 'https://github.com/Python-AI-Solutions/agentic-cervical-screener',
     demo: null,
-    hideCodeActions: true,
     achievements: [
       'Winner - Health Innovation Hub AI Call',
       'Early research prototype and demo implementation',
@@ -259,6 +257,56 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Quality scoring system for validation results',
     ],
   },
+  'entra-credentials-validator': {
+    id: 'entra-credentials-validator',
+    title: 'Entra Credentials Validator',
+    category: 'Developer Tools',
+    shortDescription:
+      'OAuth 2.0 / OIDC validation tool for Microsoft Entra app registrations with PKCE security and browser-based SPA workflow support.',
+    fullDescription:
+      'Entra Credentials Validator is a standalone utility for testing OAuth 2.0 / OIDC flows with Microsoft Entra (formerly Azure AD) app registrations. It supports both CLI-based interactive workflows and browser-based SPA authentication patterns, addressing the challenge of validating credentials with complex enterprise security constraints like PIV authentication, MFA, and VPN-protected endpoints. The tool demonstrates secure implementation of PKCE (Proof Key for Code Exchange), OIDC discovery metadata validation, and both public and confidential client authentication patterns.',
+    problem:
+      'Microsoft Entra registrations configured as Single-Page Applications (SPA) require authorization code redemption to happen directly in the browser due to cross-origin restrictions. Testing credential flows in highly secure environments (like NIH with PIV requirement, VPN access, and MFA) is manually painful and error-prone. Developers lack a standalone tool that can validate complete OAuth 2.0 flows while handling enterprise security constraints.',
+    solution:
+      'Entra Credentials Validator provides two complementary workflows. The CLI workflow (`report`) walks users interactively through discovery, authorization, token exchange, and userinfo steps. The browser helper (`browser-helper`) exposes a local SPA that redeems authorization codes directly in the browser, satisfying Microsoft\'s cross-origin-only restriction. Both workflows enforce PKCE security, support public and confidential clients, and provide detailed PASS/SKIP/FAIL reporting. The tool validates credential flows end-to-end without requiring actual application integration.',
+    whatWeDid: [
+      'Implemented PKCE (Proof Key for Code Exchange) with SHA-256 code challenge in both Python and JavaScript',
+      'Built Flask-based local SPA server that handles browser-side token exchanges',
+      'Developed comprehensive CLI with interactive prompts for authorization code capture',
+      'Created responsive HTML/CSS interface for browser helper with modern design and accessibility',
+      'Implemented OIDC discovery metadata fetching and validation',
+      'Built support for both public client (PKCE-only) and confidential client (with client secret) flows',
+      'Added Microsoft Graph userinfo endpoint integration',
+      'Wrote unit tests for utility functions and browser helpers',
+      'Documented manual test strategies for complex enterprise environments',
+    ],
+    techStack: ['Python', 'Flask', 'JavaScript', 'HTML/CSS', 'Pixi', 'Playwright', 'pytest'],
+    features: [
+      'PKCE security pattern implementation (SHA-256 code challenge)',
+      'Dual workflow: CLI report and browser-based SPA helper',
+      'OIDC discovery metadata validation',
+      'Authorization code + token exchange flows',
+      'Refresh token testing',
+      'Public and confidential client support',
+      'Microsoft Graph userinfo endpoint integration',
+      'PASS/SKIP/FAIL detailed reporting',
+      'Responsive browser UI with configurable parameters',
+      'Support for both Chromium and Firefox via Playwright',
+    ],
+    status: 'Production Ready',
+    statusColor: 'bg-green-500',
+    image: '/portfolio/entra-credentials-validator.webp',
+    screenshots: ['/portfolio/entra-credentials-validator.webp'],
+    github: 'https://github.com/Python-AI-Solutions/entra-credentials-validator',
+    demo: null,
+    achievements: [
+      'Demonstrates OAuth 2.0 / OIDC expertise with PKCE implementation',
+      'Handles complex enterprise security constraints (PIV, MFA, VPN)',
+      'Browser + backend integration for SPA authentication validation',
+      'Test-driven development with comprehensive unit tests',
+    ],
+  },
+
   // 'archive-flow': {
   //   id: 'archive-flow',
   //   title: 'ArchiveFlow',
