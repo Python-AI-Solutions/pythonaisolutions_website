@@ -18,9 +18,8 @@ export interface ProjectDetail {
   screenshots?: string[]
   github: string | null
   demo: string | null
-  achievements: string[]
-  /** Optional flag to hide code/GitHub actions for this project. */
   hideCodeActions?: boolean
+  achievements: string[]
 }
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -58,7 +57,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
     screenshots: ['/portfolio/CervicalAIScreener.webp'],
     github: 'https://github.com/Python-AI-Solutions/agentic-cervical-screener',
     demo: null,
-    hideCodeActions: true,
     achievements: [
       'Winner - Health Innovation Hub AI Call',
       'Early research prototype and demo implementation',
@@ -259,6 +257,53 @@ export const projectDetails: Record<string, ProjectDetail> = {
       'Quality scoring system for validation results',
     ],
   },
+  'entra-credentials-validator': {
+    id: 'entra-credentials-validator',
+    title: 'Entra OAuth Validator',
+    category: 'Developer Tools',
+    shortDescription:
+      'Testing tool for OAuth 2.0 / OIDC flows with Microsoft Entra. Validates credentials before app integration using PKCE security.',
+    fullDescription:
+      'Entra OAuth Validator is a testing utility for validating OAuth 2.0 / OIDC flows with Microsoft Entra app registrations. It provides two workflows: CLI-based interactive prompts and a browser-based SPA for testing authentication patterns. The tool is designed for developers who need to verify Entra credentials work correctly before integrating them into production applications, especially in constrained enterprise environments.',
+    problem:
+      'Microsoft Entra SPA registrations require authorization code redemption directly in the browser due to cross-origin restrictions. Testing credential flows manually is tedious and error-prone. Developers need a standalone tool to validate complete OAuth 2.0 flows before investing time in application integration.',
+    solution:
+      'Two complementary workflows: (1) CLI walks users through each OAuth step interactively, and (2) browser helper exposes a local SPA that redeems authorization codes in-browser. Both enforce PKCE security, support public and confidential clients, and provide PASS/SKIP/FAIL reporting.',
+    whatWeDid: [
+      'Implemented PKCE (Proof Key for Code Exchange) with SHA-256 code challenge in Python and JavaScript',
+      'Built Flask backend server with local SPA for browser-side token exchange',
+      'Developed interactive CLI with guided prompts through OAuth 2.0 authorization code flow',
+      'Created responsive HTML/CSS UI with real-time status display and error reporting',
+      'Implemented OIDC discovery document parsing and validation',
+      'Added support for public client (PKCE-required) and confidential client (with client_secret) flows',
+      'Integrated Microsoft Graph userinfo endpoint for token validation',
+      'Built test suite covering core OAuth logic and CLI workflows',
+    ],
+    techStack: ['Python', 'Flask', 'JavaScript', 'HTML/CSS', 'pytest', 'Playwright'],
+    features: [
+      'PKCE security implementation',
+      'CLI and browser-based workflows',
+      'OIDC discovery metadata support',
+      'Authorization code + refresh token exchange',
+      'Public and confidential client flows',
+      'Detailed PASS/SKIP/FAIL reporting',
+      'Responsive browser interface',
+      'Cross-browser testing support (Chrome, Firefox)',
+    ],
+    status: 'Complete',
+    statusColor: 'bg-blue-500',
+    image: '/portfolio/entra-credentials-validator.webp',
+    screenshots: ['/portfolio/entra-credentials-validator.webp'],
+    github: 'https://github.com/Python-AI-Solutions/entra-credentials-validator',
+    demo: null,
+    achievements: [
+      'Solves SPA-only authorization code redemption constraint',
+      'Demonstrates OAuth 2.0 / OIDC implementation with PKCE',
+      'Works with enterprise Entra setups',
+      'Full test coverage of core flows',
+    ],
+  },
+
   // 'archive-flow': {
   //   id: 'archive-flow',
   //   title: 'ArchiveFlow',
