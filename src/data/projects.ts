@@ -157,12 +157,12 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   'evaluation-exploration': {
     id: 'evaluation-exploration',
-    title: 'LLM Evaluation Exploration',
+    title: 'LLM Evaluation Exploration Pipeline',
     category: 'Developer Tools',
     shortDescription:
-      'An exploration of different techniques for evaluating LLM outputs in RAG systems.',
+      'An exploration of different techniques for evaluating LLM outputs in any QA LLM system.',
     fullDescription:
-      'This exploratory project examines various approaches to evaluating LLM outputs in retrieval-augmented generation (RAG) systems. We assembled different validation techniques into a single interface to understand their trade-offs in terms of accuracy, cost, and latency. The project demonstrates the kinds of evaluation methods available and how they can be implemented and compared.',
+      'This pipeline lets you run the same prompts through 7 different validation approaches and compare which works best for your data and your problem. Everything can run locally, results are deterministic, and costs are tracked.',
     problem:
       'Large language models can produce incorrect information with high confidence. When building systems that answer questions from documents, it\'s important to validate outputs. Various validation techniques exist—RAGAS scoring, self-consistency checks, knowledge graph verification, LLM-as-judge frameworks, and metamorphic testing—each with different trade-offs in terms of accuracy, cost, and complexity.',
     solution:
