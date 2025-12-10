@@ -136,7 +136,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             >
               {project.status}
             </span>
-            {project.github && (
+            {!project.hideCodeActions && project.github && (
               <a
                 href={project.github}
                 target="_blank"
