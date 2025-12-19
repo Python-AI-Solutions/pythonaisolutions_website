@@ -294,8 +294,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     statusColor: 'bg-blue-500',
     image: '/portfolio/entra-credentials-validator.webp',
     screenshots: ['/portfolio/entra-credentials-validator.webp'],
-    github: 'https://github.com/Python-AI-Solutions/entra-credentials-validator',
-    demo: null,
+    github: 'https://github.com/Python-AI-Solutions/entra-credentials-app',
+    demo: 'https://entra-auth.pythonaisolutions.com',
     achievements: [
       'Solves SPA-only authorization code redemption constraint',
       'Demonstrates OAuth 2.0 / OIDC implementation with PKCE',
