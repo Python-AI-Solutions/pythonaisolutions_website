@@ -114,52 +114,65 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
 
         {/* Project Header */}
         <div className="mx-auto mb-12 max-w-5xl">
-          <FadeIn>
+          <FadeIn className="text-center">
             <div className="mb-6 inline-block rounded-full bg-[#31b9fd]/10 px-4 py-2 text-sm font-semibold text-[#31b9fd]">
               {project.category}
             </div>
             <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 sm:text-5xl">
               {project.title}
             </h1>
+            {project.awardBadge && (
+              <div className="mt-6 flex justify-center">
+                <Image
+                  src={project.awardBadge}
+                  alt="Award Badge"
+                  width={120}
+                  height={120}
+                  className="h-24 w-auto object-contain sm:h-28"
+                />
+              </div>
+            )}
             <p className="mt-6 text-xl leading-relaxed text-neutral-600">
               {project.fullDescription}
             </p>
           </FadeIn>
         </div>
 
-        {/* Status Badge */}
+        {/* Status Badge and Award */}
         <div className="mx-auto max-w-5xl">
           <FadeIn className="mt-8">
-            <div className="inline-flex items-center gap-4">
-            <span
-              className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-medium text-white ${project.statusColor}`}
-            >
-              {project.status}
-            </span>
-            {!project.hideCodeActions && project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
-              >
-                <GithubIcon />
-                View on GitHub
-              </a>
-            )}
-            {project.demo && (
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#31b9fd] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#3db7f1]"
-              >
-                <ExternalLinkIcon />
-                Live Demo
-              </a>
-            )}
-          </div>
-        </FadeIn>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <span
+                  className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-medium text-white ${project.statusColor}`}
+                >
+                  {project.status}
+                </span>
+                {!project.hideCodeActions && project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+                  >
+                    <GithubIcon />
+                    View on GitHub
+                  </a>
+                )}
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#31b9fd] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#3db7f1]"
+                  >
+                    <ExternalLinkIcon />
+                    Live Demo
+                  </a>
+                )}
+              </div>
+            </div>
+          </FadeIn>
         </div>
 
         {/* Project Screenshots Carousel */}
@@ -387,4 +400,3 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
     </RootLayout>
   )
 }
-
