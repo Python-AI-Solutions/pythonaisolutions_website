@@ -20,6 +20,7 @@ export interface ProjectDetail {
   demo: string | null
   hideCodeActions?: boolean
   achievements: string[]
+  awardBadge?: string
 }
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -58,10 +59,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
     github: 'https://github.com/Python-AI-Solutions/agentic-cervical-screener',
     demo: 'https://cervical-screening.pythonaisolutions.com',
     achievements: [
-      'Winner - Health Innovation Hub AI Call',
+      'Winner - Health Innovation Hub Ireland AI Call',
       'Early research prototype and demo implementation',
       'Ongoing experimentation with AI-assisted cervical screening workflows',
     ],
+    awardBadge: '/portfolio/hihi-ai-call-2025-winner.webp',
   },
   'nostrings-resume': {
     id: 'nostrings-resume',
