@@ -1,6 +1,14 @@
 import { type Metadata } from 'next'
+import { Fira_Sans } from 'next/font/google'
 
 import '@/styles/tailwind.css'
+
+const firaSans = Fira_Sans({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-sans',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
+    <html lang="en" className={`${firaSans.variable} h-full bg-neutral-950 text-base antialiased`}>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   )
