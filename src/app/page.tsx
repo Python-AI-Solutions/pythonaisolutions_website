@@ -54,7 +54,7 @@ function Clients() {
     <div className="mt-24 rounded-4xl bg-neutral-950 py-16 sm:mt-32 sm:py-20 lg:mt-56 lg:py-32">
       <Container>
         <FadeIn className="flex flex-col items-center gap-x-4 sm:flex-row sm:gap-x-8">
-          <h2 className="text-center font-display text-xs font-semibold tracking-wider text-white sm:text-left sm:text-sm">
+          <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left sm:text-base">
             Providing trusted services globally
           </h2>
           <div className="mt-4 h-px flex-auto bg-neutral-800 sm:mt-0" />
