@@ -64,10 +64,10 @@ test.describe('Home Page', () => {
   })
 
   test('should display clients section with heading', async ({ page }) => {
-    // Check for "Providing trusted services globally" heading
-    const clientsHeading = page.locator(
-      'text=Providing trusted services globally',
-    )
+    // Check for the curated clients section heading
+    const clientsHeading = page.getByRole('heading', {
+      name: 'Trusted by teams shipping serious technical work',
+    })
     await expect(clientsHeading).toBeVisible()
   })
 

@@ -44,11 +44,12 @@ const clients = [
     'https://futurus.ie/wp-content/themes/bootscore/assets/img/logo/futurus_logo.png',
     'https://futurus.ie/',
   ],
-  [
-    'HiHi AI Call 2025 Winner',
-    '/portfolio/hihi-ai-call-2025-winner.webp',
-    '/portfolio/cervical-screener',
-  ],
+]
+
+const heroHighlights = [
+  ['Focus', 'Applied AI systems'],
+  ['Delivery', 'Consulting + build'],
+  ['Coverage', 'US / Europe'],
 ]
 
 // Load testimonials from generated data
@@ -56,55 +57,62 @@ const projects = testimonials
 
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-16 sm:mt-32 sm:py-20 lg:mt-56 lg:py-32">
+    <div className="relative mt-24 overflow-hidden rounded-4xl bg-neutral-950 py-16 shadow-[0_30px_80px_rgba(10,10,10,0.22)] sm:mt-32 sm:py-20 lg:mt-44 lg:py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(49,185,253,0.18),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_28%)]" />
       <Container>
-        <FadeIn className="flex flex-col items-center gap-x-4 sm:flex-row sm:gap-x-8">
-          <h2 className="text-center font-display text-xs font-semibold tracking-wider text-white sm:text-left sm:text-sm">
-            Providing trusted services globally
-          </h2>
-          <div className="mt-4 h-px flex-auto bg-neutral-800 sm:mt-0" />
+        <FadeIn className="relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#8dd8ff]">
+              Selected clients and collaborators
+            </p>
+            <h2 className="mt-4 font-display text-3xl tracking-tight text-white sm:text-4xl">
+              Trusted by teams shipping serious technical work
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-7 text-neutral-300">
+              Research groups, product teams, and public-interest
+              organizations use Python AI Solutions for applied AI delivery,
+              automation, and data systems work.
+            </p>
+          </div>
+          <Link
+            href="/portfolio/cervical-screener"
+            className="inline-flex items-center gap-2 self-start rounded-full border border-[#31b9fd]/25 bg-[#31b9fd]/10 px-4 py-2 text-sm font-medium text-white transition hover:border-[#31b9fd]/45 hover:bg-[#31b9fd]/15"
+          >
+            <span className="text-[#8dd8ff]">Recent recognition</span>
+            <span>HiHi AI Call 2025 winner</span>
+          </Link>
         </FadeIn>
         <FadeInStagger faster>
           <ul
             role="list"
-            className="mt-8 grid grid-cols-2 gap-x-6 gap-y-8 sm:mt-10 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-4"
+            className="relative mt-10 grid grid-cols-2 gap-4 sm:mt-12 sm:gap-5 lg:grid-cols-4"
           >
-            {clients.map(([client, logo, url]) => {
-              const isInternal = url.startsWith('/')
-              const imageElement = (
-                <Image
-                  src={logo}
-                  alt={client}
-                  unoptimized
-                  width={typeof logo === 'string' ? 200 : undefined}
-                  height={typeof logo === 'string' ? 80 : undefined}
-                  className="mx-auto h-16 w-auto cursor-pointer object-contain sm:h-20"
-                />
-              )
-              return (
-                <li key={client} className="flex items-center justify-center">
-                  <FadeIn>
-                    {isInternal ? (
-                      <Link
-                        href={url}
-                        className="transition-transform duration-200 hover:scale-105"
-                      >
-                        {imageElement}
-                      </Link>
-                    ) : (
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-transform duration-200 hover:scale-105"
-                      >
-                        {imageElement}
-                      </a>
-                    )}
-                  </FadeIn>
-                </li>
-              )
-            })}
+            {clients.map(([client, logo, url]) => (
+              <li key={client}>
+                <FadeIn>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex h-full min-h-[9.5rem] flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.04] px-5 py-5 ring-1 ring-white/5 transition duration-300 hover:-translate-y-1 hover:border-[#31b9fd]/40 hover:bg-white/[0.08]"
+                  >
+                    <div className="flex min-h-[4.5rem] items-center justify-center">
+                      <Image
+                        src={logo}
+                        alt={client}
+                        unoptimized
+                        width={typeof logo === 'string' ? 200 : undefined}
+                        height={typeof logo === 'string' ? 80 : undefined}
+                        className="mx-auto h-14 w-auto object-contain opacity-90 transition duration-300 group-hover:opacity-100 sm:h-16"
+                      />
+                    </div>
+                    <span className="mt-5 text-center text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-neutral-400 transition group-hover:text-[#8dd8ff] sm:text-xs">
+                      {client}
+                    </span>
+                  </a>
+                </FadeIn>
+              </li>
+            ))}
           </ul>
         </FadeInStagger>
       </Container>
@@ -677,7 +685,11 @@ export default function Home() {
     <RootLayout>
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn>
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#31b9fd]/15 bg-white/80 px-4 py-1.5 text-sm font-medium text-[#0f3554] shadow-sm ring-1 ring-neutral-950/5 backdrop-blur">
+              <span className="h-2 w-2 rounded-full bg-[#31b9fd]" />
+              Applied AI consulting, automation, and delivery
+            </div>
             <div className="mb-6 flex justify-start">
               <Image
                 src={getAssetPath('/Python-AI-Solutions-Logo.webp')}
@@ -696,6 +708,36 @@ export default function Home() {
               harness their data and streamline their operations amid rapid
               technological advancements.
             </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button
+                href="/portfolio"
+                className="bg-[#31b9fd] px-5 py-2.5 text-white hover:!bg-[#24a8ea]"
+              >
+                View portfolio
+              </Button>
+              <Button
+                href="/contact"
+                invert
+                className="border border-neutral-300 bg-white/80 px-5 py-2.5 text-neutral-950 hover:!bg-white"
+              >
+                Start a conversation
+              </Button>
+            </div>
+            <dl className="mt-8 grid gap-4 sm:grid-cols-3">
+              {heroHighlights.map(([label, value]) => (
+                <div
+                  key={label}
+                  className="rounded-3xl border border-neutral-200/80 bg-white/70 px-5 py-4 shadow-sm ring-1 ring-neutral-950/5 backdrop-blur"
+                >
+                  <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                    {label}
+                  </dt>
+                  <dd className="mt-2 text-base font-semibold text-neutral-950">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </FadeIn>
       </Container>
