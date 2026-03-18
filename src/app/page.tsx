@@ -44,6 +44,11 @@ const clients = [
     'https://futurus.ie/wp-content/themes/bootscore/assets/img/logo/futurus_logo.png',
     'https://futurus.ie/',
   ],
+  [
+    'HiHi AI Call 2025 Winner',
+    '/portfolio/hihi-ai-call-2025-winner.webp',
+    '/portfolio/cervical-screener',
+  ],
 ]
 
 // Load testimonials from generated data
@@ -64,27 +69,42 @@ function Clients() {
             role="list"
             className="mt-8 grid grid-cols-2 gap-x-6 gap-y-8 sm:mt-10 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-4"
           >
-            {clients.map(([client, logo, url]) => (
-              <li key={client} className="flex items-center justify-center">
-                <FadeIn>
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-transform duration-200 hover:scale-105"
-                  >
-                    <Image
-                      src={logo}
-                      alt={client}
-                      unoptimized
-                      width={typeof logo === 'string' ? 200 : undefined}
-                      height={typeof logo === 'string' ? 80 : undefined}
-                      className="mx-auto h-16 w-auto cursor-pointer object-contain sm:h-20"
-                    />
-                  </a>
-                </FadeIn>
-              </li>
-            ))}
+            {clients.map(([client, logo, url]) => {
+              const isInternal = url.startsWith('/')
+              const imageElement = (
+                <Image
+                  src={logo}
+                  alt={client}
+                  unoptimized
+                  width={typeof logo === 'string' ? 200 : undefined}
+                  height={typeof logo === 'string' ? 80 : undefined}
+                  className="mx-auto h-16 w-auto cursor-pointer object-contain sm:h-20"
+                />
+              )
+              return (
+                <li key={client} className="flex items-center justify-center">
+                  <FadeIn>
+                    {isInternal ? (
+                      <Link
+                        href={url}
+                        className="transition-transform duration-200 hover:scale-105"
+                      >
+                        {imageElement}
+                      </Link>
+                    ) : (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-transform duration-200 hover:scale-105"
+                      >
+                        {imageElement}
+                      </a>
+                    )}
+                  </FadeIn>
+                </li>
+              )
+            })}
           </ul>
         </FadeInStagger>
       </Container>
